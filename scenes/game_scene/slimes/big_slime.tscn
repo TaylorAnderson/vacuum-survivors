@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://bckuh2ooj6ye6"]
+
+[ext_resource type="PackedScene" uid="uid://deypg4htvxsn3" path="res://scenes/game_scene/slimes/slime.tscn" id="1_kadty"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_toliv"]
+radius = 20.0
+
+[node name="BigSlime" instance=ExtResource("1_kadty")]
+scale = Vector2(2, 2)
+speed = 400.0
+stunned_vacuum_resistance = 280.0
+
+[node name="Vacuumable" parent="." index="4"]
+value = 20
+
+[node name="Bar" parent="." index="5"]
+max = 10
+value = 10
+
+[node name="CollisionShape2D" parent="Joltable" index="0"]
+shape = SubResource("CircleShape2D_toliv")
+
+[node name="ParticleExplosion" parent="." index="10"]
+amount = 20

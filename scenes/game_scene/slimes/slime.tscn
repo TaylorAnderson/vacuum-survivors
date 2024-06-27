@@ -1,0 +1,200 @@
+[gd_scene load_steps=31 format=3 uid="uid://deypg4htvxsn3"]
+
+[ext_resource type="Script" path="res://scenes/game_scene/slimes/slime.gd" id="1_rj8rp"]
+[ext_resource type="Texture2D" uid="uid://c5rpgu4sa21m" path="res://assets/sprites/slime.png" id="2_ikgkn"]
+[ext_resource type="PackedScene" uid="uid://cguavmce3qee4" path="res://scenes/game_scene/elements/element.tscn" id="3_xkqwo"]
+[ext_resource type="PackedScene" uid="uid://d1bfmdsnal6pj" path="res://scenes/game_scene/vacuum/vacuumable.tscn" id="4_kbfou"]
+[ext_resource type="PackedScene" uid="uid://ridxevwf7yqc" path="res://scenes/game_scene/bar.tscn" id="5_nhxvo"]
+[ext_resource type="Texture2D" uid="uid://bae618o7ulkob" path="res://assets/sprites/stun_anim.png" id="6_3vpt6"]
+[ext_resource type="Texture2D" uid="uid://nbmwy7is1gvu" path="res://assets/sprites/slime_killed_anim.png" id="7_jtpwy"]
+[ext_resource type="PackedScene" uid="uid://c6ou3wr6f8c2n" path="res://scenes/game_scene/elements/flammable.tscn" id="8_kqo0w"]
+[ext_resource type="PackedScene" uid="uid://re0untg3gyy8" path="res://scenes/game_scene/elements/joltable.tscn" id="9_ajclt"]
+[ext_resource type="Script" path="res://scenes/game_scene/slimes/particle_explosion.gd" id="11_lfpce"]
+[ext_resource type="PackedScene" uid="uid://c5dpiko1evojg" path="res://scenes/game_scene/elements/slimeable.tscn" id="12_a2yl3"]
+[ext_resource type="PackedScene" uid="uid://cvq8uxvopg1vr" path="res://scenes/game_scene/score_particle.tscn" id="12_yvajo"]
+[ext_resource type="AudioStream" uid="uid://ngsyf51utg06" path="res://assets/audio/slime hit.wav" id="15_enx8f"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y2yfw"]
+atlas = ExtResource("2_ikgkn")
+region = Rect2(0, 0, 22, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lrpvh"]
+atlas = ExtResource("2_ikgkn")
+region = Rect2(22, 0, 22, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxfrn"]
+atlas = ExtResource("2_ikgkn")
+region = Rect2(44, 0, 22, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndg4h"]
+atlas = ExtResource("2_ikgkn")
+region = Rect2(66, 0, 22, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ew8w5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y2yfw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lrpvh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hxfrn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ndg4h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x775c"]
+radius = 8.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1p7xb"]
+atlas = ExtResource("6_3vpt6")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ox5j7"]
+atlas = ExtResource("6_3vpt6")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g8bd4"]
+atlas = ExtResource("6_3vpt6")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_76h4h"]
+atlas = ExtResource("6_3vpt6")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7tfjw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1p7xb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ox5j7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g8bd4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_76h4h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_heiie"]
+atlas = ExtResource("7_jtpwy")
+region = Rect2(0, 0, 26, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yeva6"]
+atlas = ExtResource("7_jtpwy")
+region = Rect2(26, 0, 26, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cdu5r"]
+atlas = ExtResource("7_jtpwy")
+region = Rect2(52, 0, 26, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7tlth"]
+atlas = ExtResource("7_jtpwy")
+region = Rect2(0, 26, 26, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_llivd"]
+atlas = ExtResource("7_jtpwy")
+region = Rect2(26, 26, 26, 26)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l0t0v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_heiie")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yeva6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cdu5r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7tlth")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_llivd")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"poof",
+"speed": 10.0
+}]
+
+[node name="Slime" type="CharacterBody2D"]
+z_index = 2
+collision_layer = 8
+collision_mask = 9
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_rj8rp")
+speed = 450.0
+stunned_vacuum_resistance = 250.0
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ew8w5")
+autoplay = "default"
+frame_progress = 0.437271
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_x775c")
+
+[node name="Element" parent="." instance=ExtResource("3_xkqwo")]
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="Vacuumable" parent="." instance=ExtResource("4_kbfou")]
+can_be_eaten = false
+resistance = 1000
+value = 10
+
+[node name="Bar" parent="." instance=ExtResource("5_nhxvo")]
+position = Vector2(0, -14)
+max = 5
+value = 5
+is_health_bar = true
+
+[node name="StunAnim" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(0, 1)
+sprite_frames = SubResource("SpriteFrames_7tfjw")
+autoplay = "default"
+frame_progress = 0.155916
+
+[node name="StunPoofAnim" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_l0t0v")
+animation = &"poof"
+
+[node name="Flammable" parent="." instance=ExtResource("8_kqo0w")]
+visible = false
+
+[node name="Joltable" parent="." instance=ExtResource("9_ajclt")]
+
+[node name="ParticleExplosion" type="Node2D" parent="."]
+script = ExtResource("11_lfpce")
+particle_scene = ExtResource("12_yvajo")
+velocity_min = 150.0
+velocity_max = 200.0
+
+[node name="Slimeable" parent="." instance=ExtResource("12_a2yl3")]
+
+[node name="SlimeHitSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_enx8f")
+volume_db = -5.0

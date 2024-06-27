@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ckscjgx4ks3ow"
+path="res://.godot/imported/The Journey Ahead (loop).wav-618dd393dc5e5ae647caf06b7fe13928.sample"
+
+[deps]
+
+source_file="res://assets/audio/music/The Journey Ahead (loop).wav"
+dest_files=["res://.godot/imported/The Journey Ahead (loop).wav-618dd393dc5e5ae647caf06b7fe13928.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

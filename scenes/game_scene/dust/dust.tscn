@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://c10he5qxqrbrt"]
+
+[ext_resource type="Script" path="res://scenes/game_scene/dust/dust.gd" id="1_2dy21"]
+[ext_resource type="Texture2D" uid="uid://dy7ekb1ed5fee" path="res://assets/sprites/dust.png" id="1_8j6cq"]
+[ext_resource type="PackedScene" uid="uid://d1bfmdsnal6pj" path="res://scenes/game_scene/vacuum/vacuumable.tscn" id="2_w4jgl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6jq8y"]
+radius = 3.0
+
+[node name="Dust" type="Area2D"]
+modulate = Color(0.368627, 0.376471, 0.431373, 1)
+z_index = -5
+collision_layer = 2
+script = ExtResource("1_2dy21")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_6jq8y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_8j6cq")
+
+[node name="Vacuumable" parent="." instance=ExtResource("2_w4jgl")]
+resistance = 1

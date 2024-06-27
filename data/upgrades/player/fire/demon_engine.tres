@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Upgrade" load_steps=3 format=3 uid="uid://blvyse0eevp73"]
+
+[ext_resource type="Script" path="res://data/upgrade.gd" id="1_6ep8u"]
+[ext_resource type="Resource" uid="uid://dk1tfvjoyeseo" path="res://data/upgrades/player/fire/turbo_engine.tres" id="1_u181d"]
+
+[resource]
+script = ExtResource("1_6ep8u")
+name = "DEMON ENGINE"
+id = "demon_engine"
+description = "When vacuum is {RED}: 
+Faster run and walk, and even more flames erupt behind you"
+pre_req = ExtResource("1_u181d")

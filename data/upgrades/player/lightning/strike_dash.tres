@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Upgrade" load_steps=3 format=3 uid="uid://c870epgs7wg8d"]
+
+[ext_resource type="Resource" uid="uid://d1ce000ds26n2" path="res://data/upgrades/player/lightning/bolt_dash.tres" id="1_nyc3e"]
+[ext_resource type="Script" path="res://data/upgrade.gd" id="2_2btmc"]
+
+[resource]
+script = ExtResource("2_2btmc")
+name = "STRIKE DASH"
+id = "strike_dash"
+description = "Bolt Dash does more damage and pushes enemies away."
+pre_req = ExtResource("1_nyc3e")

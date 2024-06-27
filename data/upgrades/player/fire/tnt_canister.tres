@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Upgrade" load_steps=3 format=3 uid="uid://d3pamo5m37xbx"]
+
+[ext_resource type="Resource" uid="uid://dojjma06dgkh6" path="res://data/upgrades/player/fire/gunpowder_canister.tres" id="1_iemn2"]
+[ext_resource type="Script" path="res://data/upgrade.gd" id="2_das7y"]
+
+[resource]
+script = ExtResource("2_das7y")
+name = "TNT CANISTER"
+id = "tnt_canister"
+description = "Fire bullets explode on impact."
+pre_req = ExtResource("1_iemn2")

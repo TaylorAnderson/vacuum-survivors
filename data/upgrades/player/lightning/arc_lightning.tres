@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Upgrade" load_steps=2 format=3 uid="uid://dbgmum00t3w7h"]
+
+[ext_resource type="Script" path="res://data/upgrade.gd" id="2_1hw0r"]
+
+[resource]
+script = ExtResource("2_1hw0r")
+name = "ARC LIGHTNING"
+id = "arc_lightning"
+description = "Lightning bullets can arc farther and to more enemies."

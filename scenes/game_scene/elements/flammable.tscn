@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://c6ou3wr6f8c2n"]
+
+[ext_resource type="Script" path="res://scenes/game_scene/elements/flammable.gd" id="1_bwnir"]
+[ext_resource type="Texture2D" uid="uid://c4ainjff8b6gt" path="res://assets/sprites/fire.png" id="2_dlhvt"]
+[ext_resource type="AudioStream" uid="uid://ddpga3bmq18yj" path="res://assets/audio/fire_burst.wav" id="3_pqtxq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8uek2"]
+atlas = ExtResource("2_dlhvt")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ts2jv"]
+atlas = ExtResource("2_dlhvt")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rorgx"]
+atlas = ExtResource("2_dlhvt")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_repkx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8uek2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ts2jv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rorgx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jc46t"]
+radius = 7.07107
+
+[node name="Flammable" type="Area2D"]
+collision_mask = 15
+script = ExtResource("1_bwnir")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_repkx")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_jc46t")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_pqtxq")
+volume_db = -5.0
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

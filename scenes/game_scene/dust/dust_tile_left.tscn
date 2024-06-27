@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhevfmh2racy8"]
+
+[ext_resource type="Texture2D" uid="uid://by2xrd2rnb166" path="res://assets/sprites/dust_tile_guide.png" id="1_c4pvv"]
+[ext_resource type="PackedScene" uid="uid://c10he5qxqrbrt" path="res://scenes/game_scene/dust/dust.tscn" id="2_sevo5"]
+
+[node name="DustTile" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_c4pvv")
+
+[node name="Dust" parent="." instance=ExtResource("2_sevo5")]
+position = Vector2(-5, 5)
+
+[node name="Dust2" parent="." instance=ExtResource("2_sevo5")]
+position = Vector2(-5, 0)
+
+[node name="Dust3" parent="." instance=ExtResource("2_sevo5")]
+position = Vector2(-5, -5)

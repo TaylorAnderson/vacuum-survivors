@@ -1,0 +1,77 @@
+[gd_scene load_steps=11 format=3 uid="uid://jg6wxfsjathk"]
+
+[ext_resource type="PackedScene" uid="uid://b2h8ok8yfc7wb" path="res://addons/silent_wolf/Scores/Leaderboard.tscn" id="1_fdesq"]
+[ext_resource type="FontFile" uid="uid://dddr2bqhrtyux" path="res://assets/fonts/Smart Basic 9h.ttf" id="2_m0phy"]
+[ext_resource type="PackedScene" uid="uid://c0qopxvm2fexc" path="res://scenes/main_scene/leaderboard_scene/score_item.tscn" id="2_rakxg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lrjnr"]
+bg_color = Color(0, 0, 0, 0.8)
+
+[sub_resource type="LabelSettings" id="LabelSettings_070ya"]
+font = ExtResource("2_m0phy")
+font_size = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5i4ve"]
+bg_color = Color(0.360784, 0.180392, 0.470588, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fr5u1"]
+bg_color = Color(0.482353, 0.258824, 0.619608, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0xhmq"]
+bg_color = Color(0.321569, 0.156863, 0.419608, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x6xrd"]
+bg_color = Color(0.239216, 0.239216, 0.239216, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5a1jl"]
+bg_color = Color(0.360784, 0.180392, 0.470588, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="Leaderboard" instance=ExtResource("1_fdesq")]
+ScoreItem = ExtResource("2_rakxg")
+
+[node name="Panel" type="Panel" parent="." index="0"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lrjnr")
+
+[node name="Board" parent="." index="2"]
+mouse_filter = 2
+
+[node name="Label" parent="Board/TitleContainer" index="0"]
+label_settings = SubResource("LabelSettings_070ya")
+
+[node name="CloseButton" parent="Board/CloseButtonContainer" index="0"]
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_m0phy")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_5i4ve")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fr5u1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0xhmq")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_x6xrd")
+theme_override_styles/focus = SubResource("StyleBoxFlat_5a1jl")
+
+[connection signal="button_down" from="Board/CloseButtonContainer/CloseButton" to="." method="_on_close_button_button_down"]

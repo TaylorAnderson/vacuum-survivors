@@ -1,0 +1,33 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://bway7m7g41jnv"
+path="res://.godot/imported/ChevyRay - Babyblocks.ttf-6f799097873f4fd70f6390ad603c49dd.fontdata"
+
+[deps]
+
+source_file="res://assets/fonts/ChevyRay - Babyblocks.ttf"
+dest_files=["res://.godot/imported/ChevyRay - Babyblocks.ttf-6f799097873f4fd70f6390ad603c49dd.fontdata"]
+
+[params]
+
+Rendering=null
+antialiasing=0
+generate_mipmaps=false
+multichannel_signed_distance_field=false
+msdf_pixel_range=8
+msdf_size=48
+allow_system_fallback=true
+force_autohinter=false
+hinting=1
+subpixel_positioning=1
+oversampling=0.0
+Fallbacks=null
+fallbacks=[]
+Compress=null
+compress=true
+preload=[]
+language_support={}
+script_support={}
+opentype_features={}

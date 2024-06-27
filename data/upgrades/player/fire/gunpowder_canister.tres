@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Upgrade" load_steps=3 format=3 uid="uid://dojjma06dgkh6"]
+
+[ext_resource type="Script" path="res://data/upgrade.gd" id="1_7q4b1"]
+[ext_resource type="Resource" uid="uid://d3pamo5m37xbx" path="res://data/upgrades/player/fire/tnt_canister.tres" id="1_ybxed"]
+
+[resource]
+script = ExtResource("1_7q4b1")
+name = "GUNPOWDER CANISTER"
+id = "gunpowder_canister"
+description = "Dirt bullets can ignite when in contact with flames."
