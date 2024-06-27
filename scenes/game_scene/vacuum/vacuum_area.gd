@@ -41,14 +41,14 @@ func _on_eat_area_area_entered(area):
 func _on_eat_area_body_entered(body):
 	try_to_eat(body);
 		
-func try_to_eat(object):
+func try_to_eat(object:Node2D):
 	if not enabled: return;
 	if not is_instance_valid(object): return;
 	var vacuumable:Vacuumable = Find.child_by_type(object, Vacuumable)
 	if vacuumable and vacuumable.can_be_eaten:
 		$CollectNoise.play();
-		if objects_sucking.has(object):
-			objects_sucking.erase(object);
+		if objects_sucking.has(vacuumable):
+			objects_sucking.erase(vacuumable);
 		vacuumable.get_parent().queue_free();
 		vacuumed_object.emit(vacuumable.get_parent());
 func _on_body_entered(body):

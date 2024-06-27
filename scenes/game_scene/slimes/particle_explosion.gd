@@ -12,7 +12,7 @@ func _ready():
 func trigger():
 	for i in amount:
 		var new_particle = particle_scene.instantiate()
-		add_child(new_particle)
+		call_deferred("add_child", new_particle);
 		new_particle.velocity = Vector2(randf_range(velocity_min, velocity_max), 0);
 		new_particle.velocity = new_particle.velocity.rotated(randf() * (PI*2))
 		

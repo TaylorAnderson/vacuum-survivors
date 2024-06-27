@@ -185,7 +185,8 @@ animation = &"poof"
 [node name="Flammable" parent="." instance=ExtResource("8_kqo0w")]
 visible = false
 
-[node name="Joltable" parent="." instance=ExtResource("9_ajclt")]
+[node name="Joltable" parent="." node_paths=PackedStringArray("health_bar") instance=ExtResource("9_ajclt")]
+health_bar = NodePath("../Bar")
 
 [node name="ParticleExplosion" type="Node2D" parent="."]
 script = ExtResource("11_lfpce")

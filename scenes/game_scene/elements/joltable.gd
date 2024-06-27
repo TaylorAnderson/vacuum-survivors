@@ -34,7 +34,7 @@ func _process(delta):
 		line.points = [Vector2.ZERO]
 		target = null;
 	else:
-		if target:
+		if target and is_instance_valid(target):
 			line.points[1] = (target.global_position - global_position) / get_parent().scale
 
 func pulse(iterations:int):

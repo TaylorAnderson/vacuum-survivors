@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://ds3f6jlkv8oc0"]
+[gd_scene load_steps=64 format=3 uid="uid://ds3f6jlkv8oc0"]
 
 [ext_resource type="Script" path="res://scenes/game_scene/game.gd" id="1_6prm5"]
 [ext_resource type="Script" path="res://scenes/game_scene/camera_follow.gd" id="1_4721r"]
@@ -28,10 +28,10 @@
 [ext_resource type="PackedScene" uid="uid://bckuh2ooj6ye6" path="res://scenes/game_scene/slimes/big_slime.tscn" id="17_6qigw"]
 [ext_resource type="FontFile" uid="uid://dddr2bqhrtyux" path="res://assets/fonts/Smart Basic 9h.ttf" id="21_hyrwg"]
 [ext_resource type="Script" path="res://scenes/main_scene/score_label.gd" id="23_ig7ap"]
-[ext_resource type="StyleBox" uid="uid://cf8tl47h7hr6f" path="res://scenes/bg_panel.tres" id="28_xm61l"]
 [ext_resource type="Script" path="res://scenes/game_scene/ui/upgrade_screen.gd" id="29_mhigv"]
-[ext_resource type="PackedScene" uid="uid://cty0hnyocw8ms" path="res://scenes/game_scene/ui/upgrade.tscn" id="29_raru4"]
+[ext_resource type="PackedScene" uid="uid://cty0hnyocw8ms" path="res://scenes/game_scene/ui/upgrade_card.tscn" id="29_raru4"]
 [ext_resource type="FontFile" uid="uid://cps7wwwrgo0ch" path="res://assets/fonts/Yesterday Basic 10h.ttf" id="30_vvp6j"]
+[ext_resource type="Script" path="res://scenes/game_scene/xp_bar.gd" id="32_dv8qa"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_fy4km"]
 tile_data = PackedInt32Array(0, 327681, 0, 65536, 327681, 1, 131072, 327681, 1, 196608, 327681, 1, 262144, 131073, 1, 327680, 131073, 1, 393216, 131073, 1, 458752, 131073, 1, 524288, 327681, 1, 589824, 327681, 1, 655360, 131073, 1, 720896, 131073, 1, 786432, 131073, 1, 851968, 327681, 1, 917504, 131073, 1, 983040, 327681, 1, 1048576, 327681, 1, 1114112, 327681, 2, 1, 65537, 2, 65537, 1, 0, 131073, 458753, 1, 196609, 458753, 1, 262145, 458753, 1, 327681, 458753, 1, 393217, 458753, 1, 458753, 1, 1, 524289, 1, 1, 589825, 458753, 1, 655361, 458753, 1, 720897, 458753, 1, 786433, 1, 1, 851969, 1, 1, 917505, 458753, 1, 983041, 458753, 1, 1048577, 1, 2, 1114113, 65537, 0, 2, 65537, 2, 65538, 393217, 2, 1048578, 65537, 2, 1114114, 393217, 2, 3, 65537, 2, 65539, 65537, 0, 1048579, 65537, 2, 1114115, 65537, 0, 4, 65537, 2, 65540, 65537, 0, 1048580, 65537, 2, 1114116, 393217, 2, 5, 393217, 0, 65541, 65537, 0, 1048581, 65537, 2, 1114117, 65537, 0, 6, 393217, 0, 65542, 393217, 2, 1048582, 393217, 0, 1114118, 393217, 2, 7, 393217, 0, 65543, 65537, 0, 1048583, 393217, 0, 1114119, 393217, 2, 8, 65537, 2, 65544, 393217, 2, 1048584, 65537, 2, 1114120, 65537, 0, 9, 65537, 2, 65545, 65537, 0, 1048585, 65537, 2, 1114121, 65537, 0, 10, 393217, 0, 65546, 65537, 0, 1048586, 393217, 0, 1114122, 393217, 2, 11, 393217, 0, 65547, 65537, 0, 1048587, 393217, 0, 1114123, 393217, 2, 12, 65537, 2, 65548, 393217, 2, 1048588, 65537, 2, 1114124, 65537, 0, 13, 65537, 2, 65549, 65537, 0, 1048589, 65537, 2, 1114125, 393217, 2, 14, 65537, 2, 65550, 65537, 0, 1048590, 65537, 2, 1114126, 393217, 2, 15, 65537, 2, 65551, 65537, 0, 1048591, 65537, 2, 1114127, 65537, 0, 16, 65537, 2, 65552, 131073, 0, 131088, 327681, 1, 196624, 327681, 1, 262160, 131073, 1, 327696, 327681, 1, 393232, 327681, 1, 458768, 131073, 1, 524304, 327681, 1, 589840, 131073, 1, 655376, 131073, 1, 720912, 327681, 1, 786448, 327681, 1, 851984, 327681, 1, 917520, 327681, 1, 983056, 327681, 1, 1048592, 131073, 2, 1114128, 393217, 2, 17, 458753, 0, 65553, 1, 1, 131089, 1, 1, 196625, 458753, 1, 262161, 1, 1, 327697, 1, 1, 393233, 1, 1, 458769, 1, 1, 524305, 458753, 1, 589841, 458753, 1, 655377, 1, 1, 720913, 1, 1, 786449, 1, 1, 851985, 458753, 1, 917521, 458753, 1, 983057, 458753, 1, 1048593, 1, 1, 1114129, 458753, 2)
@@ -422,6 +422,9 @@ radius = 5.09902
 [sub_resource type="LabelSettings" id="LabelSettings_xodsp"]
 font = ExtResource("21_hyrwg")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_osbru"]
+bg_color = Color(0, 0, 0, 0.8)
+
 [sub_resource type="LabelSettings" id="LabelSettings_7sjca"]
 font = ExtResource("30_vvp6j")
 font_size = 120
@@ -432,6 +435,172 @@ font = ExtResource("30_vvp6j")
 font_size = 60
 font_color = Color(0.360784, 0.180392, 0.470588, 1)
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_a64hj"]
+resource_name = "level_up"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Upgrade:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(68, 798), Vector2(68, 798), Vector2(68, 234)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Upgrade2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.3, 1.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(460, 798), Vector2(460, 798), Vector2(460, 234)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Upgrade3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.5, 1.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(852, 798), Vector2(852, 798), Vector2(852, 234)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.8, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(820, 268), Vector2(820, 268), Vector2(1280, 720)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.8, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(230, 226), Vector2(230, 226), Vector2(230, 226), Vector2(0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../FlashWhite:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.545098), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_e3f14"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Upgrade:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(68, 234)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Upgrade2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(460, 234)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Upgrade3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(852, 234)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1280, 720)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../FlashWhite:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ewqn3"]
+_data = {
+"RESET": SubResource("Animation_e3f14"),
+"level_up": SubResource("Animation_a64hj")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6a6sa"]
+bg_color = Color(0.0687982, 0.0687983, 0.0687982, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fvqbo"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3mulf"]
+bg_color = Color(1, 1, 1, 1)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_6prm5")
@@ -893,9 +1062,9 @@ autostart = true
 
 [node name="Hearts" type="HBoxContainer" parent="CanvasLayer"]
 offset_left = 30.0
-offset_top = 31.0
+offset_top = 70.0
 offset_right = 106.0
-offset_bottom = 61.0
+offset_bottom = 100.0
 scale = Vector2(4, 4)
 script = ExtResource("16_0uei6")
 
@@ -919,9 +1088,9 @@ anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -379.0
-offset_top = 14.0
+offset_top = 61.0
 offset_right = -289.0
-offset_bottom = 30.0
+offset_bottom = 77.0
 grow_horizontal = 0
 scale = Vector2(4, 4)
 text = "0"
@@ -933,16 +1102,17 @@ script = ExtResource("23_ig7ap")
 [node name="UpgradeScreen" type="Panel" parent="CanvasLayer" node_paths=PackedStringArray("upgrade_cards")]
 process_mode = 3
 visible = false
+clip_contents = true
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = ExtResource("28_xm61l")
+theme_override_styles/panel = SubResource("StyleBoxFlat_osbru")
 script = ExtResource("29_mhigv")
-upgrade_cards = [NodePath("Upgrades/Upgrade"), NodePath("Upgrades/Upgrade2"), NodePath("Upgrades/Upgrade3")]
+upgrade_cards = [NodePath("Upgrade"), NodePath("Upgrade2"), NodePath("Upgrade3")]
 
-[node name="Label" type="Label" parent="CanvasLayer/UpgradeScreen"]
+[node name="LevelUp" type="Label" parent="CanvasLayer/UpgradeScreen"]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -954,7 +1124,7 @@ label_settings = SubResource("LabelSettings_7sjca")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="CanvasLayer/UpgradeScreen"]
+[node name="Choose upgrade" type="Label" parent="CanvasLayer/UpgradeScreen"]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -966,37 +1136,59 @@ label_settings = SubResource("LabelSettings_kdqek")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Upgrades" type="HBoxContainer" parent="CanvasLayer/UpgradeScreen"]
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
+[node name="Upgrade" parent="CanvasLayer/UpgradeScreen" instance=ExtResource("29_raru4")]
+layout_mode = 2
+offset_left = 68.0
+offset_top = 234.0
+offset_right = 428.0
+offset_bottom = 687.0
+
+[node name="Upgrade2" parent="CanvasLayer/UpgradeScreen" instance=ExtResource("29_raru4")]
+layout_mode = 2
+offset_left = 460.0
+offset_top = 234.0
+offset_right = 820.0
+offset_bottom = 687.0
+
+[node name="Upgrade3" parent="CanvasLayer/UpgradeScreen" instance=ExtResource("29_raru4")]
+layout_mode = 2
+offset_left = 852.0
+offset_top = 234.0
+offset_right = 1212.0
+offset_bottom = 687.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/UpgradeScreen"]
+libraries = {
+"": SubResource("AnimationLibrary_ewqn3")
+}
+
+[node name="XPBar" type="Panel" parent="CanvasLayer"]
+anchors_preset = 10
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -121.0
-offset_bottom = 332.0
+offset_bottom = 45.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6a6sa")
+script = ExtResource("32_dv8qa")
+xp_to_level_up = 15
+
+[node name="XPBarFG" type="Panel" parent="CanvasLayer/XPBar"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 45.0
+grow_horizontal = 2
+scale = Vector2(1e-05, 1)
+theme_override_styles/panel = SubResource("StyleBoxFlat_fvqbo")
+
+[node name="FlashWhite" type="Panel" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-alignment = 1
-
-[node name="Upgrade" parent="CanvasLayer/UpgradeScreen/Upgrades" instance=ExtResource("29_raru4")]
-layout_mode = 2
-
-[node name="Spacer" type="ReferenceRect" parent="CanvasLayer/UpgradeScreen/Upgrades"]
-custom_minimum_size = Vector2(24, 0)
-layout_mode = 2
-border_color = Color(1, 0, 0, 0.113725)
-editor_only = false
-
-[node name="Upgrade2" parent="CanvasLayer/UpgradeScreen/Upgrades" instance=ExtResource("29_raru4")]
-layout_mode = 2
-
-[node name="Spacer2" type="ReferenceRect" parent="CanvasLayer/UpgradeScreen/Upgrades"]
-custom_minimum_size = Vector2(24, 0)
-layout_mode = 2
-border_color = Color(1, 0, 0, 0.32549)
-
-[node name="Upgrade3" parent="CanvasLayer/UpgradeScreen/Upgrades" instance=ExtResource("29_raru4")]
-layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3mulf")
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
 z_index = 1000
@@ -1014,7 +1206,7 @@ target = NodePath("../Player")
 
 [connection signal="hp_lost" from="Player" to="." method="_on_player_hp_lost"]
 [connection signal="hp_lost" from="Player" to="CanvasLayer/Hearts" method="_on_player_hp_lost"]
-[connection signal="score_gained" from="Player" to="CanvasLayer/ScoreLabel" method="_on_player_score_gained"]
+[connection signal="xp_gained" from="Player" to="CanvasLayer/XPBar" method="_on_player_xp_gained"]
 [connection signal="area_entered" from="Player/Sprite2D/VacuumArea" to="Player/Sprite2D/VacuumArea" method="_on_area_entered"]
 [connection signal="area_exited" from="Player/Sprite2D/VacuumArea" to="Player/Sprite2D/VacuumArea" method="_on_area_exited"]
 [connection signal="body_entered" from="Player/Sprite2D/VacuumArea" to="Player/Sprite2D/VacuumArea" method="_on_body_entered"]
@@ -1025,6 +1217,8 @@ target = NodePath("../Player")
 [connection signal="body_entered" from="Player/Hitbox" to="Player" method="_on_hitbox_body_entered"]
 [connection signal="timeout" from="Player/ElementLifetime" to="Player" method="_on_element_lifetime_timeout"]
 [connection signal="timeout" from="EnemySpawner/SpawnTimer" to="EnemySpawner" method="_on_spawn_timer_timeout"]
-[connection signal="selected" from="CanvasLayer/UpgradeScreen/Upgrades/Upgrade" to="CanvasLayer/UpgradeScreen" method="_on_upgrade_selected"]
-[connection signal="selected" from="CanvasLayer/UpgradeScreen/Upgrades/Upgrade2" to="CanvasLayer/UpgradeScreen" method="_on_upgrade_selected"]
-[connection signal="selected" from="CanvasLayer/UpgradeScreen/Upgrades/Upgrade3" to="CanvasLayer/UpgradeScreen" method="_on_upgrade_selected"]
+[connection signal="upgrade_selected" from="CanvasLayer/UpgradeScreen" to="CanvasLayer/XPBar" method="_on_upgrade_screen_upgrade_selected"]
+[connection signal="selected" from="CanvasLayer/UpgradeScreen/Upgrade" to="CanvasLayer/UpgradeScreen" method="_on_upgrade_selected"]
+[connection signal="selected" from="CanvasLayer/UpgradeScreen/Upgrade2" to="CanvasLayer/UpgradeScreen" method="_on_upgrade_selected"]
+[connection signal="selected" from="CanvasLayer/UpgradeScreen/Upgrade3" to="CanvasLayer/UpgradeScreen" method="_on_upgrade_selected"]
+[connection signal="levelled_up" from="CanvasLayer/XPBar" to="CanvasLayer/UpgradeScreen" method="_on_xp_bar_levelled_up"]

@@ -19,7 +19,7 @@ var current_speed:float;
 var hp:int = 3;
 
 signal hp_lost(new_hp);
-signal score_gained(score_gained);
+signal xp_gained(xp_gained);
 
 var invicibility_time = 2;
 var invincibility_timer = 0;
@@ -101,8 +101,7 @@ func _on_vacuum_area_vacuumed_object(object):
 		set_element(elemental.element_type);
 	
 	if object is ScoreParticle:
-		Score.current_score += object.value;
-		score_gained.emit(object.value);
+		xp_gained.emit(object.value);
 
 func _on_hitbox_body_entered(body):
 	if body is Slime and invincibility_timer <= 0:

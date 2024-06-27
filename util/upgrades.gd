@@ -17,6 +17,9 @@ func _ready():
 	all.append_array(all_player);
 	all.append_array(all_dungeon);
 	
+	for upgrade in all_player:
+		print(upgrade);
+	
 func add_upgrade(upgrade:Upgrade):
 	current.append(upgrade)
 	upgrade_acquired.emit(upgrade);
