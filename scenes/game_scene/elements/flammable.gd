@@ -1,8 +1,8 @@
 extends Area2D
 class_name Flammable;
-@export var dmg_per_tick = 1;
-@export var tick_time = 0.3;
-@export var lifetime_ticks = 10;
+var dmg_per_tick = 1;
+var tick_time = 0.3;
+var lifetime_ticks = 10;
 var lifetime_tick_counter = 10;
 var tick_timer:float; 
 var enabled:bool = false;
@@ -11,7 +11,6 @@ var nodes_in_range:Array
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	visible = false;
-	pass # Replace with function body.
 
 func set_enabled(enabled):
 	if enabled:

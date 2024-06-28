@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Upgrade" load_steps=3 format=3 uid="uid://tagcotu01vcf"]
+[gd_resource type="Resource" script_class="UpgradeData" load_steps=3 format=3 uid="uid://tagcotu01vcf"]
 
 [ext_resource type="Resource" uid="uid://dbgmum00t3w7h" path="res://data/upgrades/player/lightning/arc_lightning.tres" id="1_62ptx"]
 [ext_resource type="Script" path="res://data/upgrade_data.gd" id="1_f8rn8"]
@@ -8,4 +8,8 @@ script = ExtResource("1_f8rn8")
 name = "FORK LIGHTNING"
 id = "fork_lightning"
 description = "Lightning does more damage and now hits two enemies every time it arcs"
+custom_data = {
+"extra_damage": 1,
+"extra_forks": 1
+}
 pre_req = ExtResource("1_62ptx")

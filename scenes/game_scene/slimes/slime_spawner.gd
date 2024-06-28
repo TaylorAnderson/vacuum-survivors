@@ -15,6 +15,7 @@ var spawn_refresh_rate = 5;
 var spawn_refresh_rate_timer = 0;
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$SpawnTimer.start($SpawnTimer.wait_time);
 	for row in $EnemySpawns.get_children():
 		for spawn in row.get_children():
 			spawns.append(spawn);

@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://ds3f6jlkv8oc0"]
+[gd_scene load_steps=67 format=3 uid="uid://ds3f6jlkv8oc0"]
 
 [ext_resource type="Script" path="res://scenes/game_scene/game.gd" id="1_6prm5"]
 [ext_resource type="Script" path="res://scenes/game_scene/camera_follow.gd" id="1_4721r"]
@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://1u8kk4sacbnj" path="res://assets/sprites/suck_in_anim.png" id="3_2msub"]
 [ext_resource type="Resource" uid="uid://dbgmum00t3w7h" path="res://data/upgrades/player/lightning/arc_lightning.tres" id="3_dg6fp"]
 [ext_resource type="PackedScene" uid="uid://bhevfmh2racy8" path="res://scenes/game_scene/dust/dust_tile_left.tscn" id="3_fnwdn"]
-[ext_resource type="Resource" uid="uid://tagcotu01vcf" path="res://data/upgrades/player/lightning/fork_lightning.tres" id="3_t2p1l"]
 [ext_resource type="PackedScene" uid="uid://bsblxrka3xqvl" path="res://scenes/game_scene/dust/dust_tile_right.tscn" id="4_gjv5a"]
 [ext_resource type="PackedScene" uid="uid://c2b74n8fxx4dl" path="res://scenes/game_scene/dust/dust_tile_down.tscn" id="5_muc2a"]
 [ext_resource type="PackedScene" uid="uid://b2brwh630rgwx" path="res://scenes/game_scene/dust/dust_bullet.tscn" id="8_qr5i6"]
@@ -601,7 +600,7 @@ script = ExtResource("1_6prm5")
 
 [node name="UpgradePreloader" type="Node" parent="."]
 script = ExtResource("2_qgc4o")
-upgrades_to_preload = Array[Resource("res://data/upgrade_data.gd")]([ExtResource("3_t2p1l"), ExtResource("3_dg6fp")])
+upgrades_to_preload = Array[Resource("res://data/upgrade_data.gd")]([ExtResource("3_dg6fp")])
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_lrfpd")
@@ -1062,6 +1061,7 @@ position = Vector2(533, 84)
 position = Vector2(565, 84)
 
 [node name="SpawnTimer" type="Timer" parent="EnemySpawner"]
+autostart = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

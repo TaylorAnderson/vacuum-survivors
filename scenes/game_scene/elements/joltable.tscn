@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://re0untg3gyy8"]
+[gd_scene load_steps=8 format=3 uid="uid://re0untg3gyy8"]
 
 [ext_resource type="Script" path="res://scenes/game_scene/elements/joltable.gd" id="1_up4i5"]
 [ext_resource type="Texture2D" uid="uid://bf7q6mqwgdgdg" path="res://assets/sprites/electric_node.png" id="2_705yl"]
 [ext_resource type="AudioStream" uid="uid://cma8nk0ch5c5p" path="res://assets/audio/electricity_jolt.wav" id="3_c6c74"]
+[ext_resource type="Script" path="res://scenes/game_scene/upgrades/arc_lightning.gd" id="4_vld4w"]
+[ext_resource type="Resource" uid="uid://dbgmum00t3w7h" path="res://data/upgrades/player/lightning/arc_lightning.tres" id="5_hodxa"]
+[ext_resource type="Script" path="res://scenes/game_scene/upgrades/fork_lightning.gd" id="6_2do15"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_btihh"]
 radius = 35.0143
@@ -28,6 +31,14 @@ texture = ExtResource("2_705yl")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_c6c74")
 volume_db = -5.0
+
+[node name="ArcLightningUpgrade" type="Node" parent="." node_paths=PackedStringArray("joltable")]
+script = ExtResource("4_vld4w")
+joltable = NodePath("..")
+data = ExtResource("5_hodxa")
+
+[node name="ForkLightningUpgrade" type="Node" parent="."]
+script = ExtResource("6_2do15")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]

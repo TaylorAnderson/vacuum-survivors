@@ -186,7 +186,6 @@ animation = &"poof"
 visible = false
 
 [node name="Joltable" parent="." node_paths=PackedStringArray("health_bar") instance=ExtResource("9_ajclt")]
-max_iterations = 4
 health_bar = NodePath("../Bar")
 
 [node name="ParticleExplosion" type="Node2D" parent="."]

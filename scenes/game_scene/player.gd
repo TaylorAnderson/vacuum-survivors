@@ -1,4 +1,6 @@
 extends CharacterBody2D
+class_name Player
+
 @onready var sprite:Sprite2D = $Sprite2D
 @onready var vacuum_area:VacuumArea = $Sprite2D/VacuumArea
 @onready var suck_in_anim:AnimatedSprite2D = $Sprite2D/SuckInAnim
@@ -14,7 +16,8 @@ extends CharacterBody2D
 
 
 
-@export var speed:float = 500;
+@export var run_speed:float = 60;
+@export var walk_speed:float = 60;
 @export var accel = 10;
 @export var friction = 30;
 @export var shot_speed = 700;
@@ -36,7 +39,7 @@ var invisible_ticker = 0;
 var element_lifetime = 5;
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	current_speed = speed;
+	current_speed = run_speed;
 	set_element(current_element)
 	await get_tree().create_timer(0.01).timeout;
 
@@ -63,9 +66,9 @@ func _physics_process(delta):
 	vacuum_area.enabled = Input.is_action_pressed("suck")
 	suck_in_anim.visible = Input.is_action_pressed("suck")
 	
-	current_speed = speed;
+	current_speed = run_speed;
 	if Input.is_action_pressed("suck"): 
-		current_speed = speed * 0.75;
+		current_speed = walk_speed;
 		if not vacuum_noise.playing:
 			vacuum_noise.play();
 	else:
@@ -81,7 +84,7 @@ func _physics_process(delta):
 		if fire_interval_timer > fire_interval and vacuum_bar.value >= shot_cost:
 			shoot_noise.play();
 			fire_interval_timer = 0;
-			current_speed = speed * 0.75;
+			current_speed = walk_speed;
 			var dust_bullet = dust_bullet_scene.instantiate();
 			get_parent().add_child(dust_bullet)
 			var shoot_angle = Vector2.from_angle(sprite.rotation + PI/2)
