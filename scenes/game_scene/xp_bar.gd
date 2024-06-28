@@ -30,4 +30,5 @@ func _on_player_xp_gained(xp_gained):
 
 func _on_upgrade_screen_upgrade_selected(upgrade):
 	xp_gained_this_level = 0;
+	xp_to_level_up *= xp_multiplier;
 	xp_bar_fg.scale.x = 0;

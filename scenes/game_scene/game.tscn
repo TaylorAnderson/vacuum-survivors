@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://ds3f6jlkv8oc0"]
+[gd_scene load_steps=62 format=3 uid="uid://ds3f6jlkv8oc0"]
 
 [ext_resource type="Script" path="res://scenes/game_scene/game.gd" id="1_6prm5"]
 [ext_resource type="Script" path="res://scenes/game_scene/camera_follow.gd" id="1_4721r"]
@@ -14,7 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://deyxywylxkd01" path="res://scenes/game_scene/environment/grass.tscn" id="8_tb5tn"]
 [ext_resource type="Script" path="res://scenes/game_scene/vacuum/vacuum_area.gd" id="10_te2a8"]
 [ext_resource type="AudioStream" uid="uid://b8oh0r1pt84i4" path="res://assets/audio/vacuum.wav" id="11_8f7oe"]
-[ext_resource type="PackedScene" uid="uid://ridxevwf7yqc" path="res://scenes/game_scene/bar.tscn" id="11_ywetq"]
 [ext_resource type="AudioStream" uid="uid://c2pxia7sdtt0w" path="res://assets/audio/vacuum_start.wav" id="12_0xkpx"]
 [ext_resource type="Texture2D" uid="uid://bnnkomyeverx" path="res://assets/sprites/dust_bullet_shoot_anim.png" id="13_d72q0"]
 [ext_resource type="AudioStream" uid="uid://cv6wpiby73gbj" path="res://assets/audio/vacuum_end.wav" id="13_wkram"]
@@ -26,11 +25,12 @@
 [ext_resource type="PackedScene" uid="uid://dogrpob6iqehr" path="res://scenes/game_scene/slimes/lil_slime_mob.tscn" id="16_knxkt"]
 [ext_resource type="AudioStream" uid="uid://cp02cinwxua1p" path="res://assets/audio/object_sucked.wav" id="16_ll37g"]
 [ext_resource type="PackedScene" uid="uid://bckuh2ooj6ye6" path="res://scenes/game_scene/slimes/big_slime.tscn" id="17_6qigw"]
+[ext_resource type="PackedScene" uid="uid://ridxevwf7yqc" path="res://scenes/game_scene/ui/bar.tscn" id="19_ek86m"]
 [ext_resource type="FontFile" uid="uid://dddr2bqhrtyux" path="res://assets/fonts/Smart Basic 9h.ttf" id="21_hyrwg"]
 [ext_resource type="Script" path="res://scenes/main_scene/score_label.gd" id="23_ig7ap"]
-[ext_resource type="Script" path="res://scenes/game_scene/ui/upgrade_screen.gd" id="29_mhigv"]
-[ext_resource type="PackedScene" uid="uid://cty0hnyocw8ms" path="res://scenes/game_scene/ui/upgrade_card.tscn" id="29_raru4"]
+[ext_resource type="Script" path="res://scenes/game_scene/ui/upgrade_screen.gd" id="29_i1w2w"]
 [ext_resource type="FontFile" uid="uid://cps7wwwrgo0ch" path="res://assets/fonts/Yesterday Basic 10h.ttf" id="30_vvp6j"]
+[ext_resource type="PackedScene" uid="uid://cty0hnyocw8ms" path="res://scenes/game_scene/ui/upgrade_card.tscn" id="31_q2ceq"]
 [ext_resource type="Script" path="res://scenes/game_scene/xp_bar.gd" id="32_dv8qa"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_fy4km"]
@@ -342,10 +342,6 @@ region = Rect2(0, 0, 20, 13)
 atlas = ExtResource("3_2msub")
 region = Rect2(20, 0, 20, 13)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mntj2"]
-atlas = ExtResource("3_2msub")
-region = Rect2(40, 0, 20, 13)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_cvyty"]
 atlas = ExtResource("3_2msub")
 region = Rect2(0, 13, 20, 13)
@@ -353,10 +349,6 @@ region = Rect2(0, 13, 20, 13)
 [sub_resource type="AtlasTexture" id="AtlasTexture_agcjc"]
 atlas = ExtResource("3_2msub")
 region = Rect2(20, 13, 20, 13)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wdyjn"]
-atlas = ExtResource("3_2msub")
-region = Rect2(40, 13, 20, 13)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sremg"]
 animations = [{
@@ -368,52 +360,43 @@ animations = [{
 "texture": SubResource("AtlasTexture_6rdw7")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mntj2")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_cvyty")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_agcjc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wdyjn")
 }],
 "loop": true,
 "name": &"default",
 "speed": 20.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_d65pt"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_lbtgo"]
 atlas = ExtResource("13_d72q0")
-region = Rect2(0, 0, 8, 8)
+region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mlnr3"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_go6cl"]
 atlas = ExtResource("13_d72q0")
-region = Rect2(8, 0, 8, 8)
+region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_oi77j"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ddcme"]
 atlas = ExtResource("13_d72q0")
-region = Rect2(16, 0, 8, 8)
+region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_j86qm"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_d65pt")
+"texture": SubResource("AtlasTexture_lbtgo")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mlnr3")
+"texture": SubResource("AtlasTexture_go6cl")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_oi77j")
-}, {
-"duration": 1.0,
-"texture": null
+"texture": SubResource("AtlasTexture_ddcme")
 }],
 "loop": false,
 "name": &"shoot",
-"speed": 15.0
+"speed": 20.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dew35"]
@@ -422,8 +405,19 @@ radius = 5.09902
 [sub_resource type="LabelSettings" id="LabelSettings_xodsp"]
 font = ExtResource("21_hyrwg")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6a6sa"]
+bg_color = Color(0.0687982, 0.0687983, 0.0687982, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fvqbo"]
+bg_color = Color(1, 1, 1, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_osbru"]
-bg_color = Color(0, 0, 0, 0.8)
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.196078, 0.196078, 0.196078, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_7sjca"]
 font = ExtResource("30_vvp6j")
@@ -435,82 +429,6 @@ font = ExtResource("30_vvp6j")
 font_size = 60
 font_color = Color(0.360784, 0.180392, 0.470588, 1)
 outline_color = Color(0, 0, 0, 1)
-
-[sub_resource type="Animation" id="Animation_a64hj"]
-resource_name = "level_up"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Upgrade:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.1, 1.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(68, 798), Vector2(68, 798), Vector2(68, 234)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Upgrade2:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.3, 1.7),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(460, 798), Vector2(460, 798), Vector2(460, 234)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Upgrade3:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1.5, 1.9),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(852, 798), Vector2(852, 798), Vector2(852, 234)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath(".:size")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.8, 1.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(820, 268), Vector2(820, 268), Vector2(1280, 720)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath(".:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.8, 1.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(230, 226), Vector2(230, 226), Vector2(230, 226), Vector2(0, 0)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../FlashWhite:modulate")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0.545098), Color(1, 1, 1, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_e3f14"]
 length = 0.001
@@ -587,17 +505,87 @@ tracks/5/keys = {
 "values": [Color(1, 1, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_a64hj"]
+resource_name = "level_up"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Upgrade:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.3, 1.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(68, 798), Vector2(68, 798), Vector2(68, 234)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Upgrade2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5, 1.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(460, 798), Vector2(460, 798), Vector2(460, 234)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Upgrade3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.7, 2.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(852, 798), Vector2(852, 798), Vector2(852, 234)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(820, 268), Vector2(820, 268), Vector2(1280, 720)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.6, 1.1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(230, 800), Vector2(230, 226), Vector2(230, 226), Vector2(230, 226), Vector2(0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../FlashWhite:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.7),
+"transitions": PackedFloat32Array(1e+06, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.545098), Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ewqn3"]
 _data = {
 "RESET": SubResource("Animation_e3f14"),
 "level_up": SubResource("Animation_a64hj")
 }
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6a6sa"]
-bg_color = Color(0.0687982, 0.0687983, 0.0687982, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fvqbo"]
-bg_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3mulf"]
 bg_color = Color(1, 1, 1, 1)
@@ -618,36 +606,39 @@ layer_2/tile_data = PackedInt32Array(2097211, 458753, 2, 2031675, 1, 1, 1966139,
 metadata/_edit_lock_ = true
 
 [node name="Player" type="CharacterBody2D" parent="."]
-visible = false
 position = Vector2(316, 264)
 collision_layer = 2
 motion_mode = 1
 script = ExtResource("1_box4w")
 speed = 60.0
 friction = 7
-shot_speed = 300
+shot_speed = 200
 shot_cost = 1
-fire_interval = 0.2
+fire_interval = 0.25
 dust_bullet_scene = ExtResource("8_qr5i6")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-shape = SubResource("CircleShape2D_vf21g")
+[node name="Upgrades" type="Node" parent="Player"]
 
-[node name="VacuumNoise" type="AudioStreamPlayer" parent="Player"]
+[node name="Sounds" type="Node" parent="Player"]
+
+[node name="VacuumNoise" type="AudioStreamPlayer" parent="Player/Sounds"]
 stream = ExtResource("11_8f7oe")
 volume_db = -5.0
 
-[node name="VacuumStart" type="AudioStreamPlayer" parent="Player"]
+[node name="VacuumStart" type="AudioStreamPlayer" parent="Player/Sounds"]
 stream = ExtResource("12_0xkpx")
 volume_db = -5.0
 
-[node name="VacuumEnd" type="AudioStreamPlayer" parent="Player"]
+[node name="VacuumEnd" type="AudioStreamPlayer" parent="Player/Sounds"]
 stream = ExtResource("13_wkram")
 volume_db = -5.0
 
-[node name="ShootNoise" type="AudioStreamPlayer" parent="Player"]
+[node name="ShootNoise" type="AudioStreamPlayer" parent="Player/Sounds"]
 stream = ExtResource("14_5usg7")
 volume_db = 10.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("CircleShape2D_vf21g")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
 texture = ExtResource("1_n2lkh")
@@ -679,13 +670,13 @@ autoplay = "default"
 frame_progress = 0.954999
 
 [node name="ShotAnim" type="AnimatedSprite2D" parent="Player/Sprite2D"]
+visible = false
 position = Vector2(1, 8)
 sprite_frames = SubResource("SpriteFrames_j86qm")
 animation = &"shoot"
-frame = 3
-frame_progress = 1.0
 
-[node name="VacuumBar" parent="Player" instance=ExtResource("11_ywetq")]
+[node name="VacuumBar" parent="Player" instance=ExtResource("19_ek86m")]
+value = 50
 
 [node name="Hitbox" type="Area2D" parent="Player"]
 collision_layer = 2
@@ -1099,6 +1090,24 @@ horizontal_alignment = 2
 vertical_alignment = 1
 script = ExtResource("23_ig7ap")
 
+[node name="XPBar" type="Panel" parent="CanvasLayer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 45.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6a6sa")
+script = ExtResource("32_dv8qa")
+xp_to_level_up = 15
+
+[node name="XPBarFG" type="Panel" parent="CanvasLayer/XPBar"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 45.0
+grow_horizontal = 2
+scale = Vector2(1e-05, 1)
+theme_override_styles/panel = SubResource("StyleBoxFlat_fvqbo")
+
 [node name="UpgradeScreen" type="Panel" parent="CanvasLayer" node_paths=PackedStringArray("upgrade_cards")]
 process_mode = 3
 visible = false
@@ -1106,10 +1115,12 @@ clip_contents = true
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 1280.0
+offset_bottom = 720.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_osbru")
-script = ExtResource("29_mhigv")
+script = ExtResource("29_i1w2w")
 upgrade_cards = [NodePath("Upgrade"), NodePath("Upgrade2"), NodePath("Upgrade3")]
 
 [node name="LevelUp" type="Label" parent="CanvasLayer/UpgradeScreen"]
@@ -1136,49 +1147,31 @@ label_settings = SubResource("LabelSettings_kdqek")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Upgrade" parent="CanvasLayer/UpgradeScreen" instance=ExtResource("29_raru4")]
+[node name="Upgrade" parent="CanvasLayer/UpgradeScreen" instance=ExtResource("31_q2ceq")]
 layout_mode = 2
 offset_left = 68.0
 offset_top = 234.0
 offset_right = 428.0
 offset_bottom = 687.0
 
-[node name="Upgrade2" parent="CanvasLayer/UpgradeScreen" instance=ExtResource("29_raru4")]
+[node name="Upgrade2" parent="CanvasLayer/UpgradeScreen" instance=ExtResource("31_q2ceq")]
 layout_mode = 2
 offset_left = 460.0
 offset_top = 234.0
 offset_right = 820.0
 offset_bottom = 687.0
 
-[node name="Upgrade3" parent="CanvasLayer/UpgradeScreen" instance=ExtResource("29_raru4")]
+[node name="Upgrade3" parent="CanvasLayer/UpgradeScreen" instance=ExtResource("31_q2ceq")]
 layout_mode = 2
 offset_left = 852.0
 offset_top = 234.0
 offset_right = 1212.0
-offset_bottom = 687.0
+offset_bottom = 687.001
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/UpgradeScreen"]
 libraries = {
 "": SubResource("AnimationLibrary_ewqn3")
 }
-
-[node name="XPBar" type="Panel" parent="CanvasLayer"]
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 45.0
-grow_horizontal = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_6a6sa")
-script = ExtResource("32_dv8qa")
-xp_to_level_up = 15
-
-[node name="XPBarFG" type="Panel" parent="CanvasLayer/XPBar"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 45.0
-grow_horizontal = 2
-scale = Vector2(1e-05, 1)
-theme_override_styles/panel = SubResource("StyleBoxFlat_fvqbo")
 
 [node name="FlashWhite" type="Panel" parent="CanvasLayer"]
 modulate = Color(1, 1, 1, 0)
@@ -1217,8 +1210,8 @@ target = NodePath("../Player")
 [connection signal="body_entered" from="Player/Hitbox" to="Player" method="_on_hitbox_body_entered"]
 [connection signal="timeout" from="Player/ElementLifetime" to="Player" method="_on_element_lifetime_timeout"]
 [connection signal="timeout" from="EnemySpawner/SpawnTimer" to="EnemySpawner" method="_on_spawn_timer_timeout"]
+[connection signal="levelled_up" from="CanvasLayer/XPBar" to="CanvasLayer/UpgradeScreen" method="_on_xp_bar_levelled_up"]
 [connection signal="upgrade_selected" from="CanvasLayer/UpgradeScreen" to="CanvasLayer/XPBar" method="_on_upgrade_screen_upgrade_selected"]
 [connection signal="selected" from="CanvasLayer/UpgradeScreen/Upgrade" to="CanvasLayer/UpgradeScreen" method="_on_upgrade_selected"]
 [connection signal="selected" from="CanvasLayer/UpgradeScreen/Upgrade2" to="CanvasLayer/UpgradeScreen" method="_on_upgrade_selected"]
 [connection signal="selected" from="CanvasLayer/UpgradeScreen/Upgrade3" to="CanvasLayer/UpgradeScreen" method="_on_upgrade_selected"]
-[connection signal="levelled_up" from="CanvasLayer/XPBar" to="CanvasLayer/UpgradeScreen" method="_on_xp_bar_levelled_up"]

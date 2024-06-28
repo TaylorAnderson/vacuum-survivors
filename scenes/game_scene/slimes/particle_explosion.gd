@@ -2,7 +2,8 @@ extends Node2D
 
 ## We assume this has a velocity vector property.
 @export var particle_scene:PackedScene
-@export var amount:int = 10;
+@export var amount_min:int = 5;
+@export var amount_max:int = 10;
 @export var velocity_min:float = 200;
 @export var velocity_max:float = 300;
 # Called when the node enters the scene tree for the first time.
@@ -10,6 +11,7 @@ func _ready():
 	pass # Replace with function body.
 
 func trigger():
+	var amount = randi_range(amount_min, amount_max)
 	for i in amount:
 		var new_particle = particle_scene.instantiate()
 		call_deferred("add_child", new_particle);

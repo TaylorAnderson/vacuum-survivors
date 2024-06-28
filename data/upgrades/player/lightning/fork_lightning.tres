@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Upgrade" load_steps=3 format=3 uid="uid://tagcotu01vcf"]
 
 [ext_resource type="Resource" uid="uid://dbgmum00t3w7h" path="res://data/upgrades/player/lightning/arc_lightning.tres" id="1_62ptx"]
-[ext_resource type="Script" path="res://data/upgrade.gd" id="1_f8rn8"]
+[ext_resource type="Script" path="res://data/upgrade_data.gd" id="1_f8rn8"]
 
 [resource]
 script = ExtResource("1_f8rn8")

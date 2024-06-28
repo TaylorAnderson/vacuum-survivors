@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c5rpgu4sa21m" path="res://assets/sprites/slime.png" id="2_ikgkn"]
 [ext_resource type="PackedScene" uid="uid://cguavmce3qee4" path="res://scenes/game_scene/elements/element.tscn" id="3_xkqwo"]
 [ext_resource type="PackedScene" uid="uid://d1bfmdsnal6pj" path="res://scenes/game_scene/vacuum/vacuumable.tscn" id="4_kbfou"]
-[ext_resource type="PackedScene" uid="uid://ridxevwf7yqc" path="res://scenes/game_scene/bar.tscn" id="5_nhxvo"]
+[ext_resource type="PackedScene" uid="uid://ridxevwf7yqc" path="res://scenes/game_scene/ui/bar.tscn" id="5_nhxvo"]
 [ext_resource type="Texture2D" uid="uid://bae618o7ulkob" path="res://assets/sprites/stun_anim.png" id="6_3vpt6"]
 [ext_resource type="Texture2D" uid="uid://nbmwy7is1gvu" path="res://assets/sprites/slime_killed_anim.png" id="7_jtpwy"]
 [ext_resource type="PackedScene" uid="uid://c6ou3wr6f8c2n" path="res://scenes/game_scene/elements/flammable.tscn" id="8_kqo0w"]
@@ -186,6 +186,7 @@ animation = &"poof"
 visible = false
 
 [node name="Joltable" parent="." node_paths=PackedStringArray("health_bar") instance=ExtResource("9_ajclt")]
+max_iterations = 4
 health_bar = NodePath("../Bar")
 
 [node name="ParticleExplosion" type="Node2D" parent="."]

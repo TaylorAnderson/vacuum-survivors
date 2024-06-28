@@ -1,13 +1,14 @@
 extends Node
 
 
-var current:Array[Upgrade] = [];
-
-var all:Array[Upgrade] = [];
-var all_player:Array[Upgrade] = [];
-var all_dungeon:Array[Upgrade] = [];
+var current:Array[UpgradeData] = [];
+var player_pool:Array[UpgradeData] = [];
+var dungeon_pool:Array[UpgradeData] = [];
+var all:Array[UpgradeData] = [];
+var all_player:Array[UpgradeData] = [];
+var all_dungeon:Array[UpgradeData] = [];
 var upgrades_path = "res://data/upgrades"
-signal upgrade_acquired(upgrade:Upgrade);
+signal upgrade_acquired(upgrade:UpgradeData);
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	await get_tree().create_timer(0.1).timeout;
@@ -20,14 +21,21 @@ func _ready():
 	for upgrade in all_player:
 		print(upgrade);
 	
-func add_upgrade(upgrade:Upgrade):
+func add_upgrade(upgrade:UpgradeData):
 	current.append(upgrade)
+	if player_pool.has(upgrade): player_pool.erase(upgrade);
+	elif dungeon_pool.has(upgrade): dungeon_pool.erase(upgrade);
+	else:
+		push_error("Upgrade acquired that wasn't part of either pool")
 	upgrade_acquired.emit(upgrade);
 
-
-func find_upgrades(path) -> Array[Upgrade]:
+func reset():
+	current = [];
+	player_pool = all_player.duplicate();
+	dungeon_pool = all_dungeon.duplicate();
+func find_upgrades(path) -> Array[UpgradeData]:
 	var dir = DirAccess.open(path)
-	var upgrades_found:Array[Upgrade] = [];
+	var upgrades_found:Array[UpgradeData] = [];
 	if dir:
 		dir.list_dir_begin()
 		var file_name = dir.get_next();

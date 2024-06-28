@@ -1,9 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://ix5svtfpmtpj"]
+[gd_scene load_steps=2 format=3 uid="uid://ix5svtfpmtpj"]
 
 [ext_resource type="PackedScene" uid="uid://deypg4htvxsn3" path="res://scenes/game_scene/slimes/slime.tscn" id="1_xv4q0"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_c640s"]
-radius = 50.0
 
 [node name="LilSlime" instance=ExtResource("1_xv4q0")]
 scale = Vector2(0.5, 0.5)
@@ -20,8 +17,6 @@ value = 3
 [node name="Joltable" parent="." index="9"]
 z_index = 5
 
-[node name="CollisionShape2D" parent="Joltable" index="0"]
-shape = SubResource("CircleShape2D_c640s")
-
 [node name="ParticleExplosion" parent="." index="10"]
-amount = 3
+amount_min = 0
+amount_max = 2

@@ -72,7 +72,7 @@ func change_state(new_state:State):
 	if new_state == State.GAME_OVER:
 		get_tree().paused = true;
 	if new_state == State.GAME:
-		Upgrades.current = [];
+		Upgrades.reset();
 		get_tree().paused = false;
 		$Game/Player.visible = true;
 	if new_state == State.LEADERBOARD:

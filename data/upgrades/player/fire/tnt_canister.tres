@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Upgrade" load_steps=3 format=3 uid="uid://d3pamo5m37xbx"]
 
 [ext_resource type="Resource" uid="uid://dojjma06dgkh6" path="res://data/upgrades/player/fire/gunpowder_canister.tres" id="1_iemn2"]
-[ext_resource type="Script" path="res://data/upgrade.gd" id="2_das7y"]
+[ext_resource type="Script" path="res://data/upgrade_data.gd" id="2_das7y"]
 
 [resource]
 script = ExtResource("2_das7y")

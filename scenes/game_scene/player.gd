@@ -6,6 +6,14 @@ extends CharacterBody2D
 @onready var shot_anim:AnimatedSprite2D = $Sprite2D/ShotAnim
 @onready var element_lifetime_timer:Timer = $ElementLifetime
 
+# sounds
+@onready var vacuum_noise = $Sounds/VacuumNoise
+@onready var vacuum_start_noise = $Sounds/VacuumStart
+@onready var vacuum_end_noise = $Sounds/VacuumEnd
+@onready var shoot_noise = $Sounds/ShootNoise
+
+
+
 @export var speed:float = 500;
 @export var accel = 10;
 @export var friction = 30;
@@ -58,20 +66,20 @@ func _physics_process(delta):
 	current_speed = speed;
 	if Input.is_action_pressed("suck"): 
 		current_speed = speed * 0.75;
-		if not $VacuumNoise.playing:
-			$VacuumNoise.play();
+		if not vacuum_noise.playing:
+			vacuum_noise.play();
 	else:
-		$VacuumNoise.stop();
+		vacuum_noise.stop();
 	if Input.is_action_just_pressed("suck"):
-		$VacuumStart.play();
+		vacuum_start_noise.play();
 	if Input.is_action_just_released("suck"):
-		$VacuumEnd.play();
+		vacuum_end_noise.play();
 	if Input.is_action_just_pressed("shoot"):
-		fire_interval_timer = fire_interval + 1
+		fire_interval_timer  = fire_interval + 1;
 	if Input.is_action_pressed("shoot"):
 		fire_interval_timer += delta;
 		if fire_interval_timer > fire_interval and vacuum_bar.value >= shot_cost:
-			$ShootNoise.play();
+			shoot_noise.play();
 			fire_interval_timer = 0;
 			current_speed = speed * 0.75;
 			var dust_bullet = dust_bullet_scene.instantiate();
@@ -81,7 +89,10 @@ func _physics_process(delta):
 			dust_bullet.global_position = global_position;
 			dust_bullet.set_element(current_element);
 			vacuum_bar.add_value(-shot_cost)
+			shot_anim.visible = true;
 			shot_anim.play("shoot");
+			await shot_anim.animation_finished
+			shot_anim.visible = false;
 	move_and_slide()
 
 func set_element(new_element:Data.Element):

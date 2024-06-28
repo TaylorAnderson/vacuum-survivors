@@ -1,5 +1,5 @@
 extends Resource
-class_name Upgrade
+class_name UpgradeData
 enum UpgradeType {
 	PLAYER,
 	DUNGEON
@@ -9,4 +9,4 @@ enum UpgradeType {
 @export var id:String
 @export_multiline var description:String
 
-@export var pre_req:Upgrade;
+@export var pre_req:UpgradeData;

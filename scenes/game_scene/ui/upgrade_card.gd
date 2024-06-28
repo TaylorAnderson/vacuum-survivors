@@ -9,14 +9,14 @@ class_name UpgradeCard
 @export var green_color:Color;
 @export var yellow_color:Color;
 ## Setting this in the inspector will load it for testing on ready
-@export var upgrade:Upgrade;
+@export var upgrade:UpgradeData;
 
 signal selected(card:UpgradeCard);
 signal finished_select_anim();
 
 func _ready():
 	if upgrade != null: setup(upgrade);
-func setup(upgrade:Upgrade):
+func setup(upgrade:UpgradeData):
 	self.upgrade = upgrade;
 	title.text = upgrade.name;
 	description.text = "[center]" + upgrade.description;

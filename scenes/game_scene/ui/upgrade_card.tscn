@@ -1,9 +1,9 @@
 [gd_scene load_steps=12 format=3 uid="uid://cty0hnyocw8ms"]
 
-[ext_resource type="Script" path="res://scenes/game_scene/ui/upgrade_card.gd" id="1_ftvkf"]
-[ext_resource type="Texture2D" uid="uid://ctylb7uvjir5g" path="res://assets/sprites/upgrade_panel.png" id="2_xres4"]
-[ext_resource type="FontFile" uid="uid://cps7wwwrgo0ch" path="res://assets/fonts/Yesterday Basic 10h.ttf" id="3_a0lhg"]
-[ext_resource type="FontFile" uid="uid://dlweprwdb1n13" path="res://assets/fonts/ChevyRay - Love Bug.ttf" id="4_utesr"]
+[ext_resource type="Script" path="res://scenes/game_scene/ui/upgrade_card.gd" id="1_rrrn4"]
+[ext_resource type="Texture2D" uid="uid://ctylb7uvjir5g" path="res://assets/sprites/upgrade_panel.png" id="2_a358h"]
+[ext_resource type="FontFile" uid="uid://cps7wwwrgo0ch" path="res://assets/fonts/Yesterday Basic 10h.ttf" id="3_q4e4y"]
+[ext_resource type="FontFile" uid="uid://dlweprwdb1n13" path="res://assets/fonts/ChevyRay - Love Bug.ttf" id="4_m5rv3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_clqih"]
 bg_color = Color(0, 0, 0, 1)
@@ -14,7 +14,7 @@ border_width_bottom = 4
 border_color = Color(0.0823529, 0.0823529, 0.0823529, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_7vlcs"]
-font = ExtResource("3_a0lhg")
+font = ExtResource("3_q4e4y")
 font_size = 70
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_ohnrx"]
@@ -92,7 +92,7 @@ offset_bottom = 475.0
 pivot_offset = Vector2(180, 225)
 size_flags_horizontal = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_clqih")
-script = ExtResource("1_ftvkf")
+script = ExtResource("1_rrrn4")
 red_color = Color(0.886275, 0.239216, 0.411765, 1)
 green_color = Color(0.423529, 0.85098, 0.278431, 1)
 yellow_color = Color(1, 0.85098, 0.247059, 1)
@@ -110,7 +110,7 @@ offset_right = 4.0
 offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_xres4")
+texture = ExtResource("2_a358h")
 region_rect = Rect2(0, 0, 236, 236)
 patch_margin_left = 108
 patch_margin_top = 108
@@ -152,7 +152,7 @@ layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 2
 theme_override_constants/line_separation = 5
-theme_override_fonts/normal_font = ExtResource("4_utesr")
+theme_override_fonts/normal_font = ExtResource("4_m5rv3")
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
 text = "[center]Description"
