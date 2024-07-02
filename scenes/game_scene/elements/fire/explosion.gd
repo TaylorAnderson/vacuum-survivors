@@ -13,6 +13,6 @@ func _ready():
 	for target in targets: 
 		var healthbar:Bar = Find.child_by_type(target, Bar);
 		if healthbar:
-			Events.damage_given.emit(Upgrades.fire_damage * 3, target, target.global_position)
-			healthbar.add_value(-Upgrades.fire_damage * 3)
+			Events.damage_given.emit(Upgrades.fire_damage * 2, target, target.global_position)
+			healthbar.add_value(-Upgrades.fire_damage * 2)
 	

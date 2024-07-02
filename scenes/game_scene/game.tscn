@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=3 uid="uid://ds3f6jlkv8oc0"]
+[gd_scene load_steps=81 format=3 uid="uid://ds3f6jlkv8oc0"]
 
 [ext_resource type="Script" path="res://scenes/game_scene/game.gd" id="1_6prm5"]
 [ext_resource type="Script" path="res://scenes/game_scene/camera_follow.gd" id="1_4721r"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://du2mfd6mi71ch" path="res://assets/sprites/rhino.png" id="1_n2lkh"]
 [ext_resource type="PackedScene" uid="uid://dpdwqen5xk1sh" path="res://scenes/game_scene/dust/dust_tile_up.tscn" id="2_i0xhc"]
 [ext_resource type="Texture2D" uid="uid://bbkos73jkqclt" path="res://assets/sprites/tiles.png" id="2_mvx70"]
-[ext_resource type="Script" path="res://scenes/game_scene/upgrade_preloader.gd" id="2_qgc4o"]
 [ext_resource type="Texture2D" uid="uid://1u8kk4sacbnj" path="res://assets/sprites/suck_in_anim.png" id="3_2msub"]
 [ext_resource type="PackedScene" uid="uid://bhevfmh2racy8" path="res://scenes/game_scene/dust/dust_tile_left.tscn" id="3_fnwdn"]
 [ext_resource type="Resource" uid="uid://dojjma06dgkh6" path="res://data/upgrades/player/fire/flamethrower.tres" id="3_hjxqw"]
@@ -613,9 +612,6 @@ bg_color = Color(1, 1, 1, 1)
 [node name="Game" type="Node2D"]
 script = ExtResource("1_6prm5")
 
-[node name="UpgradePreloader" type="Node" parent="."]
-script = ExtResource("2_qgc4o")
-
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_lrfpd")
 format = 2
@@ -639,7 +635,6 @@ fire_interval = 0.25
 dust_bullet_scene = ExtResource("8_qr5i6")
 
 [node name="Upgrades" type="Node2D" parent="Player"]
-visible = false
 
 [node name="TurboEngine" type="Node2D" parent="Player/Upgrades" node_paths=PackedStringArray("player")]
 script = ExtResource("10_576h5")
@@ -666,10 +661,12 @@ script = ExtResource("21_i5don")
 player = NodePath("../..")
 data = ExtResource("3_hjxqw")
 
-[node name="GunkGuard" parent="Player/Upgrades" instance=ExtResource("23_d2ljb")]
+[node name="GunkGuard" parent="Player/Upgrades" node_paths=PackedStringArray("player") instance=ExtResource("23_d2ljb")]
+player = NodePath("../..")
 
-[node name="SpikeGuard" parent="Player/Upgrades" node_paths=PackedStringArray("gunk_guard") instance=ExtResource("24_4kbuq")]
+[node name="SpikeGuard" parent="Player/Upgrades" node_paths=PackedStringArray("gunk_guard", "player") instance=ExtResource("24_4kbuq")]
 gunk_guard = NodePath("../GunkGuard")
+player = NodePath("../..")
 data = ExtResource("25_rsjls")
 
 [node name="SlimeTrail" type="Node2D" parent="Player/Upgrades"]
@@ -752,13 +749,13 @@ shape = SubResource("CircleShape2D_dew35")
 [node name="EnemySpawner" type="Node2D" parent="." node_paths=PackedStringArray("player")]
 script = ExtResource("14_h5y2k")
 spawn_interval = 3.5
-initial_spawn = 0
+initial_spawn = 2
 slime_scenes = Array[PackedScene]([ExtResource("14_1ka7q"), ExtResource("16_knxkt"), ExtResource("17_6qigw")])
 weights = Array[float]([0.6, 0.2, 0.2])
 wait_times = Array[float]([0.0, 70.0, 70.0])
 player = NodePath("../Player")
-spawn_decrease = 0.01
-health_multiplier_increase = 0.01
+spawn_decrease = 0.03
+health_multiplier_increase = 0.015
 min_spawn_distance_from_player = 150
 metadata/_edit_lock_ = true
 
@@ -1139,7 +1136,7 @@ layout_mode = 2
 texture = ExtResource("16_3d23y")
 stretch_mode = 4
 
-[node name="ScoreLabel" type="Label" parent="CanvasLayer"]
+[node name="TimeLabel" type="Label" parent="CanvasLayer"]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0

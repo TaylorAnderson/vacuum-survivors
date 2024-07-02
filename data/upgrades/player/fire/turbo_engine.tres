@@ -10,5 +10,5 @@ description = "When vacuum is {RED}:
 Faster run, and flames erupt behind you when running."
 custom_data = {
 "fire_rate": 0.5,
-"run_speed_multiplier": 1.3
+"run_speed_multiplier": 1.5
 }

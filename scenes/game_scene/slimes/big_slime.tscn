@@ -14,6 +14,6 @@ value = 20
 max = 60
 value = 60
 
-[node name="ParticleExplosion" parent="." index="9"]
+[node name="ParticleExplosion" parent="." index="10"]
 amount_min = 10
 amount_max = 15

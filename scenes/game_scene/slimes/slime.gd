@@ -7,7 +7,7 @@ class_name Slime;
 @onready var vacuumable = $Vacuumable
 @onready var slimeable = $Slimeable
 @onready var slime_hit_sound = $SlimeHitSound
-@onready var death_anim = $DeathAnim
+@onready var death_anim:AnimatedSprite2D = $DeathAnim
 
 @export var stunned_vacuum_resistance:float = 200;
 @onready var health_bar:Bar = $Bar
@@ -32,6 +32,7 @@ func _physics_process(delta):
 	if stunned: 
 		stun_timer += delta;
 		if stun_timer > stun_time and not vacuumable.being_pulled:
+			sprite.modulate = sprite.modulate.lightened(0.5);
 			health_bar.set_value(health_bar.max);
 			stun_timer = 0;
 			stunned = false;
@@ -55,6 +56,7 @@ func _on_health_bar_value_changed(old_value, new_value):
 	if new_value == 0:
 		if not stunned:
 			stunned = true;
+			sprite.modulate = sprite.modulate.darkened(0.5);
 			# 2 is entities, 3 is disabled
 			set_collision_layer_value(2, false);
 			set_collision_layer_value(3, true);
@@ -64,8 +66,10 @@ func _on_health_bar_value_changed(old_value, new_value):
 			$Vacuumable.resistance = stunned_vacuum_resistance;
 			$Vacuumable.can_be_eaten = true;
 		else:
+			stunned = true;
 			get_parent().add_child(death_anim)
-			death_anim.play();
+			death_anim.frame = 0;
+			death_anim.play("default");
 			death_anim.global_position = global_position;
 			remove_child(particle_explosion);
 			get_parent().add_child(particle_explosion);

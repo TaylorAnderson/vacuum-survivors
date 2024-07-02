@@ -17,23 +17,21 @@ func activate():
 	
 	visible = true;
 	get_tree().paused = true;
-	var potential_upgrades = Upgrades.player_pool.duplicate();
+	var potential_upgrades = [];
 	
 	# filtering the upgrades	
 	
 	var upgrades_picked = [];
-	if times_shown > dungeon_evolution_interval:
-		print("getting dungeon");
-		times_shown = 0;
-		potential_upgrades = Upgrades.dungeon_pool.duplicate();
-	for upgrade in potential_upgrades:
-		if upgrade.pre_req != null and not Upgrades.current.has(upgrade.pre_req):
-			potential_upgrades.erase(upgrade);
+	
+	for upgrade in Upgrades.player_pool:
+		if upgrade.pre_req == null or Upgrades.current.has(upgrade.pre_req):
+			potential_upgrades.append(upgrade);
 	
 	# assigning the upgrades to the cards
 	for i in range(3):
 		var assigned_upgrade = potential_upgrades.pick_random();
 		potential_upgrades.erase(assigned_upgrade);
+		print(assigned_upgrade.name);
 		upgrade_cards[i].setup(assigned_upgrade);
 		
 	times_shown += 1;

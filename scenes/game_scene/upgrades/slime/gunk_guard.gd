@@ -2,7 +2,7 @@ extends Upgrade
 class_name GunkGuard
 @onready var sprite = $Sprite2D
 @onready var area = $Area2D
-
+@export var player:Player
 var knockback_speed = 500;
 var hp = 0;
 var active = false;
@@ -11,7 +11,9 @@ func _on_area_2d_body_entered(body):
 	if not enabled or not active: return
 	if body is Slime:
 		on_hit_slime(body);
-		
+func _process(delta):
+	if active:
+		player.invincibility_timer = player.invicibility_time;	
 func on_hit_slime(body:Slime):
 	hp -= 1;
 	if hp <= 0:
