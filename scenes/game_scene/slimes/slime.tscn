@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://deypg4htvxsn3"]
+[gd_scene load_steps=38 format=3 uid="uid://deypg4htvxsn3"]
 
 [ext_resource type="Script" path="res://scenes/game_scene/slimes/slime.gd" id="1_rj8rp"]
 [ext_resource type="Texture2D" uid="uid://c5rpgu4sa21m" path="res://assets/sprites/slime.png" id="2_ikgkn"]
@@ -8,7 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://bae618o7ulkob" path="res://assets/sprites/stun_anim.png" id="6_3vpt6"]
 [ext_resource type="Texture2D" uid="uid://nbmwy7is1gvu" path="res://assets/sprites/slime_killed_anim.png" id="7_jtpwy"]
 [ext_resource type="PackedScene" uid="uid://c6ou3wr6f8c2n" path="res://scenes/game_scene/elements/fire/flammable.tscn" id="8_kqo0w"]
+[ext_resource type="Texture2D" uid="uid://do3xka86qkli5" path="res://assets/sprites/slime_death.png" id="8_vpuxc"]
 [ext_resource type="PackedScene" uid="uid://re0untg3gyy8" path="res://scenes/game_scene/elements/lightning/joltable.tscn" id="9_ajclt"]
+[ext_resource type="Script" path="res://scenes/game_scene/slimes/death_anim.gd" id="9_jcjys"]
 [ext_resource type="Script" path="res://scenes/game_scene/slimes/particle_explosion.gd" id="11_lfpce"]
 [ext_resource type="PackedScene" uid="uid://c5dpiko1evojg" path="res://scenes/game_scene/elements/slime/slimeable.tscn" id="12_a2yl3"]
 [ext_resource type="PackedScene" uid="uid://cvq8uxvopg1vr" path="res://scenes/game_scene/particles/score_particle.tscn" id="12_yvajo"]
@@ -135,7 +137,46 @@ animations = [{
 }],
 "loop": false,
 "name": &"poof",
-"speed": 10.0
+"speed": 15.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ynj4q"]
+atlas = ExtResource("8_vpuxc")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l4bn5"]
+atlas = ExtResource("8_vpuxc")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6xxnp"]
+atlas = ExtResource("8_vpuxc")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_abdj0"]
+atlas = ExtResource("8_vpuxc")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_man3r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ynj4q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l4bn5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6xxnp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_abdj0")
+}],
+"loop": false,
+"name": &"default",
+"speed": 15.0
 }]
 
 [node name="Slime" type="CharacterBody2D"]
@@ -180,6 +221,10 @@ frame_progress = 0.155916
 sprite_frames = SubResource("SpriteFrames_l0t0v")
 animation = &"poof"
 
+[node name="DeathAnim" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_man3r")
+script = ExtResource("9_jcjys")
+
 [node name="Flammable" parent="." instance=ExtResource("8_kqo0w")]
 visible = false
 
@@ -196,3 +241,5 @@ velocity_max = 200.0
 [node name="SlimeHitSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_enx8f")
 volume_db = -5.0
+
+[connection signal="animation_finished" from="DeathAnim" to="DeathAnim" method="_on_animation_finished"]

@@ -6,5 +6,5 @@
 script = ExtResource("2_jnxpk")
 name = "BOLT DASH"
 id = "bolt_dash"
-description = "Right click to teleport to the last Lightning bullet fired, damaging enemies in your wake"
+description = "Right click to teleport to the last Lightning bullet fired"
 custom_data = {}

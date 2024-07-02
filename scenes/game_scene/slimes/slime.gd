@@ -7,6 +7,7 @@ class_name Slime;
 @onready var vacuumable = $Vacuumable
 @onready var slimeable = $Slimeable
 @onready var slime_hit_sound = $SlimeHitSound
+@onready var death_anim = $DeathAnim
 
 @export var stunned_vacuum_resistance:float = 200;
 @onready var health_bar:Bar = $Bar
@@ -63,13 +64,15 @@ func _on_health_bar_value_changed(old_value, new_value):
 			$Vacuumable.resistance = stunned_vacuum_resistance;
 			$Vacuumable.can_be_eaten = true;
 		else:
+			get_parent().add_child(death_anim)
+			death_anim.play();
+			death_anim.global_position = global_position;
 			remove_child(particle_explosion);
 			get_parent().add_child(particle_explosion);
 			particle_explosion.global_position = global_position;
 			particle_explosion.trigger();
 			$Vacuumable.resistance = 1000;
 			$Vacuumable.can_be_eaten = false;
-			$StunPoofAnim.play("poof");
 			sprite.visible = false;
 			$StunAnim.visible = false;
 			$Bar.visible = false;

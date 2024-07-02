@@ -5,6 +5,8 @@ extends Node2D
 @export var initial_spawn = 20;
 @export var slime_scenes:Array[PackedScene];
 @export var weights:Array[float]
+## as in, the time in seconds before we spawn this slime;
+@export var wait_times:Array[float]
 @export var player:Node2D;
 @export var spawn_decrease = 0.05;
 var health_multiplier = 1.0;
@@ -16,12 +18,14 @@ var unused_spawns:Array[Marker2D]
 var spawn_refresh_rate = 5;
 var spawn_refresh_rate_timer = 0;
 var done_initial_spawn = false;
+var time_in_level = 0;
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass;
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	time_in_level += delta;
 	# doing it here so we don't try to spawn enemies before the game is unpaused
 	if not done_initial_spawn:
 		done_initial_spawn = true;
@@ -35,9 +39,16 @@ func _process(delta):
 	spawn_refresh_rate_timer += delta;
 	if spawn_refresh_rate_timer > spawn_refresh_rate:
 		unused_spawns = spawns;
+		spawn_refresh_rate_timer = spawn_refresh_rate;
 
 func spawn_slime():
-	var new_slime = choice(slime_scenes, weights).instantiate();
+	var potential_slimes = [];
+	var potential_weights = [];
+	for i in wait_times.size():
+		if time_in_level >= wait_times[i]:
+			potential_slimes.append(slime_scenes[i]);
+			potential_weights.append(weights[i]);
+	var new_slime = choice(potential_slimes, potential_weights).instantiate();
 	new_slime.player = player;
 	
 	var potential_spawns = [];
