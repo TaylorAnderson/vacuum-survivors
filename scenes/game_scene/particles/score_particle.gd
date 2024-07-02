@@ -24,13 +24,5 @@ func _process(delta):
 	ray_cast.rotation = velocity.angle()
 	if ray_cast.is_colliding():
 		velocity = velocity * ray_cast.get_collision_normal()
-	lifetime -= delta;
-	if lifetime < flicker_time:
-		flicker_counter += delta;
-		if flicker_counter > 0.1:
-			$Sprite2D.visible = not $Sprite2D.visible;
-			flicker_counter = 0;
-	if lifetime <= 0:
-		queue_free();
 	velocity *= 0.9;
 	position += velocity * delta;

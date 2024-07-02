@@ -2,6 +2,7 @@ extends Node2D
 @onready var player = $Player
 signal player_died();
 
+
 @onready var upgrade_screen = $CanvasLayer/UpgradeScreen
 
 

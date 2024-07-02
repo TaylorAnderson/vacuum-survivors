@@ -9,7 +9,7 @@ name = "FORK LIGHTNING"
 id = "fork_lightning"
 description = "Lightning does more damage and now hits two enemies every time it arcs"
 custom_data = {
-"extra_damage": 1,
+"damage_multiplier": 1.3,
 "extra_forks": 1
 }
 pre_req = ExtResource("1_62ptx")

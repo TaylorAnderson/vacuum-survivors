@@ -21,3 +21,6 @@ texture = ExtResource("1_8j6cq")
 
 [node name="Vacuumable" parent="." instance=ExtResource("2_w4jgl")]
 resistance = 1
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, 3)

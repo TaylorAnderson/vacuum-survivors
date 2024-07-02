@@ -8,28 +8,29 @@ var all:Array[UpgradeData] = [];
 var all_player:Array[UpgradeData] = [];
 var all_dungeon:Array[UpgradeData] = [];
 var upgrades_path = "res://data/upgrades"
+
+var lightning_damage = 0;
+var fire_damage = 0;
+var og_fire_damage = 5;
+var og_lightning_damage = 5;
 signal upgrade_acquired(upgrade:UpgradeData);
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	await get_tree().create_timer(0.1).timeout;
 	all_player = find_upgrades(upgrades_path + "/player")
 	all_dungeon = find_upgrades(upgrades_path + "/dungeon")
 	
 	all.append_array(all_player);
 	all.append_array(all_dungeon);
 	
-	for upgrade in all_player:
-		print(upgrade);
-	
 func add_upgrade(upgrade:UpgradeData):
 	current.append(upgrade)
 	if player_pool.has(upgrade): player_pool.erase(upgrade);
 	elif dungeon_pool.has(upgrade): dungeon_pool.erase(upgrade);
-	else:
-		push_error("Upgrade acquired that wasn't part of either pool")
 	upgrade_acquired.emit(upgrade);
 
 func reset():
+	fire_damage = og_fire_damage;
+	lightning_damage = og_lightning_damage;
 	current = [];
 	player_pool = all_player.duplicate();
 	dungeon_pool = all_dungeon.duplicate();

@@ -9,7 +9,7 @@ class_name Slime;
 @onready var slime_hit_sound = $SlimeHitSound
 
 @export var stunned_vacuum_resistance:float = 200;
-@onready var health_bar = $Bar
+@onready var health_bar:Bar = $Bar
 @onready var sprite = $Sprite2D
 @export var stun_time = 5;
 var stun_timer = 0;
@@ -77,4 +77,6 @@ func _on_health_bar_value_changed(old_value, new_value):
 			await $StunPoofAnim.animation_finished;
 			
 			queue_free();
-		
+func set_health_multiplier(health_multiplier):
+	health_bar.max *= health_multiplier;
+	health_bar.set_value(health_bar.max);

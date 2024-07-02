@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="UpgradeData" load_steps=2 format=3 uid="uid://631w2effassv"]
+
+[ext_resource type="Script" path="res://data/upgrade_data.gd" id="1_kujxv"]
+
+[resource]
+script = ExtResource("1_kujxv")
+name = "SLIME TRAIL"
+id = ""
+description = "When vacuum is {GREEN}:
+A trail of slime follows behind you, slowing down any enemies that come in contact."
+custom_data = {}

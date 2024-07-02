@@ -11,8 +11,8 @@ stunned_vacuum_resistance = 100.0
 value = 3
 
 [node name="Bar" parent="." index="5"]
-max = 3
-value = 3
+max = 30
+value = 30
 
 [node name="Joltable" parent="." index="9"]
 z_index = 5

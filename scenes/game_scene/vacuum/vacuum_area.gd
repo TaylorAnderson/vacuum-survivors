@@ -49,22 +49,11 @@ func try_to_eat(object:Node2D):
 		$CollectNoise.play();
 		if objects_sucking.has(vacuumable):
 			objects_sucking.erase(vacuumable);
-		vacuumable.get_parent().queue_free();
-		vacuumed_object.emit(vacuumable.get_parent());
+		object.queue_free();
+		vacuumed_object.emit(object);
 func _on_body_entered(body):
 	var vacuumable = Find.child_by_type(body, Vacuumable)
 	if vacuumable:
 		objects_sucking.append(vacuumable);
-	pass # Replace with function body.
-
-
-func _on_body_exited(body):
-	if not enabled: return;
-	var vacuumable:Vacuumable = Find.child_by_type(body, Vacuumable)
-	if vacuumable and vacuumable.can_be_eaten:
-		vacuumable.get_parent().queue_free();
-		vacuumed_object.emit(vacuumable.get_parent());
-	pass # Replace with function body.
-
 
 

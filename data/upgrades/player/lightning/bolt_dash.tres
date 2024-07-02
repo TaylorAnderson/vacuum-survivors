@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Upgrade" load_steps=2 format=3 uid="uid://d1ce000ds26n2"]
+[gd_resource type="Resource" script_class="UpgradeData" load_steps=2 format=3 uid="uid://d1ce000ds26n2"]
 
 [ext_resource type="Script" path="res://data/upgrade_data.gd" id="2_jnxpk"]
 
@@ -6,4 +6,5 @@
 script = ExtResource("2_jnxpk")
 name = "BOLT DASH"
 id = "bolt_dash"
-description = "Press E to teleport to the last Lightning bullet fired, damaging enemies in your wake"
+description = "Right click to teleport to the last Lightning bullet fired, damaging enemies in your wake"
+custom_data = {}

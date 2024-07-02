@@ -5,8 +5,8 @@ class_name Bar;
 @export var value:int = 0;
 @export var can_kill_parent:bool = false;
 signal value_changed(old_value, new_value);
-## If true, parent gets deleted if this hits zero 
 @export var is_health_bar:bool = false;
+@export var can_be_hit_by_bullet:bool = false;
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	set_value(value);

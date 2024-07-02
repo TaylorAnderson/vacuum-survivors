@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cvq8uxvopg1vr"]
 
-[ext_resource type="Script" path="res://scenes/game_scene/score_particle.gd" id="1_5ljpq"]
+[ext_resource type="Script" path="res://scenes/game_scene/particles/score_particle.gd" id="1_5ljpq"]
 [ext_resource type="Texture2D" uid="uid://dy7ekb1ed5fee" path="res://assets/sprites/dust.png" id="2_ae3ru"]
 [ext_resource type="PackedScene" uid="uid://d1bfmdsnal6pj" path="res://scenes/game_scene/vacuum/vacuumable.tscn" id="3_wsc4l"]
 

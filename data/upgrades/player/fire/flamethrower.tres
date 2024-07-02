@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="UpgradeData" load_steps=2 format=3 uid="uid://dojjma06dgkh6"]
+
+[ext_resource type="Script" path="res://data/upgrade_data.gd" id="1_vylgl"]
+
+[resource]
+script = ExtResource("1_vylgl")
+name = "FLAMETHROWER"
+id = "flamethrower"
+description = "Fire does more damage 
+When vacuum is RED:
+Much faster fire rate."
+custom_data = {
+"fire_damage_multiplier": 1.6,
+"fire_rate_multiplier": 1.5
+}

@@ -38,8 +38,6 @@ func _on_mouse_exited():
 func _input(event):
 	if event.is_action_pressed("left_click") and select_rect.visible:
 		animation_player.play("selected");
-		print("emitting selected");
 		selected.emit(self)
 		await animation_player.animation_finished
-		print("emitting finished select");
 		finished_select_anim.emit();

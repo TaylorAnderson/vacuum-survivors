@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Upgrade" load_steps=2 format=3 uid="uid://dk0avrf8wuncf"]
+[gd_resource type="Resource" script_class="UpgradeData" load_steps=2 format=3 uid="uid://dk0avrf8wuncf"]
 
 [ext_resource type="Script" path="res://data/upgrade_data.gd" id="1_mfhi2"]
 
@@ -8,3 +8,6 @@ name = "GUNK GUARD"
 id = ""
 description = "After vacuuming a {GREEN} enemy: 
 Gain a shield that can take 1 hit. "
+custom_data = {
+"hp": 1
+}

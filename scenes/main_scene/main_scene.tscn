@@ -18,6 +18,7 @@
 line_spacing = 0.0
 font = ExtResource("2_yybqn")
 font_size = 128
+outline_size = 32
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_xmxoo"]
@@ -238,9 +239,9 @@ theme_override_styles/panel = ExtResource("4_pv5vu")
 
 [node name="VacuumImage" type="TextureRect" parent="Title"]
 offset_left = -333.0
-offset_top = -1000.0
+offset_top = -96.0
 offset_right = -13.0
-offset_bottom = -820.0
+offset_bottom = 84.0
 scale = Vector2(4, 4)
 texture = ExtResource("2_0ejoc")
 
@@ -250,14 +251,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -1072.0
+offset_left = -208.0
 offset_top = -165.0
-offset_right = -760.0
+offset_right = 104.0
 offset_bottom = -37.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 32
 text = "Vacuum"
 label_settings = SubResource("LabelSettings_nps30")
 
@@ -268,20 +268,18 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 760.0
+offset_left = -152.0
 offset_top = -65.0
-offset_right = 1156.0
+offset_right = 244.0
 offset_bottom = 63.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 32
 theme_override_font_sizes/font_size = 128
 text = "Survivors"
 label_settings = SubResource("LabelSettings_nps30")
 
 [node name="PressAnyButton" type="Label" parent="Title"]
-modulate = Color(1, 1, 1, 0)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5

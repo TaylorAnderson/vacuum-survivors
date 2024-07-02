@@ -9,6 +9,8 @@ var instigator;
 @onready var fire_anim = $FireAnim
 @onready var slime_anim = $SlimeAnim
 
+signal object_hit(object);
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -39,8 +41,8 @@ func _on_area_entered(area):
 
 
 func hit_object(object, kill_bullet):
+	object_hit.emit(object);
 	if current_element == Data.Element.FIRE:
-		
 		var flammable = Find.child_by_type(object, Flammable);
 		if flammable: flammable.set_enabled(true);
 	if current_element == Data.Element.THUNDER:
@@ -51,6 +53,9 @@ func hit_object(object, kill_bullet):
 		if slimeable: slimeable.trigger();
 	var health_bar = Find.child_by_type(object, Bar)
 	if health_bar and health_bar.get_parent() != instigator:
-		health_bar.set_value(health_bar.value - damage);
+		
+		if health_bar.can_be_hit_by_bullet:
+			health_bar.set_value(health_bar.value - damage);
+			Events.damage_given.emit(damage, object, position);
 		if kill_bullet: queue_free();
 	if object is TileMap: queue_free();

@@ -13,7 +13,7 @@ func _ready():
 
 func activate():
 	if visible: return;
-	animation_player.play("level_up");
+	animation_player.play("level_up", -1, 1.2);
 	
 	visible = true;
 	get_tree().paused = true;

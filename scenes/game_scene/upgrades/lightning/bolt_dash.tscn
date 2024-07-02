@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://bg8tbn6dy1pi6"]
+
+[ext_resource type="Script" path="res://scenes/game_scene/upgrades/lightning/bolt_dash.gd" id="1_fv4y3"]
+[ext_resource type="Resource" uid="uid://d1ce000ds26n2" path="res://data/upgrades/player/lightning/bolt_dash.tres" id="2_wurey"]
+[ext_resource type="PackedScene" uid="uid://re0untg3gyy8" path="res://scenes/game_scene/elements/lightning/joltable.tscn" id="3_dpctl"]
+
+[node name="BoltDash" type="Node2D"]
+script = ExtResource("1_fv4y3")
+data = ExtResource("2_wurey")
+
+[node name="StartJolt" parent="." instance=ExtResource("3_dpctl")]
+
+[node name="EndJolt" parent="." instance=ExtResource("3_dpctl")]

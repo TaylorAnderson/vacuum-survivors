@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://c6ou3wr6f8c2n"]
 
-[ext_resource type="Script" path="res://scenes/game_scene/elements/flammable.gd" id="1_bwnir"]
+[ext_resource type="Script" path="res://scenes/game_scene/elements/fire/flammable.gd" id="1_bwnir"]
 [ext_resource type="Texture2D" uid="uid://c4ainjff8b6gt" path="res://assets/sprites/fire.png" id="2_dlhvt"]
 [ext_resource type="AudioStream" uid="uid://ddpga3bmq18yj" path="res://assets/audio/fire_burst.wav" id="3_pqtxq"]
 
@@ -37,7 +37,7 @@ animations = [{
 radius = 7.07107
 
 [node name="Flammable" type="Area2D"]
-collision_mask = 15
+collision_mask = 31
 script = ExtResource("1_bwnir")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

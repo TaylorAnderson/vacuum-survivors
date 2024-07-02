@@ -1,10 +1,13 @@
-[gd_scene load_steps=18 format=3 uid="uid://b2brwh630rgwx"]
+[gd_scene load_steps=21 format=3 uid="uid://b2brwh630rgwx"]
 
 [ext_resource type="Texture2D" uid="uid://duyoxq5wgrfxa" path="res://assets/sprites/dust_bullet.png" id="1_btgvb"]
 [ext_resource type="Script" path="res://scenes/game_scene/dust/dust_bullet.gd" id="1_n7qa3"]
 [ext_resource type="Texture2D" uid="uid://c4c4olhfje72l" path="res://assets/sprites/lightning_bullet.png" id="3_wl8s7"]
 [ext_resource type="Texture2D" uid="uid://c4ainjff8b6gt" path="res://assets/sprites/fire.png" id="4_uu01k"]
 [ext_resource type="Texture2D" uid="uid://dsgknsxyn1qf0" path="res://assets/sprites/slime_anim.png" id="5_evrgb"]
+[ext_resource type="Script" path="res://scenes/game_scene/upgrades/fire/tnt_canister.gd" id="8_4a2oi"]
+[ext_resource type="PackedScene" uid="uid://5b63n2wr3kil" path="res://scenes/game_scene/elements/fire/explosion.tscn" id="9_g4bol"]
+[ext_resource type="Resource" uid="uid://d3pamo5m37xbx" path="res://data/upgrades/player/fire/tnt_canister.tres" id="10_lu8de"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ttwat"]
 size = Vector2(8, 6)
@@ -94,6 +97,7 @@ z_index = 1
 collision_layer = 2
 collision_mask = 13
 script = ExtResource("1_n7qa3")
+damage = 10
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_btgvb")
@@ -121,5 +125,12 @@ sprite_frames = SubResource("SpriteFrames_f84sn")
 autoplay = "default"
 frame_progress = 0.256762
 
+[node name="TNTCanister" type="Node2D" parent="." node_paths=PackedStringArray("bullet")]
+script = ExtResource("8_4a2oi")
+explosion_scene = ExtResource("9_g4bol")
+bullet = NodePath("..")
+data = ExtResource("10_lu8de")
+
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="object_hit" from="." to="TNTCanister" method="_on_dust_bullet_object_hit"]

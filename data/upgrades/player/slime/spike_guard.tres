@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="UpgradeData" load_steps=3 format=3 uid="uid://c2uctwcevx2f1"]
+
+[ext_resource type="Resource" uid="uid://dk0avrf8wuncf" path="res://data/upgrades/player/slime/gunk_guard.tres" id="1_6tpft"]
+[ext_resource type="Script" path="res://data/upgrade_data.gd" id="1_svep8"]
+
+[resource]
+script = ExtResource("1_svep8")
+name = "SPIKE GUARD"
+id = ""
+description = "Gunk Guard takes 3 hits and damages enemies when touched"
+custom_data = {
+"damage": 10,
+"hp": 3
+}
+pre_req = ExtResource("1_6tpft")

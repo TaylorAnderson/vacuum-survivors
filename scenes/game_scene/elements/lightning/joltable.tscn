@@ -1,14 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://re0untg3gyy8"]
+[gd_scene load_steps=9 format=3 uid="uid://re0untg3gyy8"]
 
-[ext_resource type="Script" path="res://scenes/game_scene/elements/joltable.gd" id="1_up4i5"]
+[ext_resource type="Script" path="res://scenes/game_scene/elements/lightning/joltable.gd" id="1_up4i5"]
 [ext_resource type="Texture2D" uid="uid://bf7q6mqwgdgdg" path="res://assets/sprites/electric_node.png" id="2_705yl"]
 [ext_resource type="AudioStream" uid="uid://cma8nk0ch5c5p" path="res://assets/audio/electricity_jolt.wav" id="3_c6c74"]
-[ext_resource type="Script" path="res://scenes/game_scene/upgrades/arc_lightning.gd" id="4_vld4w"]
+[ext_resource type="Script" path="res://scenes/game_scene/upgrades/lightning/arc_lightning.gd" id="4_vld4w"]
 [ext_resource type="Resource" uid="uid://dbgmum00t3w7h" path="res://data/upgrades/player/lightning/arc_lightning.tres" id="5_hodxa"]
-[ext_resource type="Script" path="res://scenes/game_scene/upgrades/fork_lightning.gd" id="6_2do15"]
+[ext_resource type="Script" path="res://scenes/game_scene/upgrades/lightning/fork_lightning.gd" id="6_2do15"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_btihh"]
 radius = 35.0143
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lp5gy"]
+radius = 6.0
 
 [node name="Joltable" type="Area2D"]
 z_index = 10
@@ -25,7 +28,6 @@ width = 2.0
 default_color = Color(0.298039, 0.505882, 0.984314, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
 texture = ExtResource("2_705yl")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -39,6 +41,11 @@ data = ExtResource("5_hodxa")
 
 [node name="ForkLightningUpgrade" type="Node" parent="."]
 script = ExtResource("6_2do15")
+
+[node name="ShapeCast2D" type="ShapeCast2D" parent="."]
+shape = SubResource("CircleShape2D_lp5gy")
+exclude_parent = false
+collision_mask = 12
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]

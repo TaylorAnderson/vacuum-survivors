@@ -5,14 +5,14 @@
 [node name="BigSlime" instance=ExtResource("1_kadty")]
 scale = Vector2(2, 2)
 speed = 400.0
-stunned_vacuum_resistance = 280.0
+stunned_vacuum_resistance = 250.0
 
 [node name="Vacuumable" parent="." index="4"]
 value = 20
 
 [node name="Bar" parent="." index="5"]
-max = 10
-value = 10
+max = 100
+value = 100
 
 [node name="ParticleExplosion" parent="." index="10"]
 amount_min = 10

@@ -90,5 +90,4 @@ func _input(event):
 
 
 func _on_leaderboard_leaderboard_closed():
-	print("hello");
 	change_state(State.TITLE);

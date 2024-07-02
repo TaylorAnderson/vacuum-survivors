@@ -1,6 +1,6 @@
 extends Area2D
 class_name Flammable;
-var dmg_per_tick = 1;
+
 var tick_time = 0.3;
 var lifetime_ticks = 10;
 var lifetime_tick_counter = 10;
@@ -28,7 +28,8 @@ func _process(delta):
 		tick_timer += delta;
 		if tick_timer > tick_time:
 			for health_bar in nodes_in_range:
-				health_bar.add_value(-dmg_per_tick);
+				Events.damage_given.emit(Upgrades.fire_damage , health_bar.get_parent(), global_position)
+				health_bar.add_value(-Upgrades.fire_damage);
 			tick_timer = 0;
 			lifetime_tick_counter -= 1;
 			if lifetime_tick_counter <= 0:

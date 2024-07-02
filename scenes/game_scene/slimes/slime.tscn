@@ -7,11 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://ridxevwf7yqc" path="res://scenes/game_scene/ui/bar.tscn" id="5_nhxvo"]
 [ext_resource type="Texture2D" uid="uid://bae618o7ulkob" path="res://assets/sprites/stun_anim.png" id="6_3vpt6"]
 [ext_resource type="Texture2D" uid="uid://nbmwy7is1gvu" path="res://assets/sprites/slime_killed_anim.png" id="7_jtpwy"]
-[ext_resource type="PackedScene" uid="uid://c6ou3wr6f8c2n" path="res://scenes/game_scene/elements/flammable.tscn" id="8_kqo0w"]
-[ext_resource type="PackedScene" uid="uid://re0untg3gyy8" path="res://scenes/game_scene/elements/joltable.tscn" id="9_ajclt"]
+[ext_resource type="PackedScene" uid="uid://c6ou3wr6f8c2n" path="res://scenes/game_scene/elements/fire/flammable.tscn" id="8_kqo0w"]
+[ext_resource type="PackedScene" uid="uid://re0untg3gyy8" path="res://scenes/game_scene/elements/lightning/joltable.tscn" id="9_ajclt"]
 [ext_resource type="Script" path="res://scenes/game_scene/slimes/particle_explosion.gd" id="11_lfpce"]
-[ext_resource type="PackedScene" uid="uid://c5dpiko1evojg" path="res://scenes/game_scene/elements/slimeable.tscn" id="12_a2yl3"]
-[ext_resource type="PackedScene" uid="uid://cvq8uxvopg1vr" path="res://scenes/game_scene/score_particle.tscn" id="12_yvajo"]
+[ext_resource type="PackedScene" uid="uid://c5dpiko1evojg" path="res://scenes/game_scene/elements/slime/slimeable.tscn" id="12_a2yl3"]
+[ext_resource type="PackedScene" uid="uid://cvq8uxvopg1vr" path="res://scenes/game_scene/particles/score_particle.tscn" id="12_yvajo"]
 [ext_resource type="AudioStream" uid="uid://ngsyf51utg06" path="res://assets/audio/slime hit.wav" id="15_enx8f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y2yfw"]
@@ -146,7 +146,6 @@ motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_rj8rp")
 speed = 450.0
-stunned_vacuum_resistance = 250.0
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ew8w5")
@@ -158,8 +157,6 @@ shape = SubResource("CircleShape2D_x775c")
 
 [node name="Element" parent="." instance=ExtResource("3_xkqwo")]
 
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-
 [node name="Vacuumable" parent="." instance=ExtResource("4_kbfou")]
 can_be_eaten = false
 resistance = 1000
@@ -167,9 +164,9 @@ value = 10
 
 [node name="Bar" parent="." instance=ExtResource("5_nhxvo")]
 position = Vector2(0, -14)
-max = 5
-value = 5
+value = 50
 is_health_bar = true
+can_be_hit_by_bullet = true
 
 [node name="StunAnim" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -185,8 +182,7 @@ animation = &"poof"
 [node name="Flammable" parent="." instance=ExtResource("8_kqo0w")]
 visible = false
 
-[node name="Joltable" parent="." node_paths=PackedStringArray("health_bar") instance=ExtResource("9_ajclt")]
-health_bar = NodePath("../Bar")
+[node name="Joltable" parent="." instance=ExtResource("9_ajclt")]
 
 [node name="ParticleExplosion" type="Node2D" parent="."]
 script = ExtResource("11_lfpce")
