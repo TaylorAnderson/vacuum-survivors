@@ -7,13 +7,13 @@ scale = Vector2(2, 2)
 speed = 400.0
 stunned_vacuum_resistance = 250.0
 
-[node name="Vacuumable" parent="." index="4"]
+[node name="Vacuumable" parent="." index="3"]
 value = 20
 
-[node name="Bar" parent="." index="5"]
-max = 100
-value = 100
+[node name="Bar" parent="." index="4"]
+max = 60
+value = 60
 
-[node name="ParticleExplosion" parent="." index="10"]
+[node name="ParticleExplosion" parent="." index="9"]
 amount_min = 10
 amount_max = 15

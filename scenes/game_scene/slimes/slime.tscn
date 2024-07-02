@@ -164,7 +164,8 @@ value = 10
 
 [node name="Bar" parent="." instance=ExtResource("5_nhxvo")]
 position = Vector2(0, -14)
-value = 50
+max = 40
+value = 40
 is_health_bar = true
 can_be_hit_by_bullet = true
 
