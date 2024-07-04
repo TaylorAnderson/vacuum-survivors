@@ -14,9 +14,9 @@ value = 3
 max = 20
 value = 20
 
-[node name="Joltable" parent="." index="8"]
+[node name="Joltable" parent="." index="9"]
 z_index = 5
 
-[node name="ParticleExplosion" parent="." index="9"]
+[node name="ParticleExplosion" parent="." index="10"]
 amount_min = 0
 amount_max = 2

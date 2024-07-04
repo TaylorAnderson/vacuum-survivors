@@ -7,6 +7,12 @@ class_name Slime;
 @onready var vacuumable = $Vacuumable
 @onready var slimeable = $Slimeable
 @onready var slime_hit_sound = $SlimeHitSound
+@onready var slime_stun_sound = $SlimeStunSound
+@onready var slime_death_sound = $SlimeDeathSound
+@onready var can_be_vacuumed_anim = $CanBeVacuumedAnim
+
+
+
 @onready var death_anim:AnimatedSprite2D = $DeathAnim
 
 @export var stunned_vacuum_resistance:float = 200;
@@ -15,6 +21,7 @@ class_name Slime;
 @export var stun_time = 5;
 var stun_timer = 0;
 var stunned = false;
+
 func _ready():
 	var rand = randf();
 	if rand < 0.5: element.element_type = Data.Element.SLIME;
@@ -32,7 +39,7 @@ func _physics_process(delta):
 	if stunned: 
 		stun_timer += delta;
 		if stun_timer > stun_time and not vacuumable.being_pulled:
-			sprite.modulate = sprite.modulate.lightened(0.5);
+			sprite.modulate = Data.colors[element.element_type]
 			health_bar.set_value(health_bar.max);
 			stun_timer = 0;
 			stunned = false;
@@ -55,6 +62,8 @@ func _on_health_bar_value_changed(old_value, new_value):
 		$SlimeHitSound.play();
 	if new_value == 0:
 		if not stunned:
+			can_be_vacuumed_anim.play("pop_in");
+			slime_stun_sound.play();
 			stunned = true;
 			sprite.modulate = sprite.modulate.darkened(0.5);
 			# 2 is entities, 3 is disabled
@@ -66,8 +75,9 @@ func _on_health_bar_value_changed(old_value, new_value):
 			$Vacuumable.resistance = stunned_vacuum_resistance;
 			$Vacuumable.can_be_eaten = true;
 		else:
+			can_be_vacuumed_anim.play("RESET")
+			slime_death_sound.play();
 			stunned = true;
-			get_parent().add_child(death_anim)
 			death_anim.frame = 0;
 			death_anim.play("default");
 			death_anim.global_position = global_position;
@@ -80,9 +90,9 @@ func _on_health_bar_value_changed(old_value, new_value):
 			sprite.visible = false;
 			$StunAnim.visible = false;
 			$Bar.visible = false;
+			$Slimeable.visible = false;
 			remove_child($CollisionShape2D)
-			await $StunPoofAnim.animation_finished;
-			
+			await death_anim.animation_finished;
 			queue_free();
 func set_health_multiplier(health_multiplier):
 	health_bar.max *= health_multiplier;

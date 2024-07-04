@@ -1,9 +1,9 @@
 [gd_scene load_steps=15 format=3 uid="uid://5b63n2wr3kil"]
 
 [ext_resource type="Script" path="res://scenes/game_scene/elements/fire/explosion.gd" id="1_mc56b"]
-[ext_resource type="AudioStream" uid="uid://3io7kdw47egw" path="res://assets/audio/EXPLDsgn_Anime Explosion 7.wav" id="2_22b3a"]
+[ext_resource type="AudioStream" uid="uid://3io7kdw47egw" path="res://assets/audio/sfx/EXPLDsgn_Anime Explosion 7.wav" id="2_22b3a"]
 [ext_resource type="Texture2D" uid="uid://dba2hukr0h6go" path="res://assets/sprites/explosion.png" id="2_p6rmp"]
-[ext_resource type="AudioStream" uid="uid://co6y225j0m7nh" path="res://assets/audio/EXPLDsgn_Anime Explosion 9.wav" id="3_bdilt"]
+[ext_resource type="AudioStream" uid="uid://co6y225j0m7nh" path="res://assets/audio/sfx/EXPLDsgn_Anime Explosion 9.wav" id="3_bdilt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_koebr"]
 atlas = ExtResource("2_p6rmp")

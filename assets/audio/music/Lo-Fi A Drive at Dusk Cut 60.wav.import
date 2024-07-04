@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cnvadurr7s5af"
+path="res://.godot/imported/Lo-Fi A Drive at Dusk Cut 60.wav-a74278ba5fe5ced4c788c813041c37e7.sample"
+
+[deps]
+
+source_file="res://assets/audio/music/Lo-Fi A Drive at Dusk Cut 60.wav"
+dest_files=["res://.godot/imported/Lo-Fi A Drive at Dusk Cut 60.wav-a74278ba5fe5ced4c788c813041c37e7.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c6xe5cmp57rg3" path="res://assets/sprites/slowdown.png" id="1_wpkye"]
 [ext_resource type="Script" path="res://scenes/game_scene/slimes/slimeable.gd" id="2_nfdnk"]
-[ext_resource type="AudioStream" uid="uid://b4kc016bnxli4" path="res://assets/audio/slime_splat.wav" id="3_8vds1"]
+[ext_resource type="AudioStream" uid="uid://b4kc016bnxli4" path="res://assets/audio/sfx/slime_splat.wav" id="3_8vds1"]
 
 [node name="Slimeable" type="Sprite2D"]
 visible = false

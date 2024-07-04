@@ -22,6 +22,7 @@ SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
 Score="*res://util/score.gd"
 Upgrades="*res://util/upgrades.gd"
 Events="*res://util/events.gd"
+Format="*res://util/format.gd"
 
 [display]
 
@@ -30,6 +31,10 @@ window/size/viewport_height=720
 window/size/initial_position_type=0
 window/size/initial_position=Vector2i(100, 100)
 window/stretch/aspect="ignore"
+
+[editor]
+
+movie_writer/movie_file="D:/Work/Game Projects/Godot Projects/RhinoVacuumSurvivors/videos/movie.avi"
 
 [editor_plugins]
 

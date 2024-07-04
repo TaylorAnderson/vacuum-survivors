@@ -1,0 +1,10 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://dcnskgxeu0o8l"]
+
+[ext_resource type="FontFile" uid="uid://cps7wwwrgo0ch" path="res://assets/fonts/Yesterday Basic 10h.ttf" id="1_73jw4"]
+
+[resource]
+line_spacing = -5.0
+font = ExtResource("1_73jw4")
+font_color = Color(0.709804, 0.709804, 0.709804, 1)
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)

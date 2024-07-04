@@ -13,6 +13,8 @@ class_name Player
 @onready var vacuum_start_noise = $Sounds/VacuumStart
 @onready var vacuum_end_noise = $Sounds/VacuumEnd
 @onready var shoot_noise = $Sounds/ShootNoise
+@onready var hit_sound = $Sounds/HitSound
+@onready var die_sound = $Sounds/DieSound
 
 
 @export var run_speed:float = 60;
@@ -59,6 +61,7 @@ func _process(delta):
 	vacuum_bar.rotation = -rotation
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
+	if hp <= 0: return;
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	if direction:
 		velocity = velocity.move_toward(direction * current_speed, accel);
@@ -135,11 +138,13 @@ func _on_vacuum_area_vacuumed_object(object):
 
 func _on_hitbox_body_entered(body):
 	if body is Slime and invincibility_timer <= 0:
+		hit_sound.play();
 		invincibility_timer = invicibility_time;
 		velocity += body.global_position.direction_to(global_position) * 150;
 		hp -= 1;
 		hp_lost.emit(hp);
 		if hp > 0:
+			die_sound.play();
 			modulate = Color.RED;
 			await get_tree().create_timer(0.25).timeout;
 			modulate = Color.WHITE;

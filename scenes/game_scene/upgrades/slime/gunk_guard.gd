@@ -11,9 +11,7 @@ func _on_area_2d_body_entered(body):
 	if not enabled or not active: return
 	if body is Slime:
 		on_hit_slime(body);
-func _process(delta):
-	if active:
-		player.invincibility_timer = player.invicibility_time;	
+
 func on_hit_slime(body:Slime):
 	hp -= 1;
 	if hp <= 0:

@@ -6,6 +6,7 @@ enum State {
 	GAME_OVER,
 	LEADERBOARD,
 }
+@export var game_scene_file:PackedScene;
 @onready var title_scene = $Title
 @onready var game_scene = $Game
 @onready var game_over_scene = $GameOver
@@ -72,8 +73,16 @@ func change_state(new_state:State):
 	if new_state == State.GAME_OVER:
 		get_tree().paused = true;
 	if new_state == State.GAME:
-		Upgrades.reset();
+		print("unpausing");
 		get_tree().paused = false;
+		game_scene.queue_free();
+		game_scene = game_scene_file.instantiate();
+		game_scene.player_died.connect(_on_game_player_died);
+		state_scenes[State.GAME] = game_scene;
+		add_child(game_scene);
+		Upgrades.reset();
+		
+
 		$Game/Player.visible = true;
 	if new_state == State.LEADERBOARD:
 		leaderboard_scene.set_process(true);

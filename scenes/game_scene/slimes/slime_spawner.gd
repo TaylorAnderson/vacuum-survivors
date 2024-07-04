@@ -38,8 +38,13 @@ func _process(delta):
 			call_deferred("spawn_slime");
 	spawn_refresh_rate_timer += delta;
 	if spawn_refresh_rate_timer > spawn_refresh_rate:
-		unused_spawns = spawns;
-		spawn_refresh_rate_timer = spawn_refresh_rate;
+		
+		# i suspect this is just as performant as calling .duplicate()
+		# but just in case
+		unused_spawns = [];
+		for spawn in spawns: unused_spawns.append(spawn);
+		
+		spawn_refresh_rate_timer = 0;
 
 func spawn_slime():
 	var potential_slimes = [];
@@ -67,7 +72,6 @@ func _on_spawn_timer_timeout():
 	spawn_interval -= spawn_decrease;
 	health_multiplier += health_multiplier_increase
 	spawn_timer.start(spawn_interval)
-	print("Reducing timer and increasing health");5
 func choice(array: Array, weights: Array):
 	assert(array.size() == weights.size())
 

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/game_scene/elements/fire/flammable.gd" id="1_bwnir"]
 [ext_resource type="Texture2D" uid="uid://c4ainjff8b6gt" path="res://assets/sprites/fire.png" id="2_dlhvt"]
-[ext_resource type="AudioStream" uid="uid://ddpga3bmq18yj" path="res://assets/audio/fire_burst.wav" id="3_pqtxq"]
+[ext_resource type="AudioStream" uid="uid://ddpga3bmq18yj" path="res://assets/audio/sfx/fire_burst.wav" id="3_pqtxq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8uek2"]
 atlas = ExtResource("2_dlhvt")
@@ -48,9 +48,10 @@ autoplay = "default"
 position = Vector2(0, 3)
 shape = SubResource("CircleShape2D_jc46t")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_pqtxq")
 volume_db = -5.0
+attenuation = 0.554785
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]

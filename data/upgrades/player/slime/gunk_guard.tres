@@ -7,7 +7,7 @@ script = ExtResource("1_mfhi2")
 name = "GUNK GUARD"
 id = ""
 description = "After vacuuming a {GREEN} enemy: 
-Gain a shield that can take 2 hits.  Your run is slower."
+Gain a shield that can take 2 hits. "
 custom_data = {
 "hp": 2,
 "run_speed_multiplier": 0.8

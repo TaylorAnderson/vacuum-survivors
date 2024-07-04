@@ -7,7 +7,7 @@ func _ready():
 	pass # Replace with function body.
 
 func on_enter():
-	await get_tree().create_timer(0.1).timeout;
+	await get_tree().create_timer(0.3).timeout;
 	animation_player.play("intro");
 	await animation_player.animation_finished
 	can_exit_screen = true;

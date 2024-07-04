@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://pwbhtsol03d3"
+path="res://.godot/imported/The moon and the sea.ogg-70ab72136d56b58e1b14c2893a1a1219.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/sfx/The moon and the sea.ogg"
+dest_files=["res://.godot/imported/The moon and the sea.ogg-70ab72136d56b58e1b14c2893a1a1219.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

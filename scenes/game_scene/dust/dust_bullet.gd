@@ -4,11 +4,15 @@ class_name DustBullet
 var velocity:Vector2 = Vector2.ZERO;
 var current_element:Data.Element;
 var instigator;
+@onready var trail = $Trail
 
 @onready var lightning_anim = $LightningAnim
 @onready var fire_anim = $FireAnim
 @onready var slime_anim = $SlimeAnim
 
+
+var trail_queue:Array = [];
+var max_length = 20;
 signal object_hit(object);
 
 # Called when the node enters the scene tree for the first time.
@@ -20,11 +24,11 @@ func _process(delta):
 
 func shoot(instigator, shoot_vel:Vector2):
 	self.instigator = instigator;
-	rotation = shoot_vel.angle();
 	velocity = shoot_vel;
 
 func set_element(element:Data.Element):
-	#modulate = Data.colors[element]
+	self_modulate = Data.colors[element]
+	trail.modulate = Data.colors[element]
 	current_element = element;
 	if element == Data.Element.FIRE:
 		fire_anim.visible = true;

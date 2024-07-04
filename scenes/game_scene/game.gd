@@ -6,8 +6,6 @@ signal player_died();
 @onready var upgrade_screen = $CanvasLayer/UpgradeScreen
 
 
-func _ready():
-	pass;
 
 func _process(delta):
 	pass

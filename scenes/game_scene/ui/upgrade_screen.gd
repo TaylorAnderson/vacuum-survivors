@@ -2,6 +2,7 @@ extends Panel
 class_name UpgradeScreen
 @export var upgrade_cards:Array[UpgradeCard]
 @onready var animation_player = $AnimationPlayer
+@onready var option_selected = $OptionSelected
 
 var dungeon_evolution_interval = 5;
 var times_shown:int = 0;
@@ -16,6 +17,7 @@ func activate():
 	animation_player.play("level_up", -1, 1.2);
 	
 	visible = true;
+	print("pausing");
 	get_tree().paused = true;
 	var potential_upgrades = [];
 	
@@ -38,6 +40,7 @@ func activate():
 
 
 func _on_upgrade_selected(card:UpgradeCard):
+	option_selected.play();
 	Upgrades.add_upgrade(card.upgrade)
 	await card.finished_select_anim
 	get_tree().paused = false;
