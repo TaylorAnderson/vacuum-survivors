@@ -75,22 +75,24 @@ func _on_health_bar_value_changed(old_value, new_value):
 			$Vacuumable.resistance = stunned_vacuum_resistance;
 			$Vacuumable.can_be_eaten = true;
 		else:
-			can_be_vacuumed_anim.play("RESET")
+			
 			slime_death_sound.play();
+			
+			visible = false;
 			stunned = true;
-			death_anim.frame = 0;
+			
+			remove_child(death_anim)
+			get_parent().add_child(death_anim)
 			death_anim.play("default");
 			death_anim.global_position = global_position;
+			
 			remove_child(particle_explosion);
 			get_parent().add_child(particle_explosion);
 			particle_explosion.global_position = global_position;
 			particle_explosion.trigger();
+			
 			$Vacuumable.resistance = 1000;
 			$Vacuumable.can_be_eaten = false;
-			sprite.visible = false;
-			$StunAnim.visible = false;
-			$Bar.visible = false;
-			$Slimeable.visible = false;
 			remove_child($CollisionShape2D)
 			await death_anim.animation_finished;
 			queue_free();

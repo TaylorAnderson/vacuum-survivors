@@ -6,9 +6,6 @@ extends Node2D
 @export var amount_max:int = 10;
 @export var velocity_min:float = 200;
 @export var velocity_max:float = 300;
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
 
 func trigger():
 	var amount = randi_range(amount_min, amount_max)
@@ -17,4 +14,4 @@ func trigger():
 		call_deferred("add_child", new_particle);
 		new_particle.velocity = Vector2(randf_range(velocity_min, velocity_max), 0);
 		new_particle.velocity = new_particle.velocity.rotated(randf() * (PI*2))
-		
+

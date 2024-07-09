@@ -12,8 +12,8 @@ extends Node2D
 var health_multiplier = 1.0;
 @export var health_multiplier_increase = 0.1; 
 @export var min_spawn_distance_from_player = 100;
-var spawns:Array[Marker2D]
-var unused_spawns:Array[Marker2D]
+var spawns:Array
+var unused_spawns:Array
 
 var spawn_refresh_rate = 5;
 var spawn_refresh_rate_timer = 0;
@@ -30,9 +30,7 @@ func _process(delta):
 	if not done_initial_spawn:
 		done_initial_spawn = true;
 		$SpawnTimer.start($SpawnTimer.wait_time);
-		for row in $EnemySpawns.get_children():
-			for spawn in row.get_children():
-				spawns.append(spawn);
+		spawns += get_tree().get_nodes_in_group("slime_spawn")
 		unused_spawns = spawns;
 		for i in initial_spawn:
 			call_deferred("spawn_slime");
