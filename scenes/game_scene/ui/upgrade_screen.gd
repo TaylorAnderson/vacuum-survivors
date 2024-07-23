@@ -17,7 +17,6 @@ func activate():
 	animation_player.play("level_up", -1, 1.2);
 	
 	visible = true;
-	print("pausing");
 	get_tree().paused = true;
 	var potential_upgrades = [];
 	

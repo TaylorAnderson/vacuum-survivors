@@ -1,4 +1,5 @@
 extends Area2D
+class_name Dust;
 @onready var ray_cast = $RayCast2D
 
 var velocity:Vector2 = Vector2.ZERO;

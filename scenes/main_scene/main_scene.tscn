@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dpudi2skix1xp"]
+[gd_scene load_steps=28 format=3 uid="uid://dpudi2skix1xp"]
 
 [ext_resource type="PackedScene" uid="uid://ds3f6jlkv8oc0" path="res://scenes/game_scene/game.tscn" id="1_3uvcg"]
 [ext_resource type="Script" path="res://scenes/main_scene/main_scene.gd" id="1_nm1y2"]
@@ -13,6 +13,9 @@
 [ext_resource type="AudioStream" uid="uid://3io7kdw47egw" path="res://assets/audio/sfx/EXPLDsgn_Anime Explosion 7.wav" id="9_12ksj"]
 [ext_resource type="AudioStream" uid="uid://30r2gon6mcrb" path="res://assets/audio/music/Lo-Fi Wicker Cut 30.wav" id="10_fjmd2"]
 [ext_resource type="PackedScene" uid="uid://jg6wxfsjathk" path="res://scenes/leaderboard_scene/leaderboard.tscn" id="12_hiqbo"]
+[ext_resource type="Script" path="res://scenes/main_scene/end_of_day.gd" id="14_ba8a3"]
+[ext_resource type="PackedScene" uid="uid://chl76gss3p0et" path="res://scenes/eod_scene/invoice_line.tscn" id="14_hwslg"]
+[ext_resource type="PackedScene" uid="uid://c2fagr5ja8gkr" path="res://scenes/button.tscn" id="16_kthha"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nps30"]
 line_spacing = 0.0
@@ -217,6 +220,19 @@ font_size = 60
 outline_size = 32
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_284r8"]
+bg_color = Color(0, 0, 0, 0.964706)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_hxyyg"]
+color = Color(1, 1, 1, 1)
+thickness = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_2ooij"]
+font = ExtResource("7_srwor")
+font_size = 60
+outline_size = 32
+outline_color = Color(0, 0, 0, 1)
+
 [node name="MainScene" type="Node2D"]
 process_mode = 3
 script = ExtResource("1_nm1y2")
@@ -227,6 +243,7 @@ game_scene_file = ExtResource("1_3uvcg")
 [node name="Title" type="CanvasLayer" parent="."]
 process_mode = 3
 layer = 10
+visible = false
 script = ExtResource("3_pavwu")
 
 [node name="Panel" type="Panel" parent="Title"]
@@ -239,9 +256,9 @@ theme_override_styles/panel = ExtResource("4_pv5vu")
 
 [node name="VacuumImage" type="TextureRect" parent="Title"]
 offset_left = -333.0
-offset_top = -110.0
+offset_top = -1000.0
 offset_right = -13.0
-offset_bottom = 70.0
+offset_bottom = -820.0
 scale = Vector2(4, 4)
 texture = ExtResource("2_0ejoc")
 
@@ -251,9 +268,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -208.0
+offset_left = -1072.0
 offset_top = -165.0
-offset_right = 104.0
+offset_right = -760.0
 offset_bottom = -37.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -268,9 +285,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -152.0
+offset_left = 760.0
 offset_top = -65.0
-offset_right = 244.0
+offset_right = 1156.0
 offset_bottom = 63.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -280,6 +297,7 @@ text = "Survivors"
 label_settings = SubResource("LabelSettings_nps30")
 
 [node name="PressAnyButton" type="Label" parent="Title"]
+modulate = Color(1, 1, 1, 0)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -529,5 +547,143 @@ texture = ExtResource("8_xhll5")
 process_mode = 3
 visible = false
 
+[node name="EndOfDay" type="CanvasLayer" parent="." node_paths=PackedStringArray("income_line", "enemies_killed_line", "dust_remaining_line", "total_label", "title")]
+process_mode = 3
+layer = 2
+visible = false
+script = ExtResource("14_ba8a3")
+income_line = NodePath("Content/Invoice/Income")
+enemies_killed_line = NodePath("Content/Invoice/Enemies killed")
+dust_remaining_line = NodePath("Content/Invoice/Dust remaining")
+total_label = NodePath("Content/Invoice/Total/Total")
+title = NodePath("Content/Title")
+line_color_1 = Color(0.360784, 0.180392, 0.470588, 1)
+line_color_2 = Color(0.25098, 0.117647, 0.333333, 1)
+
+[node name="Content" type="Control" parent="EndOfDay"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="Panel" parent="EndOfDay/Content"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_284r8")
+
+[node name="Title" type="Control" parent="EndOfDay/Content"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Day" type="Label" parent="EndOfDay/Content/Title"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 40.0
+offset_right = 144.0
+offset_bottom = 231.0
+grow_horizontal = 2
+text = "Day"
+label_settings = SubResource("LabelSettings_65721")
+vertical_alignment = 1
+
+[node name="Over" type="Label" parent="EndOfDay/Content/Title"]
+modulate = Color(0.360784, 0.180392, 0.470588, 1)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 210.0
+offset_right = 362.0
+offset_bottom = 231.0
+grow_horizontal = 2
+text = "Over"
+label_settings = SubResource("LabelSettings_65721")
+vertical_alignment = 1
+
+[node name="Invoice" type="VBoxContainer" parent="EndOfDay/Content"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 41.0
+offset_top = 200.0
+offset_right = 41.0
+offset_bottom = 516.0
+grow_horizontal = 2
+
+[node name="Income" parent="EndOfDay/Content/Invoice" instance=ExtResource("14_hwslg")]
+visible = false
+layout_mode = 2
+count_interval = 1
+
+[node name="Enemies killed" parent="EndOfDay/Content/Invoice" instance=ExtResource("14_hwslg")]
+visible = false
+layout_mode = 2
+count_interval = 1
+title = "Enemies killed:"
+
+[node name="Dust remaining" parent="EndOfDay/Content/Invoice" node_paths=PackedStringArray("title_label") instance=ExtResource("14_hwslg")]
+visible = false
+modulate = Color(0.886275, 0.239216, 0.411765, 1)
+layout_mode = 2
+title_label = NodePath("../Total/Label")
+count_interval = 10
+negative = true
+title = "Dust remaining"
+
+[node name="Control" type="Control" parent="EndOfDay/Content/Invoice"]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="EndOfDay/Content/Invoice"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+theme_override_constants/separation = 10
+theme_override_styles/separator = SubResource("StyleBoxLine_hxyyg")
+
+[node name="Total" type="HBoxContainer" parent="EndOfDay/Content/Invoice"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="EndOfDay/Content/Invoice/Total"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+text = "Total:"
+label_settings = SubResource("LabelSettings_2ooij")
+
+[node name="Calculation_Spacer" type="Control" parent="EndOfDay/Content/Invoice/Total"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="EndOfDay/Content/Invoice/Total"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="Total" type="Label" parent="EndOfDay/Content/Invoice/Total"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "0.00"
+label_settings = SubResource("LabelSettings_2ooij")
+
+[node name="ShopButton" parent="EndOfDay/Content" instance=ExtResource("16_kthha")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 511.0
+offset_top = 543.0
+offset_right = 822.0
+offset_bottom = 678.0
+grow_horizontal = 1
+grow_vertical = 1
+text = "Shop"
+disable_on_click = true
+
+[connection signal="day_over" from="Game" to="." method="_on_game_day_over"]
 [connection signal="pressed" from="GameOver/ScoreSubmit/SubmitScoreBtn" to="GameOver" method="_on_submit_score_btn_pressed"]
 [connection signal="leaderboard_closed" from="Leaderboard" to="." method="_on_leaderboard_leaderboard_closed"]

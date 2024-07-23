@@ -75,7 +75,7 @@ func _on_health_bar_value_changed(old_value, new_value):
 			$Vacuumable.resistance = stunned_vacuum_resistance;
 			$Vacuumable.can_be_eaten = true;
 		else:
-			
+			Events.monster_killed.emit(self);
 			slime_death_sound.play();
 			
 			visible = false;

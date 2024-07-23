@@ -3,6 +3,7 @@ extends Node2D
 enum State {
 	TITLE,
 	GAME,
+	END_DAY,
 	GAME_OVER,
 	LEADERBOARD,
 }
@@ -11,11 +12,13 @@ enum State {
 @onready var game_scene = $Game
 @onready var game_over_scene = $GameOver
 @onready var leaderboard_scene = $Leaderboard
-
+@onready var end_of_day_scene = $EndOfDay
 var state:State;
 var state_scenes = {};
 @onready var intro_anim = $Title/AnimationPlayer
 
+
+var fake_invoice_data:Game.InvoiceData = Game.InvoiceData.new();
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
@@ -28,11 +31,16 @@ func _ready():
 	SilentWolf.configure_scores({
 		"open_scene_on_close": "res://scenes/main_scene/main_scene.tscn"
 	})
+	
 	state_scenes[State.TITLE] = title_scene;
 	state_scenes[State.GAME] = game_scene;
 	state_scenes[State.GAME_OVER] = game_over_scene;
 	state_scenes[State.LEADERBOARD] = leaderboard_scene;
+	state_scenes[State.END_DAY] = end_of_day_scene;
+	
 	change_state(State.TITLE);
+	
+	
 	var config = ConfigFile.new()
 	# Load data from a file.
 	var err = config.load("user://name.cfg")
@@ -45,8 +53,9 @@ func _ready():
 			if sw_result.has("top_score"):
 				Score.high_score = sw_result.top_score.score;
 				print("Got top player score: " + str(sw_result.top_score))
+	Events.day_over.connect(_on_game_day_over);
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+	
 func _process(delta):
 	if state == State.TITLE or state == State.GAME_OVER:
 		if state_scenes[state].can_exit_screen:
@@ -55,13 +64,12 @@ func _process(delta):
 			if Input.is_action_just_pressed("go_to_leaderboard"):
 				change_state(State.LEADERBOARD);
 
-
-
 func change_state(new_state:State):
 	var old_state = state;
 	state = new_state;
 	
-	state_scenes[old_state].visible = false;
+	if old_state != State.GAME:
+		state_scenes[old_state].visible = false;
 	state_scenes[new_state].visible = true;
 	
 	
@@ -73,7 +81,6 @@ func change_state(new_state:State):
 	if new_state == State.GAME_OVER:
 		get_tree().paused = true;
 	if new_state == State.GAME:
-		print("unpausing");
 		get_tree().paused = false;
 		game_scene.queue_free();
 		game_scene = game_scene_file.instantiate();
@@ -81,17 +88,19 @@ func change_state(new_state:State):
 		state_scenes[State.GAME] = game_scene;
 		add_child(game_scene);
 		Upgrades.reset();
-		
-
-		$Game/Player.visible = true;
+	if new_state == State.END_DAY:
+		get_tree().paused = true;
 	if new_state == State.LEADERBOARD:
 		leaderboard_scene.set_process(true);
 	
 func _on_game_player_died():
 	await get_tree().create_timer(2).timeout
-	get_tree().paused = true;
 	change_state(State.GAME_OVER);
 
+func _on_game_day_over(data):
+	print("receiving game day over from game");
+	end_of_day_scene.init(data);
+	change_state(State.END_DAY)
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
@@ -100,3 +109,6 @@ func _input(event):
 
 func _on_leaderboard_leaderboard_closed():
 	change_state(State.TITLE);
+
+
+

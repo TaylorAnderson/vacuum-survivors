@@ -36,7 +36,7 @@ var shot_queued = false;
 signal hp_lost(new_hp);
 signal xp_gained(xp_gained);
 signal element_changed(old_element, new_element)
-
+signal dust_collected();
 var invicibility_time = 2;
 var invincibility_timer = 0;
 var invisible_ticker = 0;
@@ -132,9 +132,12 @@ func _on_vacuum_area_vacuumed_object(object):
 	vacuum_bar.add_value(vacuumable.value)
 	if elemental:
 		set_element(elemental.element_type);
-	
+	if object is Dust:
+		dust_collected.emit();
 	if object is ScoreParticle:
 		xp_gained.emit(object.value);
+	if object is Slime:
+		Events.monster_killed.emit(object);
 
 func _on_hitbox_body_entered(body):
 	if body is Slime and invincibility_timer <= 0:
