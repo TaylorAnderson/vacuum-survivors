@@ -13,3 +13,4 @@ custom_data = {
 "extra_forks": 1
 }
 pre_req = ExtResource("1_62ptx")
+type = 0

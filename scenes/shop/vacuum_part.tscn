@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://eiowxvl1eblo"]
+
+[ext_resource type="Shader" path="res://scenes/shop/vacuum_part.gdshader" id="1_2ii7e"]
+[ext_resource type="Texture2D" uid="uid://b7nv8v6sh03m0" path="res://assets/sprites/vacuum_shop/vacuum_part_nozzle.png" id="1_8jt2q"]
+[ext_resource type="Script" path="res://scenes/shop/vacuum_part.gd" id="3_ane2e"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tt0wv"]
+resource_local_to_scene = true
+shader = ExtResource("1_2ii7e")
+shader_parameter/selected = true
+shader_parameter/deselect_color = Color(0.223529, 0.223529, 0.223529, 1)
+
+[node name="VacuumPart" type="TextureRect"]
+material = SubResource("ShaderMaterial_tt0wv")
+offset_left = 137.75
+offset_top = 14.0
+offset_right = 187.75
+offset_bottom = 54.0
+texture = ExtResource("1_8jt2q")
+stretch_mode = 4
+script = ExtResource("3_ane2e")

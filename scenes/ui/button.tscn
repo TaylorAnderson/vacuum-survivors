@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://c2fagr5ja8gkr"]
+
+[ext_resource type="Theme" uid="uid://bdun18kpba8kr" path="res://themes/default_theme.tres" id="1_cg0fx"]
+[ext_resource type="Script" path="res://scenes/ui/button.gd" id="2_geef3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_plm0c"]
+bg_color = Color(0.921569, 0.541176, 0.376471, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tr4ry"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="Button" type="Button"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -102.0
+offset_top = -53.0
+offset_right = 102.0
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_cg0fx")
+theme_override_font_sizes/font_size = 64
+text = "Button"
+script = ExtResource("2_geef3")
+
+[node name="Underline" type="Panel" parent="."]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = 17.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_plm0c")
+
+[node name="FlashWhite" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tr4ry")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

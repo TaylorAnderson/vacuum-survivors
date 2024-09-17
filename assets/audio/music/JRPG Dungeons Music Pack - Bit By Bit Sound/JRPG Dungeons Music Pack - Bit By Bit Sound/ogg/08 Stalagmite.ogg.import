@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dy2mkylrg0vks"
+path="res://.godot/imported/08 Stalagmite.ogg-5b9bcf7424a382daba554787562ce218.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/music/JRPG Dungeons Music Pack - Bit By Bit Sound/JRPG Dungeons Music Pack - Bit By Bit Sound/ogg/08 Stalagmite.ogg"
+dest_files=["res://.godot/imported/08 Stalagmite.ogg-5b9bcf7424a382daba554787562ce218.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://c2ag0v0u0ssmq"]
+
+[ext_resource type="Script" path="res://scenes/game/upgrades/slime/gunk_guard.gd" id="1_8atfq"]
+[ext_resource type="Resource" uid="uid://dk0avrf8wuncf" path="res://data/upgrades/player/slime/gunk_guard.tres" id="2_3wb2r"]
+[ext_resource type="Texture2D" uid="uid://c5qwclorrybo4" path="res://assets/sprites/gunk_guard.png" id="3_0rnjj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3aelq"]
+radius = 13.0
+
+[node name="GunkGuard" type="Node2D"]
+script = ExtResource("1_8atfq")
+data = ExtResource("2_3wb2r")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+z_index = 2
+texture = ExtResource("3_0rnjj")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 12
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_3aelq")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

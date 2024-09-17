@@ -5,7 +5,8 @@
 [resource]
 script = ExtResource("1_kujxv")
 name = "SLIME TRAIL"
-id = ""
+id = &"slime_trail"
 description = "When vacuum is {GREEN}:
 A trail of slime follows behind you, slowing down any enemies that come in contact."
 custom_data = {}
+type = 0

@@ -1,8 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://cm744ofv7frkx"]
-
-[ext_resource type="Script" path="res://scenes/game_scene/elements/slime/slime_trail.gd" id="1_v7gb4"]
-[ext_resource type="PackedScene" uid="uid://tmac37p8wqdi" path="res://scenes/game_scene/elements/slime/slime_puddle.tscn" id="2_n0vtx"]
-
-[node name="SlimeTrail" type="Node2D"]
-script = ExtResource("1_v7gb4")
-slime_puddle_scene = ExtResource("2_n0vtx")

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ShopUpgradeData" load_steps=2 format=3 uid="uid://fjd6rxujqk5c"]
+
+[ext_resource type="Script" path="res://data/shop_upgrade_data.gd" id="1_iovcc"]
+
+[resource]
+script = ExtResource("1_iovcc")
+start_price = 100
+price_multiplier = 1.35
+stat_multiplier = 1.25
+name = "Stagger
+engine"
+id = &"stagger_engine"
+description = "Fire rate + 25%"
+custom_data = {}
+type = 1

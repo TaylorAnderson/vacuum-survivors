@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://w7qtx1hpsqyh"
+path="res://.godot/imported/06 Crystal Mine.ogg-08be8e19b244f94c016e753fde70ddff.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/music/JRPG Dungeons Music Pack - Bit By Bit Sound/JRPG Dungeons Music Pack - Bit By Bit Sound/ogg/06 Crystal Mine.ogg"
+dest_files=["res://.godot/imported/06 Crystal Mine.ogg-08be8e19b244f94c016e753fde70ddff.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

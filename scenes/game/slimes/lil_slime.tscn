@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://ix5svtfpmtpj"]
+
+[ext_resource type="PackedScene" uid="uid://deypg4htvxsn3" path="res://scenes/game/slimes/slime.tscn" id="1_xv4q0"]
+
+[node name="LilSlime" instance=ExtResource("1_xv4q0")]
+scale = Vector2(0.5, 0.5)
+speed = 500.0
+stunned_vacuum_resistance = 100.0
+
+[node name="Vacuumable" parent="." index="3"]
+value = 3
+
+[node name="HealthBar" parent="." index="4"]
+max = 5
+value = 5
+
+[node name="Joltable" parent="." index="6"]
+z_index = 5
+
+[node name="ShapeCast2D" parent="Behaviours/FireMovement" index="0"]
+target_position = Vector2(8, 0)

@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://camsj1j4mgjkt"]
+
+[ext_resource type="Texture2D" uid="uid://c7e4kiapujopi" path="res://assets/sprites/ui/speech_bubble_nineslice.png" id="1_6vc7t"]
+[ext_resource type="Script" path="res://scenes/shop/upgrade_node.gd" id="1_8flxy"]
+[ext_resource type="Texture2D" uid="uid://dj0co0aohtk6y" path="res://assets/sprites/ui/upgrade-dot.png" id="2_uefv7"]
+
+[node name="UpgradeNode" type="Control"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_8flxy")
+
+[node name="SpriteDefault" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(20, 20)
+texture = ExtResource("1_6vc7t")
+
+[node name="SpriteChecked" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(20, 20)
+texture = ExtResource("2_uefv7")

@@ -91,7 +91,7 @@ func add_item(player_name: String, score_value: int) -> void:
 	var item = ScoreItem.instantiate()
 	list_index += 1
 	item.get_node("PlayerName").text = "[center]" + str(list_index) + str(". ") + player_name + "[/center]"
-	item.get_node("Score").text = Format.time(score_value);
+	item.get_node("Score").text = str(score_value);
 	item.offset_top = list_index * 100
 	$"Board/HighScores/ScoreItemContainer".add_child(item)
 

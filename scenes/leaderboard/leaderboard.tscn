@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://jg6wxfsjathk"]
+
+[ext_resource type="PackedScene" uid="uid://b2h8ok8yfc7wb" path="res://addons/silent_wolf/Scores/Leaderboard.tscn" id="1_fdesq"]
+[ext_resource type="PackedScene" uid="uid://c0qopxvm2fexc" path="res://scenes/leaderboard/score_item.tscn" id="2_rakxg"]
+[ext_resource type="StyleBox" uid="uid://cf8tl47h7hr6f" path="res://themes/bg_panel.tres" id="3_uuu2i"]
+[ext_resource type="FontFile" uid="uid://b4xoqxqjsmru" path="res://assets/fonts/Yesterday 10.ttf" id="4_j6ocr"]
+[ext_resource type="Script" path="res://scenes/leaderboard/leaderboard_listener.gd" id="5_1w2s3"]
+[ext_resource type="Theme" uid="uid://bdun18kpba8kr" path="res://themes/default_theme.tres" id="5_de25x"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_070ya"]
+font = ExtResource("4_j6ocr")
+font_size = 128
+
+[node name="Leaderboard" instance=ExtResource("1_fdesq")]
+ScoreItem = ExtResource("2_rakxg")
+
+[node name="Panel" type="Panel" parent="." index="0"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("3_uuu2i")
+
+[node name="Board" parent="." index="2"]
+mouse_filter = 2
+
+[node name="Label" parent="Board/TitleContainer" index="0"]
+label_settings = SubResource("LabelSettings_070ya")
+
+[node name="CloseButton" parent="Board/CloseButtonContainer" index="0"]
+theme = ExtResource("5_de25x")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 48
+
+[node name="LeaderboardStateChange" type="Node2D" parent="." index="3"]
+script = ExtResource("5_1w2s3")
+
+[connection signal="leaderboard_closed" from="." to="LeaderboardStateChange" method="_on_leaderboard_leaderboard_closed"]

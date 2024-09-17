@@ -6,7 +6,8 @@
 [resource]
 script = ExtResource("1_0lj41")
 name = "OIL TRAIL"
-id = ""
+id = &"oil_trail"
 description = "Slime trails can be lit on fire."
 custom_data = {}
 pre_req = ExtResource("1_aq8gs")
+type = 0

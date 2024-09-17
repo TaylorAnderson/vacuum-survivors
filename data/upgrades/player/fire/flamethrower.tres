@@ -5,12 +5,14 @@
 [resource]
 script = ExtResource("1_vylgl")
 name = "FLAMETHROWER"
-id = "flamethrower"
+id = &"flamethrower"
 description = "Fire does more damage, but bullets do less damage.
 When vacuum is RED:
 Much faster fire rate.
 "
 custom_data = {
+"bullet_damage_debuff": 0.75,
 "fire_damage_multiplier": 1.6,
 "fire_rate_multiplier": 1.5
 }
+type = 0

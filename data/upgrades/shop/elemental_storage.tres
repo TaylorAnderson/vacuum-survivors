@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ShopUpgradeData" load_steps=2 format=3 uid="uid://t3uuiawbb3ba"]
+
+[ext_resource type="Script" path="res://data/shop_upgrade_data.gd" id="1_j6nr4"]
+
+[resource]
+script = ExtResource("1_j6nr4")
+start_price = 100
+price_multiplier = 1.35
+stat_multiplier = 1.25
+name = "Element 
+extractor"
+id = &"element_extractor"
+description = "Element strength + 25%"
+custom_data = {}
+type = 0

@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://d1bfmdsnal6pj"]
-
-[ext_resource type="Script" path="res://scenes/game_scene/vacuum/vacuumable.gd" id="1_fd6v5"]
-
-[node name="Vacuumable" type="Node"]
-script = ExtResource("1_fd6v5")

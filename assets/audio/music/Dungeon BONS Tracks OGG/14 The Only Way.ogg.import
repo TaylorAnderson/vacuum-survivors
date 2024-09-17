@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bfnlhpvfrhuxm"
+path="res://.godot/imported/14 The Only Way.ogg-000fe5687f5178859bf458ca3191cea6.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/music/Dungeon BONS Tracks OGG/14 The Only Way.ogg"
+dest_files=["res://.godot/imported/14 The Only Way.ogg-000fe5687f5178859bf458ca3191cea6.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

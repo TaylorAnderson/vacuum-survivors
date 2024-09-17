@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bjwbyxqbsagbf"
+path="res://.godot/imported/09 From The Darkness.ogg-775a636c66c4670b8d91f614ffbce89f.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/music/JRPG Dungeons Music Pack - Bit By Bit Sound/JRPG Dungeons Music Pack - Bit By Bit Sound/ogg/09 From The Darkness.ogg"
+dest_files=["res://.godot/imported/09 From The Darkness.ogg-775a636c66c4670b8d91f614ffbce89f.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

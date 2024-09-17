@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ShopUpgradeData" load_steps=2 format=3 uid="uid://dtfgdwnc4rhu3"]
+
+[ext_resource type="Script" path="res://data/shop_upgrade_data.gd" id="1_1ejbh"]
+
+[resource]
+script = ExtResource("1_1ejbh")
+start_price = 100
+price_multiplier = 1.35
+stat_multiplier = 1.25
+name = "Flared Nozzle"
+id = &"flared_nozzle"
+description = "Suck radius + 25%"
+custom_data = {}
+type = 1

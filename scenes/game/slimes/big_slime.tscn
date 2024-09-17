@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://bckuh2ooj6ye6"]
+
+[ext_resource type="PackedScene" uid="uid://deypg4htvxsn3" path="res://scenes/game/slimes/slime.tscn" id="1_kadty"]
+
+[node name="BigSlime" instance=ExtResource("1_kadty")]
+scale = Vector2(2, 2)
+speed = 400.0
+stunned_vacuum_resistance = 250.0
+
+[node name="Vacuumable" parent="." index="3"]
+value = 20
+
+[node name="HealthBar" parent="." index="4"]
+max = 30
+value = 30
+
+[node name="ShapeCast2D" parent="Behaviours/FireMovement" index="0"]
+target_position = Vector2(8.5, -0.5)

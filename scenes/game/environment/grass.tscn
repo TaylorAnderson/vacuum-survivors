@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://deyxywylxkd01"]
+
+[ext_resource type="Texture2D" uid="uid://ds84so5rh8jgu" path="res://assets/sprites/grass.png" id="1_w4o6y"]
+[ext_resource type="PackedScene" uid="uid://c6ou3wr6f8c2n" path="res://scenes/game/elements/fire/flammable.tscn" id="2_17l80"]
+[ext_resource type="PackedScene" uid="uid://ridxevwf7yqc" path="res://scenes/game/ui/bar.tscn" id="3_w6314"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jcsge"]
+size = Vector2(16, 16)
+
+[node name="Grass" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_w4o6y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("RectangleShape2D_jcsge")
+
+[node name="Flammable" parent="." instance=ExtResource("2_17l80")]
+visible = false
+position = Vector2(1, -2)
+
+[node name="Bar" parent="." instance=ExtResource("3_w6314")]
+visible = false
+modulate = Color(1, 1, 1, 0)
+position = Vector2(0, -8)
+max = 100
+value = 100
+can_kill_parent = true
+is_health_bar = true

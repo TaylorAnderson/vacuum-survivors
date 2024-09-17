@@ -1,0 +1,104 @@
+[gd_scene load_steps=8 format=3 uid="uid://cch04xxtrgb4n"]
+
+[ext_resource type="Script" path="res://scenes/title/title.gd" id="1_tou0s"]
+[ext_resource type="StyleBox" uid="uid://cf8tl47h7hr6f" path="res://themes/bg_panel.tres" id="2_oopg7"]
+[ext_resource type="Texture2D" uid="uid://c2m3sagnev7wk" path="res://assets/sprites/ui/title_bg.png" id="3_mf0os"]
+[ext_resource type="FontFile" uid="uid://ciiy36m75xpe5" path="res://assets/fonts/Urban 20 Basic.ttf" id="4_dnlto"]
+[ext_resource type="PackedScene" uid="uid://c2fagr5ja8gkr" path="res://scenes/ui/button.tscn" id="5_61006"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nps30"]
+line_spacing = 0.0
+font = ExtResource("4_dnlto")
+font_size = 160
+outline_size = 32
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sijfh"]
+bg_color = Color(1, 1, 1, 0)
+
+[node name="Title" type="CanvasLayer"]
+process_mode = 3
+layer = 10
+script = ExtResource("1_tou0s")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("2_oopg7")
+
+[node name="VacuumImage" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -138.0
+offset_top = -246.0
+offset_right = -25.0
+offset_bottom = -111.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+texture = ExtResource("3_mf0os")
+
+[node name="Vacuum" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -255.0
+offset_top = -189.0
+offset_right = 135.0
+offset_bottom = -29.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "Vacuum"
+label_settings = SubResource("LabelSettings_nps30")
+
+[node name="Survivors" type="Label" parent="."]
+modulate = Color(0.345098, 0.0941176, 0.494118, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -188.0
+offset_top = -80.0
+offset_right = 307.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 128
+text = "Survivors"
+label_settings = SubResource("LabelSettings_nps30")
+
+[node name="WhiteFlash" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_sijfh")
+metadata/_edit_lock_ = true
+
+[node name="SoundPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -5.0
+
+[node name="Button" parent="." instance=ExtResource("5_61006")]
+anchors_preset = 7
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -182.0
+offset_top = -148.0
+offset_right = 182.0
+offset_bottom = -42.0
+grow_vertical = 0
+text = "Play"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

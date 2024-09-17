@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c45p67wgd5tko"
+path="res://.godot/imported/04 The Underground.ogg-c314fd387393716ad60d0611bb412951.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/music/JRPG Dungeons Music Pack - Bit By Bit Sound/JRPG Dungeons Music Pack - Bit By Bit Sound/ogg/04 The Underground.ogg"
+dest_files=["res://.godot/imported/04 The Underground.ogg-c314fd387393716ad60d0611bb412951.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

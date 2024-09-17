@@ -6,10 +6,11 @@
 [resource]
 script = ExtResource("1_svep8")
 name = "SPIKE GUARD"
-id = ""
+id = &"spike_guard"
 description = "Gunk Guard takes 3 hits and damages enemies when touched"
 custom_data = {
 "damage": 10,
 "hp": 3
 }
 pre_req = ExtResource("1_6tpft")
+type = 0

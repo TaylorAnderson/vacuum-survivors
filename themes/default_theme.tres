@@ -1,0 +1,44 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://bdun18kpba8kr"]
+
+[ext_resource type="FontFile" uid="uid://b4xoqxqjsmru" path="res://assets/fonts/Yesterday 10.ttf" id="1_1djed"]
+[ext_resource type="StyleBox" uid="uid://b7v802ai0jar" path="res://themes/button_disabled_stylebox.tres" id="2_vejkc"]
+[ext_resource type="StyleBox" uid="uid://djkersprxka0k" path="res://themes/button_default_stylebox.tres" id="3_hnpqy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fg42g"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8v8d4"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.76662, 0.76662, 0.766619, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iansj"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.122252, 0.122252, 0.122252, 1)
+
+[resource]
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_disabled_color = Color(1, 1, 1, 0.490196)
+Button/font_sizes/font_size = 48
+Button/fonts/font = ExtResource("1_1djed")
+Button/styles/disabled = ExtResource("2_vejkc")
+Button/styles/focus = ExtResource("3_hnpqy")
+Button/styles/hover = ExtResource("3_hnpqy")
+Button/styles/normal = ExtResource("3_hnpqy")
+Button/styles/pressed = ExtResource("3_hnpqy")
+LineEdit/font_sizes/font_size = 48
+LineEdit/fonts/font = ExtResource("1_1djed")
+LineEdit/styles/focus = SubResource("StyleBoxFlat_fg42g")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_8v8d4")
+LineEdit/styles/read_only = SubResource("StyleBoxFlat_iansj")

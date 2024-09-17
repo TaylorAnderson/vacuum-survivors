@@ -1,0 +1,132 @@
+{
+	"categories": [
+		{
+			"uuid": "5df0d99d-44b7-4a8b-a1b1-854784fc4fd4",
+			"title": "Task",
+			"color": "70bafa"
+		}
+	],
+	"stages": [
+		{
+			"uuid": "9a099e99-c430-4988-b4d1-e4d82394c15b",
+			"title": "Todo",
+			"tasks": [
+				"891768c3-5697-4e36-afb7-187b00128614"
+			]
+		},
+		{
+			"uuid": "f7379ba4-8b2f-4d04-ac9e-18cdc49bf441",
+			"title": "Doing",
+			"tasks": [
+				"20a40308-5581-46f0-b2b3-c550c4af2848"
+			]
+		},
+		{
+			"uuid": "6e229327-2f48-4adb-b1f7-ed058a4ad6e2",
+			"title": "Done",
+			"tasks": [
+				"1e315ecc-3133-40a3-8029-f77b9580d50b",
+				"5f9037d8-09eb-46c2-8451-bf9495adbf8b",
+				"daa9c876-c1e4-429f-b7dd-bb2dc1aecab7",
+				"446fe03a-58f0-4563-8925-e93882ce1599",
+				"f86007c3-0ce2-41c8-b521-fac3c29b9bb4",
+				"d0651c7b-6e7e-467c-afcc-cb6ac480e7e2",
+				"1a0f15c9-042a-452a-bda0-6b53b03b7fa9",
+				"eb943f41-2021-46a6-99ce-e603c424db70",
+				"fa35b6e1-2256-47aa-9657-4473b49d81b6"
+			]
+		}
+	],
+	"tasks": [
+		{
+			"uuid": "446fe03a-58f0-4563-8925-e93882ce1599",
+			"title": "add levelup effect to player",
+			"description": "and hook up the sfx for it too",
+			"category": "5df0d99d-44b7-4a8b-a1b1-854784fc4fd4",
+			"steps": []
+		},
+		{
+			"uuid": "f86007c3-0ce2-41c8-b521-fac3c29b9bb4",
+			"title": "do a full run of the game",
+			"description": "testing for bugs, if it's fun, if it works, etc.",
+			"category": "5df0d99d-44b7-4a8b-a1b1-854784fc4fd4",
+			"steps": []
+		},
+		{
+			"uuid": "eb943f41-2021-46a6-99ce-e603c424db70",
+			"title": "fix spawn interval",
+			"description": "every day it should get a little lower",
+			"category": "5df0d99d-44b7-4a8b-a1b1-854784fc4fd4",
+			"steps": []
+		},
+		{
+			"uuid": "1a0f15c9-042a-452a-bda0-6b53b03b7fa9",
+			"title": "fix upgrades ",
+			"description": "the upgrade screen can present upgrades you already have\n",
+			"category": "5df0d99d-44b7-4a8b-a1b1-854784fc4fd4",
+			"steps": []
+		},
+		{
+			"uuid": "d0651c7b-6e7e-467c-afcc-cb6ac480e7e2",
+			"title": "implement curses",
+			"description": "it's basically an upgrade in reverse",
+			"category": "5df0d99d-44b7-4a8b-a1b1-854784fc4fd4",
+			"steps": []
+		},
+		{
+			"uuid": "fa35b6e1-2256-47aa-9657-4473b49d81b6",
+			"title": "get leaderboard stuff working",
+			"description": "including putting score and best score into the game over screen, and the textbox back to submit your score",
+			"category": "5df0d99d-44b7-4a8b-a1b1-854784fc4fd4",
+			"steps": []
+		},
+		{
+			"uuid": "daa9c876-c1e4-429f-b7dd-bb2dc1aecab7",
+			"title": "reduce dmg of tnt explosions",
+			"description": "",
+			"category": "5df0d99d-44b7-4a8b-a1b1-854784fc4fd4",
+			"steps": []
+		},
+		{
+			"uuid": "20a40308-5581-46f0-b2b3-c550c4af2848",
+			"title": "fix performance issues",
+			"description": "",
+			"category": "5df0d99d-44b7-4a8b-a1b1-854784fc4fd4",
+			"steps": []
+		},
+		{
+			"uuid": "1e315ecc-3133-40a3-8029-f77b9580d50b",
+			"title": "take a look at fork lightning - unsure if its doing its job",
+			"description": "",
+			"category": "5df0d99d-44b7-4a8b-a1b1-854784fc4fd4",
+			"steps": []
+		},
+		{
+			"uuid": "5f9037d8-09eb-46c2-8451-bf9495adbf8b",
+			"title": "change up behaviour of the different slimes",
+			"description": "",
+			"category": "5df0d99d-44b7-4a8b-a1b1-854784fc4fd4",
+			"steps": []
+		},
+		{
+			"uuid": "891768c3-5697-4e36-afb7-187b00128614",
+			"title": "implement devil character",
+			"description": "",
+			"category": "5df0d99d-44b7-4a8b-a1b1-854784fc4fd4",
+			"steps": []
+		}
+	],
+	"layout": {
+		"columns": [
+			[
+				"9a099e99-c430-4988-b4d1-e4d82394c15b"
+			],
+			[
+				"f7379ba4-8b2f-4d04-ac9e-18cdc49bf441"
+			],
+			[
+				"6e229327-2f48-4adb-b1f7-ed058a4ad6e2"
+			]
+		]
+	}
+}

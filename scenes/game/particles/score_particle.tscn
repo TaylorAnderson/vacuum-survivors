@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvq8uxvopg1vr"]
+
+[ext_resource type="Script" path="res://scenes/game/particles/score_particle.gd" id="1_5ljpq"]
+[ext_resource type="Texture2D" uid="uid://dfqoslx3wmxsi" path="res://assets/sprites/particle.png" id="2_tk85d"]
+[ext_resource type="PackedScene" uid="uid://d1bfmdsnal6pj" path="res://scenes/game/vacuum/vacuumable.tscn" id="3_wsc4l"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hrtrm"]
+radius = 2.31447
+
+[node name="ScoreParticle" type="Area2D"]
+z_index = -10
+collision_layer = 2
+script = ExtResource("1_5ljpq")
+color1 = Color(1, 1, 1, 1)
+color2 = Color(0.298039, 0.505882, 0.984314, 1)
+color_swap_interval = 0.2
+lifetime = 20.0
+flicker_time = 5.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_hrtrm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_tk85d")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, 10)
+
+[node name="Vacuumable" parent="." instance=ExtResource("3_wsc4l")]
+value = 0

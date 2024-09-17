@@ -6,7 +6,8 @@
 [resource]
 script = ExtResource("2_das7y")
 name = "TNT CANISTER"
-id = "tnt_canister"
+id = &"tnt_canister"
 description = "Fire bullets explode on impact."
 custom_data = {}
 pre_req = ExtResource("1_0sesl")
+type = 0

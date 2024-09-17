@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="UpgradeData" load_steps=2 format=3 uid="uid://d1ce000ds26n2"]
+
+[ext_resource type="Script" path="res://data/upgrade_data.gd" id="1_1a0vn"]
+
+[resource]
+script = ExtResource("1_1a0vn")
+name = "ELECTRICAL DISCHARGE"
+id = &"electrical_discharge"
+description = "When you fire a lightning bullet, you also damage enemies around you.
+"
+custom_data = {
+"damage": 5.0
+}
+type = 0

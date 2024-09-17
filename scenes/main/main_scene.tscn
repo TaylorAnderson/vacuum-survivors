@@ -1,0 +1,29 @@
+[gd_scene load_steps=11 format=3 uid="uid://dpudi2skix1xp"]
+
+[ext_resource type="PackedScene" uid="uid://ds3f6jlkv8oc0" path="res://scenes/game/game.tscn" id="1_3uvcg"]
+[ext_resource type="Script" path="res://scenes/main/main_scene.gd" id="1_nm1y2"]
+[ext_resource type="PackedScene" uid="uid://cch04xxtrgb4n" path="res://scenes/title/title_screen.tscn" id="3_pu32p"]
+[ext_resource type="AudioStream" uid="uid://c45p67wgd5tko" path="res://assets/audio/music/JRPG Dungeons Music Pack - Bit By Bit Sound/JRPG Dungeons Music Pack - Bit By Bit Sound/ogg/04 The Underground.ogg" id="8_61t5q"]
+[ext_resource type="Script" path="res://scenes/main/music_player.gd" id="9_g6jqq"]
+[ext_resource type="AudioStream" uid="uid://bvnnsti3mqk5m" path="res://assets/audio/music/JRPG Dungeons Music Pack - Bit By Bit Sound/JRPG Dungeons Music Pack - Bit By Bit Sound/ogg/02 Cave of the Dead.ogg" id="10_5gfd8"]
+[ext_resource type="PackedScene" uid="uid://cudr3a2h7mkaf" path="res://scenes/game_over/game_over_screen.tscn" id="11_q2uqf"]
+[ext_resource type="PackedScene" uid="uid://jg6wxfsjathk" path="res://scenes/leaderboard/leaderboard.tscn" id="12_hiqbo"]
+[ext_resource type="PackedScene" uid="uid://rjxwyafnno81" path="res://scenes/eod/end_of_day_screen.tscn" id="14_78dhm"]
+[ext_resource type="PackedScene" uid="uid://dkfrlbhaoopvd" path="res://scenes/shop/shop_screen.tscn" id="15_538n1"]
+
+[node name="MainScene" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_nm1y2")
+game_scene_file = ExtResource("1_3uvcg")
+title_scene_file = ExtResource("3_pu32p")
+eod_scene_file = ExtResource("14_78dhm")
+game_over_scene_file = ExtResource("11_q2uqf")
+shop_scene_file = ExtResource("15_538n1")
+leaderboard_scene_file = ExtResource("12_hiqbo")
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0
+autoplay = true
+script = ExtResource("9_g6jqq")
+game_track = ExtResource("8_61t5q")
+menu_track = ExtResource("10_5gfd8")

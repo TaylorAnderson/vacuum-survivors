@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d3woc47kyjj61"
+path="res://.godot/imported/01 Tower Ascent.ogg-b5f320e37f9ced39b0aad0694287d174.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/music/JRPG Dungeons Music Pack - Bit By Bit Sound/JRPG Dungeons Music Pack - Bit By Bit Sound/ogg/01 Tower Ascent.ogg"
+dest_files=["res://.godot/imported/01 Tower Ascent.ogg-b5f320e37f9ced39b0aad0694287d174.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

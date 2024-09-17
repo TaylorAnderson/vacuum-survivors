@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ShopUpgradeData" load_steps=2 format=3 uid="uid://dgayw7t40bgak"]
+
+[ext_resource type="Script" path="res://data/shop_upgrade_data.gd" id="1_5uon2"]
+
+[resource]
+script = ExtResource("1_5uon2")
+start_price = 100
+price_multiplier = 1.35
+stat_multiplier = 1.25
+name = "Powered
+wheels"
+id = &"powered_wheels"
+description = "Move speed + 25%"
+custom_data = {}
+type = 1

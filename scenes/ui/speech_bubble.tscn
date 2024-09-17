@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://dun2o0nyj54ve"]
+
+[ext_resource type="Texture2D" uid="uid://c7e4kiapujopi" path="res://assets/sprites/ui/speech_bubble_nineslice.png" id="1_gjo5w"]
+[ext_resource type="Script" path="res://scenes/ui/speech_bubble.gd" id="2_y1w72"]
+[ext_resource type="Texture2D" uid="uid://cvjmjhgjbxox7" path="res://assets/sprites/ui/speech_bubble_arrow.png" id="3_bh1o7"]
+
+[node name="SpeechBubble" type="NinePatchRect"]
+offset_right = 129.0
+offset_bottom = 35.0
+texture = ExtResource("1_gjo5w")
+region_rect = Rect2(0, 0, 17, 17)
+patch_margin_left = 7
+patch_margin_top = 7
+patch_margin_right = 7
+patch_margin_bottom = 7
+script = ExtResource("2_y1w72")
+side = 2
+side_position = 1.0
+
+[node name="Arrow" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 114.0
+offset_right = 122.0
+offset_bottom = 15.0
+rotation = -1.5708
+texture = ExtResource("3_bh1o7")
+stretch_mode = 2

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="UpgradeData" load_steps=3 format=3 uid="uid://c870epgs7wg8d"]
+
+[ext_resource type="Resource" uid="uid://d1ce000ds26n2" path="res://data/upgrades/player/lightning/electrical_discharge.tres" id="1_1glrq"]
+[ext_resource type="Script" path="res://data/upgrade_data.gd" id="2_padis"]
+
+[resource]
+script = ExtResource("2_padis")
+name = "THUNDERSTORM"
+id = &"thunderstorm"
+description = "Lightning strikes around you when you shoot lightning bullets."
+custom_data = {}
+pre_req = ExtResource("1_1glrq")
+type = 0

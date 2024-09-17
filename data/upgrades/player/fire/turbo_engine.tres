@@ -5,10 +5,11 @@
 [resource]
 script = ExtResource("1_hr424")
 name = "TURBO ENGINE"
-id = "turbo_engine"
+id = &"turbo_engine"
 description = "When vacuum is {RED}:
 Faster run, and flames erupt behind you when running."
 custom_data = {
 "fire_rate": 0.5,
 "run_speed_multiplier": 1.5
 }
+type = 0

@@ -5,9 +5,10 @@
 [resource]
 script = ExtResource("2_1hw0r")
 name = "ARC LIGHTNING"
-id = "arc_lightning"
+id = &"arc_lightning"
 description = "Lightning bullets can arc farther and to more enemies."
 custom_data = {
 "extra_arcs": 2,
 "extra_distance": 5.0
 }
+type = 0

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://wqqa3l0hg3so"]
+
+[ext_resource type="PackedScene" uid="uid://bg8tbn6dy1pi6" path="res://scenes/game/upgrades/lightning/electrical_discharge.tscn" id="1_iwng7"]
+[ext_resource type="Script" path="res://scenes/game/upgrades/lightning/thunderstorm.gd" id="2_mfwvr"]
+
+[node name="StrikeDash" instance=ExtResource("1_iwng7")]
+script = ExtResource("2_mfwvr")
+lightning_strike_scene = null
+data = null

@@ -6,11 +6,12 @@ class KeyValue:
 
 enum UpgradeType {
 	PLAYER,
-	DUNGEON
+	SHOP
 }
 
-@export var name:String
-@export var id:String
+@export_multiline var name:String
+@export var id:StringName;
 @export_multiline var description:String
 @export var custom_data:Dictionary;
 @export var pre_req:UpgradeData;
+@export var type:UpgradeType

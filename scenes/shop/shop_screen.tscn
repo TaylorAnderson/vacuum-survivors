@@ -1,0 +1,741 @@
+[gd_scene load_steps=52 format=3 uid="uid://dkfrlbhaoopvd"]
+
+[ext_resource type="Script" path="res://scenes/shop/shop_screen.gd" id="1_xy2qv"]
+[ext_resource type="StyleBox" uid="uid://cf8tl47h7hr6f" path="res://themes/bg_panel.tres" id="2_pfj7r"]
+[ext_resource type="FontFile" uid="uid://cps7wwwrgo0ch" path="res://assets/fonts/Yesterday Basic 10h.ttf" id="3_62jae"]
+[ext_resource type="Texture2D" uid="uid://22rttppfjvvi" path="res://assets/sprites/ui/button_nineslice_tiny.png" id="4_4gha6"]
+[ext_resource type="Texture2D" uid="uid://co4jsuig5m13b" path="res://assets/sprites/ui/menu_nineslice.png" id="5_iu21e"]
+[ext_resource type="Script" path="res://scenes/shop/vacuum_upgrade_card.gd" id="6_jqdhp"]
+[ext_resource type="FontFile" uid="uid://b4xoqxqjsmru" path="res://assets/fonts/Yesterday 10.ttf" id="7_n7f25"]
+[ext_resource type="PackedScene" uid="uid://c2fagr5ja8gkr" path="res://scenes/ui/button.tscn" id="8_rrtic"]
+[ext_resource type="PackedScene" uid="uid://camsj1j4mgjkt" path="res://scenes/shop/upgrade_node.tscn" id="9_an5vn"]
+[ext_resource type="Texture2D" uid="uid://clb23m6kr7pib" path="res://assets/sprites/vacuum_shop/sale_tag.png" id="10_6lkay"]
+[ext_resource type="Texture2D" uid="uid://bbk8mk068bhe2" path="res://assets/sprites/vacuum_shop/big_skull.png" id="11_kil8f"]
+[ext_resource type="Texture2D" uid="uid://bbi7tmoo00u4m" path="res://assets/sprites/ui/arrow.png" id="12_87r3m"]
+[ext_resource type="Texture2D" uid="uid://di1a7oi8ksgl4" path="res://assets/sprites/ui/curse_button_nineslice.png" id="13_skb8o"]
+[ext_resource type="Script" path="res://scenes/shop/curse_button.gd" id="14_3rytc"]
+[ext_resource type="Texture2D" uid="uid://eyya78i2mkps" path="res://assets/sprites/vacuum_shop/curse_skull.png" id="15_lek15"]
+[ext_resource type="Texture2D" uid="uid://c7e4kiapujopi" path="res://assets/sprites/ui/speech_bubble_nineslice.png" id="16_jhx68"]
+[ext_resource type="PackedScene" uid="uid://dun2o0nyj54ve" path="res://scenes/ui/speech_bubble.tscn" id="17_fet4o"]
+[ext_resource type="Texture2D" uid="uid://bnwc38rsywqr1" path="res://assets/sprites/vacuum_shop/demon_shopkeep.png" id="18_rtpun"]
+[ext_resource type="Texture2D" uid="uid://drtwm4qop5tk" path="res://assets/sprites/vacuum_shop/shop_counter.png" id="19_8yf55"]
+[ext_resource type="PackedScene" uid="uid://eiowxvl1eblo" path="res://scenes/shop/vacuum_part.tscn" id="20_b3mao"]
+[ext_resource type="Shader" path="res://scenes/shop/vacuum_part.gdshader" id="21_jnepv"]
+[ext_resource type="Resource" uid="uid://dtfgdwnc4rhu3" path="res://data/upgrades/shop/flared_nozzle.tres" id="22_7xk17"]
+[ext_resource type="Texture2D" uid="uid://b73gt1yim4t18" path="res://assets/sprites/vacuum_shop/vacuum_part_tube.png" id="23_4n1ii"]
+[ext_resource type="Resource" uid="uid://b1am5n3kqdptg" path="res://data/upgrades/shop/io_tube.tres" id="24_dcbs3"]
+[ext_resource type="Texture2D" uid="uid://bprof2pkr4gl1" path="res://assets/sprites/vacuum_shop/vacuum_part_engine.png" id="25_do5cy"]
+[ext_resource type="Resource" uid="uid://fjd6rxujqk5c" path="res://data/upgrades/shop/stagger_engine.tres" id="26_eqs2g"]
+[ext_resource type="Texture2D" uid="uid://cv2w5cyorq5nq" path="res://assets/sprites/vacuum_shop/vacuum_part_dust_storage.png" id="27_jn2sp"]
+[ext_resource type="Resource" uid="uid://t3uuiawbb3ba" path="res://data/upgrades/shop/elemental_storage.tres" id="28_6bitx"]
+[ext_resource type="Texture2D" uid="uid://c4imykwmgnwae" path="res://assets/sprites/vacuum_shop/vacuum_part_wheels.png" id="29_08eyl"]
+[ext_resource type="Resource" uid="uid://dgayw7t40bgak" path="res://data/upgrades/shop/powered_wheels.tres" id="30_t44ui"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_l3me6"]
+line_spacing = -20.0
+font = ExtResource("3_62jae")
+font_size = 96
+
+[sub_resource type="LabelSettings" id="LabelSettings_jhfy0"]
+font = ExtResource("7_n7f25")
+font_size = 64
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_nllir"]
+color = Color(0.952941, 0.952941, 0.952941, 1)
+thickness = 2
+
+[sub_resource type="LabelSettings" id="LabelSettings_itlpw"]
+font = ExtResource("7_n7f25")
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_wg4je"]
+font = ExtResource("7_n7f25")
+font_size = 48
+
+[sub_resource type="LabelSettings" id="LabelSettings_phdsr"]
+font = ExtResource("7_n7f25")
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_h71na"]
+font = ExtResource("7_n7f25")
+font_size = 48
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_slcx4"]
+color = Color(1, 1, 1, 1)
+thickness = 2
+
+[sub_resource type="LabelSettings" id="LabelSettings_jfu4t"]
+font = ExtResource("7_n7f25")
+font_size = 32
+
+[sub_resource type="Animation" id="Animation_ig478"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_5nssq"]
+resource_name = "clicked"
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.11, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.21, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l0iu8"]
+_data = {
+"RESET": SubResource("Animation_ig478"),
+"clicked": SubResource("Animation_5nssq")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sxbcx"]
+atlas = ExtResource("18_rtpun")
+region = Rect2(0, 0, 55, 58)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ahnuq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sxbcx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2u5o1"]
+bg_color = Color(0.360784, 0.180392, 0.470588, 1)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.360784, 0.180392, 0.470588, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j8vgi"]
+resource_local_to_scene = true
+shader = ExtResource("21_jnepv")
+shader_parameter/selected = true
+shader_parameter/deselect_color = Color(0.141176, 0.141176, 0.141176, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bmbui"]
+resource_local_to_scene = true
+shader = ExtResource("21_jnepv")
+shader_parameter/selected = true
+shader_parameter/deselect_color = Color(0.141176, 0.141176, 0.141176, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s1r1y"]
+resource_local_to_scene = true
+shader = ExtResource("21_jnepv")
+shader_parameter/selected = true
+shader_parameter/deselect_color = Color(0.141176, 0.141176, 0.141176, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2kkc8"]
+resource_local_to_scene = true
+shader = ExtResource("21_jnepv")
+shader_parameter/selected = true
+shader_parameter/deselect_color = Color(0.141176, 0.141176, 0.141176, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v73y8"]
+resource_local_to_scene = true
+shader = ExtResource("21_jnepv")
+shader_parameter/selected = true
+shader_parameter/deselect_color = Color(0.141176, 0.141176, 0.141176, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_v86ov"]
+font = ExtResource("7_n7f25")
+font_size = 64
+
+[node name="ShopScreen" type="CanvasLayer"]
+layer = 10
+script = ExtResource("1_xy2qv")
+
+[node name="Content" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="Panel" parent="Content"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("2_pfj7r")
+metadata/_edit_lock_ = true
+
+[node name="Title" type="Label" parent="Content"]
+layout_mode = 1
+offset_top = 16.0
+offset_right = 384.0
+offset_bottom = 251.0
+text = "Vacuum 
+Shop"
+label_settings = SubResource("LabelSettings_l3me6")
+horizontal_alignment = 1
+
+[node name="Underline" type="NinePatchRect" parent="Content/Title"]
+self_modulate = Color(0.666667, 0.360784, 0.239216, 1)
+show_behind_parent = true
+layout_mode = 0
+offset_left = 63.0
+offset_top = 78.0
+offset_right = 126.0
+offset_bottom = 85.0
+scale = Vector2(4, 4)
+texture = ExtResource("4_4gha6")
+region_rect = Rect2(0, 0, 7, 7)
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="Underline2" type="NinePatchRect" parent="Content/Title"]
+self_modulate = Color(0.666667, 0.360784, 0.239216, 1)
+show_behind_parent = true
+layout_mode = 0
+offset_left = 110.0
+offset_top = 154.0
+offset_right = 149.0
+offset_bottom = 161.0
+scale = Vector2(4, 4)
+texture = ExtResource("4_4gha6")
+region_rect = Rect2(0, 0, 7, 7)
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="Menu" type="NinePatchRect" parent="Content"]
+layout_mode = 0
+offset_left = 868.0
+offset_top = 80.0
+offset_right = 1204.0
+offset_bottom = 518.0
+texture = ExtResource("5_iu21e")
+region_rect = Rect2(0, 0, 68, 68)
+patch_margin_left = 28
+patch_margin_top = 28
+patch_margin_right = 28
+patch_margin_bottom = 28
+script = ExtResource("6_jqdhp")
+
+[node name="Title" type="Label" parent="Content/Menu"]
+layout_mode = 2
+offset_left = 8.0
+offset_top = 9.0
+offset_right = 328.0
+offset_bottom = 140.0
+text = "Stagger
+engine"
+label_settings = SubResource("LabelSettings_jhfy0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Content/Menu"]
+layout_mode = 2
+offset_left = 8.0
+offset_top = 149.0
+offset_right = 328.0
+offset_bottom = 153.0
+theme_override_styles/separator = SubResource("StyleBoxLine_nllir")
+
+[node name="Buffs" type="Label" parent="Content/Menu"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+offset_left = 8.0
+offset_top = 152.0
+offset_right = 328.0
+offset_bottom = 268.0
+text = "Damage++
+Something
+"
+label_settings = SubResource("LabelSettings_itlpw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" parent="Content/Menu" instance=ExtResource("8_rrtic")]
+z_index = 2
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 2
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 43.0
+offset_top = 277.0
+offset_right = 293.0
+offset_bottom = 357.0
+theme_override_font_sizes/font_size = 48
+text = "Buy ($2000)"
+
+[node name="UpgradeNodes" type="HBoxContainer" parent="Content/Menu"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+offset_left = 8.0
+offset_top = 359.0
+offset_right = 328.0
+offset_bottom = 429.0
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="UpgradeNode" parent="Content/Menu/UpgradeNodes" instance=ExtResource("9_an5vn")]
+layout_mode = 2
+
+[node name="UpgradeNode2" parent="Content/Menu/UpgradeNodes" instance=ExtResource("9_an5vn")]
+layout_mode = 2
+
+[node name="UpgradeNode3" parent="Content/Menu/UpgradeNodes" instance=ExtResource("9_an5vn")]
+layout_mode = 2
+
+[node name="UpgradeNode4" parent="Content/Menu/UpgradeNodes" instance=ExtResource("9_an5vn")]
+layout_mode = 2
+
+[node name="UpgradeNode5" parent="Content/Menu/UpgradeNodes" instance=ExtResource("9_an5vn")]
+layout_mode = 2
+
+[node name="Sales Tag" type="Control" parent="Content/Menu"]
+visible = false
+z_index = 2
+anchors_preset = 0
+offset_left = 228.0
+offset_top = 246.0
+offset_right = 268.0
+offset_bottom = 286.0
+metadata/_edit_group_ = true
+
+[node name="Img" type="TextureRect" parent="Content/Menu/Sales Tag"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 15.0
+scale = Vector2(4, 4)
+texture = ExtResource("10_6lkay")
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="Content/Menu/Sales Tag"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 21.0
+offset_top = -3.0
+offset_right = 107.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "-75%"
+label_settings = SubResource("LabelSettings_wg4je")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Curse Overlay" type="Control" parent="Content/Menu"]
+visible = false
+z_index = 10
+anchors_preset = 0
+offset_top = 152.0
+offset_right = 336.0
+offset_bottom = 438.0
+
+[node name="ColorRect" type="ColorRect" parent="Content/Menu/Curse Overlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.917647)
+
+[node name="TextureRect" type="TextureRect" parent="Content/Menu/Curse Overlay"]
+modulate = Color(0.360784, 0.180392, 0.470588, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -35.0
+offset_right = 20.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(4, 4)
+pivot_offset = Vector2(20, 20)
+texture = ExtResource("11_kil8f")
+
+[node name="Title" type="Label" parent="Content/Menu/Curse Overlay"]
+layout_mode = 2
+offset_left = 8.0
+offset_top = 7.0
+offset_right = 328.0
+offset_bottom = 71.0
+text = "CURSED!"
+label_settings = SubResource("LabelSettings_jhfy0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Content/Menu/Curse Overlay"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 169.0
+offset_right = 337.0
+offset_bottom = 236.0
+text = "Cannot be upgraded
+50% debuff for 1 day"
+label_settings = SubResource("LabelSettings_phdsr")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="RightArrow" type="TextureButton" parent="Content"]
+layout_mode = 0
+offset_left = 1220.0
+offset_top = 238.0
+offset_right = 1260.0
+offset_bottom = 278.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("12_87r3m")
+texture_pressed = ExtResource("12_87r3m")
+texture_hover = ExtResource("12_87r3m")
+stretch_mode = 4
+
+[node name="LeftArrow" type="TextureButton" parent="Content"]
+layout_mode = 0
+offset_left = 807.0
+offset_top = 238.0
+offset_right = 847.0
+offset_bottom = 278.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("12_87r3m")
+texture_pressed = ExtResource("12_87r3m")
+texture_hover = ExtResource("12_87r3m")
+stretch_mode = 4
+flip_h = true
+
+[node name="CurseButton" type="NinePatchRect" parent="Content"]
+self_modulate = Color(0.360784, 0.180392, 0.470588, 1)
+clip_children = 2
+layout_mode = 0
+offset_left = 808.0
+offset_top = 534.0
+offset_right = 1264.0
+offset_bottom = 704.0
+pivot_offset = Vector2(228, 85)
+mouse_filter = 0
+texture = ExtResource("13_skb8o")
+region_rect = Rect2(0, 0, 68, 68)
+patch_margin_left = 28
+patch_margin_top = 28
+patch_margin_right = 28
+patch_margin_bottom = 28
+script = ExtResource("14_3rytc")
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Content/CurseButton"]
+layout_mode = 0
+offset_right = 456.0
+offset_bottom = 169.0
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Content/CurseButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Title" type="HBoxContainer" parent="Content/CurseButton/VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Skull" type="TextureRect" parent="Content/CurseButton/VBoxContainer/Title"]
+custom_minimum_size = Vector2(36, 28)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("15_lek15")
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="Content/CurseButton/VBoxContainer/Title"]
+layout_mode = 2
+text = "DEVIL'S BARGAIN"
+label_settings = SubResource("LabelSettings_h71na")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Skull2" type="TextureRect" parent="Content/CurseButton/VBoxContainer/Title"]
+custom_minimum_size = Vector2(36, 28)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("15_lek15")
+stretch_mode = 4
+
+[node name="TopHalf" type="RichTextLabel" parent="Content/CurseButton/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("7_n7f25")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[center]Random vacuum part is [shake]CURSED"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Spacer" type="Control" parent="Content/CurseButton/VBoxContainer"]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="HSeparator" type="HSeparator" parent="Content/CurseButton/VBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+theme_override_constants/separation = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_slcx4")
+
+[node name="BottomHalf" type="Label" parent="Content/CurseButton/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Random vacuum part is FREE"
+label_settings = SubResource("LabelSettings_jfu4t")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Content/CurseButton"]
+libraries = {
+"": SubResource("AnimationLibrary_l0iu8")
+}
+
+[node name="ScaledContent" type="Control" parent="Content"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -960.0
+offset_bottom = -540.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(4, 4)
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="MoneySection" type="NinePatchRect" parent="Content/ScaledContent"]
+modulate = Color(0.0470588, 0.494118, 0.270588, 1)
+layout_mode = 0
+offset_left = 217.0
+offset_top = -13.0
+offset_right = 301.0
+offset_bottom = 17.0
+texture = ExtResource("16_jhx68")
+region_rect = Rect2(0, 0, 17, 17)
+patch_margin_left = 7
+patch_margin_top = 7
+patch_margin_right = 7
+patch_margin_bottom = 7
+
+[node name="SpeechBubble" parent="Content/ScaledContent" instance=ExtResource("17_fet4o")]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 60.25
+offset_right = 92.0
+offset_bottom = 98.25
+side = 3
+side_position = 0.5
+
+[node name="Shopkeep" type="AnimatedSprite2D" parent="Content/ScaledContent"]
+position = Vector2(21, 103)
+sprite_frames = SubResource("SpriteFrames_ahnuq")
+centered = false
+
+[node name="Shop Counter" type="TextureRect" parent="Content/ScaledContent"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 159.0
+offset_right = 82.0
+offset_bottom = 199.0
+texture = ExtResource("19_8yf55")
+
+[node name="Table" type="Panel" parent="Content/ScaledContent"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = -1.25
+offset_right = 198.0
+offset_bottom = 144.75
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2u5o1")
+
+[node name="VacuumParts" type="Control" parent="Content/ScaledContent"]
+anchors_preset = 0
+offset_right = 1.0
+offset_bottom = 1.0
+
+[node name="VacuumPart_Nozzle" parent="Content/ScaledContent/VacuumParts" instance=ExtResource("20_b3mao")]
+material = SubResource("ShaderMaterial_j8vgi")
+layout_mode = 0
+offset_left = 138.0
+offset_top = 13.75
+offset_right = 188.0
+offset_bottom = 43.75
+data = ExtResource("22_7xk17")
+
+[node name="VacuumPart_Tube" parent="Content/ScaledContent/VacuumParts" instance=ExtResource("20_b3mao")]
+material = SubResource("ShaderMaterial_bmbui")
+layout_mode = 0
+offset_left = 158.0
+offset_top = 32.25
+offset_right = 168.0
+offset_bottom = 98.25
+texture = ExtResource("23_4n1ii")
+data = ExtResource("24_dcbs3")
+
+[node name="VacuumPart_Engine" parent="Content/ScaledContent/VacuumParts" instance=ExtResource("20_b3mao")]
+material = SubResource("ShaderMaterial_s1r1y")
+layout_mode = 0
+offset_left = 154.0
+offset_top = 90.0
+offset_right = 172.0
+offset_bottom = 117.0
+texture = ExtResource("25_do5cy")
+data = ExtResource("26_eqs2g")
+
+[node name="VacuumPart_Dustbag" parent="Content/ScaledContent/VacuumParts" instance=ExtResource("20_b3mao")]
+material = SubResource("ShaderMaterial_2kkc8")
+layout_mode = 0
+offset_left = 101.75
+offset_top = 46.75
+offset_right = 143.75
+offset_bottom = 103.75
+texture = ExtResource("27_jn2sp")
+expand_mode = 1
+stretch_mode = 2
+data = ExtResource("28_6bitx")
+
+[node name="VacuumPart_Wheels" parent="Content/ScaledContent/VacuumParts" instance=ExtResource("20_b3mao")]
+material = SubResource("ShaderMaterial_v73y8")
+layout_mode = 0
+offset_left = 175.0
+offset_top = 47.0
+offset_right = 188.0
+offset_bottom = 76.0
+texture = ExtResource("29_08eyl")
+stretch_mode = 2
+data = ExtResource("30_t44ui")
+
+[node name="Money" type="Label" parent="Content"]
+layout_mode = 0
+offset_left = 869.0
+offset_top = -21.0
+offset_right = 1203.0
+offset_bottom = 67.0
+text = "$1000"
+label_settings = SubResource("LabelSettings_v86ov")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Content"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 240.0
+offset_right = 368.0
+offset_bottom = 392.0
+text = "What's up, loser."
+label_settings = SubResource("LabelSettings_phdsr")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="StartDayBtn" parent="." instance=ExtResource("8_rrtic")]
+offset_left = -253.0
+offset_top = 236.0
+offset_right = 152.0
+offset_bottom = 342.0
+text = "Start next day"
+
+[connection signal="pressed" from="Content/Menu/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Content/RightArrow" to="." method="_on_right_arrow_pressed"]
+[connection signal="pressed" from="Content/LeftArrow" to="." method="_on_left_arrow_pressed"]
+[connection signal="mouse_entered" from="Content/CurseButton" to="Content/CurseButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Content/CurseButton" to="Content/CurseButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="Content/CurseButton" to="." method="_on_curse_button_pressed"]
+[connection signal="pressed" from="StartDayBtn" to="." method="_on_start_day_btn_pressed"]

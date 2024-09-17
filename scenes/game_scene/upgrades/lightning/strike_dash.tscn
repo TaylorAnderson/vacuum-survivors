@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://wqqa3l0hg3so"]
-
-[ext_resource type="PackedScene" uid="uid://bg8tbn6dy1pi6" path="res://scenes/game_scene/upgrades/lightning/bolt_dash.tscn" id="1_iwng7"]
-[ext_resource type="Script" path="res://scenes/game_scene/upgrades/lightning/strike_dash.gd" id="2_mfwvr"]
-
-[node name="StrikeDash" instance=ExtResource("1_iwng7")]
-script = ExtResource("2_mfwvr")
-lightning_strike_scene = null
-data = null
