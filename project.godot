@@ -26,6 +26,7 @@ Events="*res://util/events.gd"
 Format="*res://util/format.gd"
 ShopData="*res://util/shop_data.gd"
 RunData="*res://util/run_data.gd"
+Dialogue="*res://util/dialogue.gd"
 
 [display]
 

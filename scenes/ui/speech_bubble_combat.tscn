@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://doiu2ctgxngts"]
+
+[ext_resource type="PackedScene" uid="uid://dun2o0nyj54ve" path="res://scenes/ui/speech_bubble.tscn" id="1_024h0"]
+[ext_resource type="Texture2D" uid="uid://kl2gu8w84noj" path="res://assets/sprites/ui/witch-portrait.png" id="3_rlful"]
+
+[node name="MessageBox" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 50.0
+offset_top = 458.0
+offset_right = 50.0
+offset_bottom = 458.0
+scale = Vector2(4, 4)
+
+[node name="SpeechBubble" parent="." instance=ExtResource("1_024h0")]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 15.0
+offset_right = 273.0
+offset_bottom = 60.0
+side = 0
+side_position = 0.75
+dialogue_location = null
+
+[node name="Portrait" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_rlful")

@@ -953,7 +953,7 @@ label_settings = SubResource("LabelSettings_xodsp")
 horizontal_alignment = 2
 vertical_alignment = 1
 script = ExtResource("23_ig7ap")
-seconds_in_day = 60.0
+seconds_in_day = 90.0
 
 [node name="EarningsLabel" type="Label" parent="CanvasLayer"]
 modulate = Color(0.423529, 0.85098, 0.278431, 1)
