@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=8 format=3 uid="uid://dd6c3kxpl7ltf"]
+
+[ext_resource type="Script" path="res://data/message.gd" id="1_s227s"]
+[ext_resource type="Script" path="res://data/dialogue_data.gd" id="2_n1oa4"]
+
+[sub_resource type="Resource" id="Resource_8nnqd"]
+script = ExtResource("1_s227s")
+text = "Hey Garnet, you think your vacuum could scratch an itch? "
+person = 1
+
+[sub_resource type="Resource" id="Resource_xrf4v"]
+script = ExtResource("1_s227s")
+text = "...I don't like where this question is going."
+person = 0
+
+[sub_resource type="Resource" id="Resource_lnado"]
+script = ExtResource("1_s227s")
+text = "My butt has been SO itchy lately.  Think you could scratch it?"
+person = 1
+
+[sub_resource type="Resource" id="Resource_qbiq7"]
+script = ExtResource("1_s227s")
+text = "Aaaand there it is. God, you're gross."
+person = 0
+
+[sub_resource type="Resource" id="Resource_7hr74"]
+script = ExtResource("1_s227s")
+text = "Thank you! Hehehe..."
+person = 1
+
+[resource]
+script = ExtResource("2_n1oa4")
+messages = Array[ExtResource("1_s227s")]([SubResource("Resource_8nnqd"), SubResource("Resource_xrf4v"), SubResource("Resource_lnado"), SubResource("Resource_qbiq7"), SubResource("Resource_7hr74")])
+seasonal = false
+season = 0

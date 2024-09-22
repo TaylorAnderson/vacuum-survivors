@@ -20,7 +20,6 @@ offset_right = 273.0
 offset_bottom = 60.0
 side = 0
 side_position = 0.75
-dialogue_location = null
 
 [node name="Portrait" type="TextureRect" parent="."]
 layout_mode = 0

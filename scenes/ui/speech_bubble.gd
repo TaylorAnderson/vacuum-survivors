@@ -15,9 +15,24 @@ enum BubbleSide {
 ## Goes from 0 to 1, proportional to side length.
 @export var side_position:float;
 @export var dialogue_location:DialogueLocation
-@export var portrait_image:TextureRect;
+@onready var letter_display_timer: Timer = $LetterDisplayTimer
+@onready var label: RichTextLabel = $Text
 
+
+var current_dialogue:DialogueData;
+var current_message:Message;
 var dialogue_options:Array[DialogueData]
+
+var message_index:int = 0;
+var letter_index:int = 0;
+
+var letter_time:float = 0.03;
+var punctuation_time:float = 0.06;
+var space_time:float = 0.04;
+
+signal convo_started(convo:DialogueData);
+signal convo_finished();
+signal message_started(message:Message);
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if dialogue_location == DialogueLocation.BATTLE:
@@ -28,6 +43,46 @@ func _ready():
 
 func _process(delta):
 	position_arrow();
+	
+func start_convo():
+	dialogue_options.shuffle();
+	for option in dialogue_options:
+		if option.seasonal and option.season != RunData.season:
+			continue;
+		current_dialogue = option;
+		current_message = current_dialogue.messages[0];
+		message_index = 0;
+		letter_index = 0;
+		convo_started.emit(current_dialogue);
+		message_started.emit(current_dialogue.messages[0])
+		letter_display_timer.start(0.5);
+
+func _on_letter_display_timer_timeout() -> void:
+	label.text = current_message.text.substr(0, letter_index);
+	
+	if letter_index == label.text.length()-1:
+		message_index += 1;
+		if message_index == current_dialogue.messages.size():
+			convo_finished.emit();
+			return;
+		current_message = current_dialogue.messages[message_index]
+		message_started.emit(current_message);
+		letter_display_timer.start(0.5);
+		return;
+	
+	var wait_time = 0;
+	match current_message.text[letter_index]:
+		"?", "!", ".":
+			wait_time = punctuation_time
+		" ":
+			wait_time = space_time;
+		_:
+			wait_time = letter_time;
+			
+	letter_display_timer.start(wait_time);
+	
+	letter_index += -1;
+
 
 
 func position_arrow():

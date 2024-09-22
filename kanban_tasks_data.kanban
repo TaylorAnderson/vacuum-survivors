@@ -11,14 +11,14 @@
 			"uuid": "9a099e99-c430-4988-b4d1-e4d82394c15b",
 			"title": "Todo",
 			"tasks": [
-				"891768c3-5697-4e36-afb7-187b00128614"
+				"20a40308-5581-46f0-b2b3-c550c4af2848"
 			]
 		},
 		{
 			"uuid": "f7379ba4-8b2f-4d04-ac9e-18cdc49bf441",
 			"title": "Doing",
 			"tasks": [
-				"20a40308-5581-46f0-b2b3-c550c4af2848"
+				"23e4046b-de61-4d24-843f-48f2ec9eb034"
 			]
 		},
 		{
@@ -109,8 +109,8 @@
 			"steps": []
 		},
 		{
-			"uuid": "891768c3-5697-4e36-afb7-187b00128614",
-			"title": "implement devil character",
+			"uuid": "23e4046b-de61-4d24-843f-48f2ec9eb034",
+			"title": "dialogue system",
 			"description": "",
 			"category": "5df0d99d-44b7-4a8b-a1b1-854784fc4fd4",
 			"steps": []
