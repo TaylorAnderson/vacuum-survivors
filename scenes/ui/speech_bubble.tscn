@@ -27,20 +27,26 @@ rotation = -1.5708
 texture = ExtResource("3_bh1o7")
 stretch_mode = 2
 
-[node name="Label" type="RichTextLabel" parent="."]
+[node name="LetterDisplayTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 7.0
-offset_top = 6.0
-offset_right = -3.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 7
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_right = 7
+theme_override_constants/margin_bottom = 4
+
+[node name="Label" type="RichTextLabel" parent="MarginContainer"]
+layout_mode = 2
 theme_override_constants/line_separation = 2
 theme_override_fonts/normal_font = ExtResource("4_isppe")
 theme_override_font_sizes/normal_font_size = 9
-
-[node name="LetterDisplayTimer" type="Timer" parent="."]
+scroll_active = false
 
 [connection signal="timeout" from="LetterDisplayTimer" to="." method="_on_letter_display_timer_timeout"]

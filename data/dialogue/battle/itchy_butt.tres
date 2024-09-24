@@ -15,7 +15,7 @@ person = 0
 
 [sub_resource type="Resource" id="Resource_lnado"]
 script = ExtResource("1_s227s")
-text = "My butt has been SO itchy lately.  Think you could scratch it?"
+text = "My butt has been SO itchy lately...👉👈"
 person = 1
 
 [sub_resource type="Resource" id="Resource_qbiq7"]

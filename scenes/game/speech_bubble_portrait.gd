@@ -4,7 +4,6 @@ extends TextureRect
 @export var devil_tex:Texture;
 @export var shopkeep_tex:Texture;
 
-
 func _on_speech_bubble_message_started(message: Message) -> void:
 	match message.person:
 		Message.Person.WITCH:
@@ -13,3 +12,7 @@ func _on_speech_bubble_message_started(message: Message) -> void:
 			texture = devil_tex;
 		Message.Person.SHOPKEEP:
 			texture = shopkeep_tex;
+
+
+func _on_speech_bubble_convo_started(convo: DialogueData) -> void:
+	_on_speech_bubble_message_started(convo.messages[0]);

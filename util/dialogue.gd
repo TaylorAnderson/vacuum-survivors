@@ -8,7 +8,7 @@ var all:Array[DialogueData]
 var dialogues_path = "res://data/dialogue"
 
 func _ready():
-	all_battle = find_dialogue(dialogues_path + "/combat")
+	all_battle = find_dialogue(dialogues_path + "/battle")
 	all_shop = find_dialogue(dialogues_path + "/shop")
 	
 	all.append_array(all_battle);

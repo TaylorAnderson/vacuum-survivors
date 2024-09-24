@@ -1130,7 +1130,7 @@ script = ExtResource("65_i7163")
 [node name="SpeechBubble" parent="CanvasLayer/BattleDialogue" instance=ExtResource("65_3l7c2")]
 layout_mode = 0
 offset_left = 59.0
-offset_top = 29.0
+offset_top = 27.0
 offset_right = 302.0
 offset_bottom = 60.0
 side = 0
@@ -1177,4 +1177,5 @@ shopkeep_tex = ExtResource("70_yhsdy")
 [connection signal="pressed" from="CanvasLayer/PauseMenu/Button" to="CanvasLayer/PauseMenu" method="_on_button_pressed"]
 [connection signal="convo_finished" from="CanvasLayer/BattleDialogue/SpeechBubble" to="CanvasLayer/BattleDialogue" method="_on_speech_bubble_convo_finished"]
 [connection signal="convo_started" from="CanvasLayer/BattleDialogue/SpeechBubble" to="CanvasLayer/BattleDialogue" method="_on_speech_bubble_convo_started"]
+[connection signal="convo_started" from="CanvasLayer/BattleDialogue/SpeechBubble" to="CanvasLayer/BattleDialogue/Portrait" method="_on_speech_bubble_convo_started"]
 [connection signal="message_started" from="CanvasLayer/BattleDialogue/SpeechBubble" to="CanvasLayer/BattleDialogue/Portrait" method="_on_speech_bubble_message_started"]

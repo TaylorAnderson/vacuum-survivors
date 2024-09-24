@@ -1,5 +1,6 @@
 @tool
 extends NinePatchRect
+class_name SpeechBubble;
 enum DialogueLocation {
 	BATTLE,
 	SHOP
@@ -16,7 +17,7 @@ enum BubbleSide {
 @export var side_position:float;
 @export var dialogue_location:DialogueLocation
 @onready var letter_display_timer: Timer = $LetterDisplayTimer
-@onready var label: RichTextLabel = $Text
+@onready var label: RichTextLabel = $MarginContainer/Label
 
 
 var current_dialogue:DialogueData;
@@ -26,8 +27,8 @@ var dialogue_options:Array[DialogueData]
 var message_index:int = 0;
 var letter_index:int = 0;
 
-var letter_time:float = 0.03;
-var punctuation_time:float = 0.06;
+var letter_time:float = 0.05;
+var punctuation_time:float = 0.07;
 var space_time:float = 0.04;
 
 signal convo_started(convo:DialogueData);
@@ -50,24 +51,27 @@ func start_convo():
 		if option.seasonal and option.season != RunData.season:
 			continue;
 		current_dialogue = option;
-		current_message = current_dialogue.messages[0];
-		message_index = 0;
-		letter_index = 0;
-		convo_started.emit(current_dialogue);
-		message_started.emit(current_dialogue.messages[0])
-		letter_display_timer.start(0.5);
-
+		break;
+	
+	message_index = 0;
+	convo_started.emit(current_dialogue);
+	start_message(current_dialogue.messages[0]);
+	
+func start_message(message:Message):
+	letter_index = 0;
+	current_message = message;
+	letter_display_timer.start(0.5);
+	await letter_display_timer.timeout;
+	message_started.emit(message);
 func _on_letter_display_timer_timeout() -> void:
 	label.text = current_message.text.substr(0, letter_index);
 	
-	if letter_index == label.text.length()-1:
+	if letter_index == current_message.text.length():
 		message_index += 1;
 		if message_index == current_dialogue.messages.size():
 			convo_finished.emit();
 			return;
-		current_message = current_dialogue.messages[message_index]
-		message_started.emit(current_message);
-		letter_display_timer.start(0.5);
+		start_message(current_dialogue.messages[message_index]);
 		return;
 	
 	var wait_time = 0;
@@ -81,7 +85,7 @@ func _on_letter_display_timer_timeout() -> void:
 			
 	letter_display_timer.start(wait_time);
 	
-	letter_index += -1;
+	letter_index += 1;
 
 
 
