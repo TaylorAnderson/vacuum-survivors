@@ -27,9 +27,9 @@ var dialogue_options:Array[DialogueData]
 var message_index:int = 0;
 var letter_index:int = 0;
 
-var letter_time:float = 0.05;
-var punctuation_time:float = 0.07;
-var space_time:float = 0.04;
+var letter_time:float = 0.06;
+var punctuation_time:float = 0.08;
+var space_time:float = 0.07;
 
 signal convo_started(convo:DialogueData);
 signal convo_finished();

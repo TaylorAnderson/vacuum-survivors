@@ -1,13 +1,13 @@
-extends Camera2D
+extends Area2D
 
-@export var target:Player
+@export var chance:float = 1;
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if randf() >= chance or RunData.season != RunData.Season.SPRING:
+		queue_free();
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if target:
-		var mouse_offset = get_global_mouse_position() - target.global_position;
-		position = target.global_position# + mouse_offset * 0.05;
+	pass
